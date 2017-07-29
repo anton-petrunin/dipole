@@ -34,7 +34,7 @@ If a Riemannian manifold satisfies the $T$-tree comparison for the tree on the d
 \end{thm}
 
 \parit{Proof.}
-Assume contrary; that is, there is $p\in M$ and $u,v\in \TIL_p$ such that $w=\tfrac12\cdot(u+v)\notin \TIL_p$.
+Assume contrary; that is, there is $p\in M$ and $u,v\zz\in \TIL_p$ such that $w=\tfrac12\cdot(u+v)\notin \TIL_p$.
 
 }
 
@@ -70,24 +70,60 @@ By general position argument we can assume that this is the case for $z=w'$.
 
 It remains to produce an array of 7 points which fail the $T$-tree comparison.
 
-Fix $\eps>0$, consider the points
+Fix $\eps_1,\eps_2,$ and $\eps_3>0$, consider the points
 \begin{align*}
-q&=\exp_pw'=\exp_pw'',
+q&=\exp_p(1-\eps_2)\cdot w',
 &
-q'&=\exp_p(\eps\cdot w''),
+q'&=\exp_p(\eps_3\cdot w''),
 \\
 x&=\exp_p u,
 &
-x'&=\exp_p (-\eps\cdot u),
+x'&=\exp_p (-\eps_1\cdot u),
 \\
 y&=\exp_p v,
 &
-y'&=\exp_p (-\eps\cdot v).
+y'&=\exp_p (-\eps_1\cdot v).
 \end{align*}
-Let us show that if $\eps$ is small, then the array $p,x,x',y,y',q,q'$ does not satisfy the $T$-tree comparison to the labeling as on the diagram.
+Let us show that for some $\eps$ and $\delta$ the array $p,x,x',y,y',q,q'$ does not satisfy the $T$-tree comparison to the labeling as on the diagram.
 
-Assume contrary; let $\~p,\~x,\~x',\~y,\~y',\~q,\~q'\in\HH$ be a point array as in the definition of $T$-tree comparison.
-Note that ???
+Assume contrary; that is, given $\eps,\delta>0$ there is a point array $\~p$, $\~x$, $\~x'$, $\~y$, $\~y'$, $\~q$, $\~q'\in\HH$ as in the definition of $T$-tree comparison.
+Without loss of generality, we can assume that $\~p$.
+
+By $T$-comparison, we have that $\~p$ lies on the line segments $[\~x,\~x']$ and $[\~y,\~y']$.
+Further, as $\eps_1\to 0$ we have 
+\begin{align*}
+\measuredangle[\~p\,^{\~x'}_{\~y}]&\to \measuredangle[p\,^{x'}_{y}],
+&
+\measuredangle[\~p\,^{\~y'}_{\~x}]&\to \measuredangle[p\,^{y'}_{x}],
+\\
+\measuredangle[\~p\,^{\~x'}_{\~q}]&\to \measuredangle[p\,^{x'}_{q}],
+&
+\measuredangle[\~p\,^{\~y'}_{\~q}]&\to \measuredangle[p\,^{y'}_{q}],
+\end{align*}
+
+Let us pass to the limit configuration as $\eps_1\to0$;
+it will be also denote by $\~p,\~x,\~x',\~y,\~y',\~q,\~q'$.
+Note that $\~x'=\~y'=\~p$ and 
+\begin{align*}
+\measuredangle[\~p\,^{\~x}_{\~y}]&= \measuredangle[p\,^{x}_{y}],
+&
+\measuredangle[\~p\,^{\~y}_{\~q}]&\to \measuredangle[p\,^{y}_{q}],
+&
+\measuredangle[\~p\,^{\~x}_{\~q}]&\to \measuredangle[p\,^{x}_{q}].
+\end{align*}
+
+Now let us pass to the limit as $\eps_2\to0$.
+By $T$-tree comparison,
+\begin{align*}
+|\~q-\~q'|&=|q-q'|,
+&
+|\~p-\~q'|&\ge |p-q'|,
+\\
+|\~x-\~q'|&\ge |x-q'|,
+&
+|\~y-\~q'|&\ge |y-q'|
+\end{align*}
+which is impossible for small $\eps_3$. %???why
 \qeds
 
 
