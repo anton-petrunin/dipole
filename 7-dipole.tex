@@ -28,9 +28,9 @@ If the tangent injectivity locus at any point $p\in M$ is convex we say that $M$
 \end{tikzpicture}
 \end{wrapfigure}
 
-\begin{thm}{Proposition}
+\begin{thm}{Proposition}\label{T=>CTIL}
 Let $T$ be the bipolar tree as on the diagram.
-If a Riemannian manifold satisfies the $T$-tree comparison for the tree on the diagram then it is CTIL.
+If a Riemannian manifold $M$ satisfies the $T$-tree comparison for the tree on the diagram then $M$ satisfies convexity of  tangent injectivity locus (CTIL).
 \end{thm}
 
 \parit{Proof.}
@@ -126,6 +126,65 @@ By $T$-tree comparison,
 which is impossible for small $\eps_3$. %???why
 \qeds
 
+Xi-Nan Ma, Neil Trudinger and Xu-Jia Wang, Xu-Jia introduced a global differential geometric condition which is now called MTW condition, see \cite{MTW}.
+As well as CTIL described above, the MTW condition provides a necessary condition for regularity of optimal transport on Riemannian manifold $M$.
+Cédric Villani gave the following global geometric interpretation MTW condition (see \cite[2.6]{MTW+CTIL}) which will be used in our proof.
 
+\begin{thm}{MTW condition}\label{MTW}
+Let $M$ be a Riemannian manifold satisfying the CTIL condition. 
+Then $M$ satisfies the MTW condition if and only if the following property
+holds true. 
+
+For any hinge $[p\,^x_y]$ there is a bisecting geodesic $[p,q]$ such that 
+$|p-q|_M$ equals to the bisector at the vertex corresponding to $p$ in the plane triangle with two sides $|p-x|_M$, $|p-y|_M$ and angle $\measuredangle [p\,^x_y]$ between them.
+Moreover for any $q'\in M$ we have
+\begin{align*}
+|p-q|^2_M-|q'-q|^2_M&\le |p-x|^2_M-|q'-x|^2_M
+\intertext{or}
+|p-q|^2_M-|q'-q|^2_M&\le |p-y|^2_M-|q'-y|^2_M.
+\end{align*}
+
+\end{thm}
+
+
+
+\begin{thm}{Proposition}
+Let $T$ be the bipolar tree as on the diagram.
+If a Riemannian manifold $M$ satisfies the $T$-tree comparison for the tree on the diagram then $M$ satisfies MTW condition.
+\end{thm}
+
+\parit{Proof.}
+By Proposition~\ref{T=>CTIL}, $M$ satisfies CTIL condition.
+Therefore it is sufficient to check that the MTW condition (\ref{MTW}) holds for $M$.
+
+\begin{wrapfigure}{r}{26 mm}
+\begin{tikzpicture}[scale=1,
+  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=8mm}]
+
+  \node[main node] (0) at (1/6,1/2) {$x$};
+   \node[main node] (1) at (1/6,3/2) {$x'$};
+  \node[main node] (2) at (1,0){$y$};
+  \node[main node] (3) at (1,1){$p$};
+  \node[main node] (4) at (1,2) {$y'$};
+  \node[main node] (5) at (2,0) {$q'$};
+  \node[main node] (6) at (2,1) {$q$};
+
+  \path[every node/.style={font=\sffamily\small}]
+     (0) edge node[above]{}(3)
+   (1) edge node[above]{}(3)
+   (2) edge node[above]{}(3)
+   (3) edge node[above]{}(6)
+   (4) edge node[above]{}(3)
+   (5) edge node[above]{}(6);
+\end{tikzpicture}
+\end{wrapfigure}
+
+Let $p,x,y, q, q'$ be as in the reformulation.
+Without loss of generality we can assume that $x,y\in\exp_p(\TIL_p)$.
+In this case the geodesics $[x,p]$ and $[y,p]$ admit an extensions behind $p$ as a minimizing geodesic;
+choose points $x'$ and $y'$ on these extensions sufficiently close to $p$.
+
+It remains to apply the limit case $T$-tree comparison in the limit case as $x',y'\to p$ for the labeling as on the diagram.
+\qeds
 
 
