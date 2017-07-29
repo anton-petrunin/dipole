@@ -1,0 +1,149 @@
+\section{Polypolar comparison}\label{sec:all-tree}
+
+
+\begin{thm}{Theorem}\label{thm:hilbert-quotient}
+A separable metric space $X$ satisfies all tree comparison if and only if
+$X$ is isometric to a subset in the quotient of the Hilbert space by subgroup of isometries.
+\end{thm}
+
+Let us denote by $\RR^\infty$ be the product of countably many real lines equipped with the product topology.
+
+\begin{thm}{Lemma}\label{lem:tikhonov}
+Let $\Gamma\acts \RR^\infty$ be a linear and continuous action of finitely generated group.
+Assume there is a nonempty convex compact $\Gamma$-invariant set $\mathfrak{C}\subset \RR^\infty$.
+Then the action has a fixed point in $\mathfrak{C}$.
+\end{thm}
+
+The following proof admits a straightforward generalization to the actions of finitely generated groups on locally convex spaces.
+Possibly the finitely generated assumption can be removed.
+
+\parit{Proof.}
+Fix a set of generators $S=\{\gamma_1,\dots,\gamma_n\}$ of $\Gamma$.
+Consider the average map
+\[\phi(\mathfrak{r})=\tfrac1{n}\cdot(\gamma_1\cdot \mathfrak{r}+\dots+\gamma_n\cdot \mathfrak{r})\]
+for $\mathfrak{r}\in\RR^\infty$.
+Note that $\phi$ is $\Gamma$ invariant;
+that is $\gamma\cdot \phi(\mathfrak{r})=\phi(\gamma\cdot\mathfrak{r})$ for any $\mathfrak{r}\in\RR^\infty$ and $\gamma\in \Gamma$.
+
+Since $\mathfrak{C}$ is convex and $\Gamma$-invariant, $\phi$ maps $\mathfrak{C}$ in itself.
+The subset of $\mathfrak{C}$ of all fixed points of $\phi$ is a convex closed $\Gamma$-invariant.
+Moreover, by Tikhinov's this set of fixed points is not empty.
+
+Without loss of generality, we can assume that $\mathfrak{C}$ is minimal (with respect to inclusion) set satisfying the assumption of the lemma.
+In this case, $\mathfrak{C}$ contains only fixed vectors;
+that is, $\phi(\mathfrak{r})=\mathfrak{r}$ for any $\mathfrak{r}\in \mathfrak{C}$.
+
+Denote by $x_i(\mathfrak{r})$ the $i$-th coordinate of $\mathfrak{r}$.
+Fix $i$ and choose $\mathfrak{r}\in \mathfrak{C}$ so that $x_i(\mathfrak{r})$ takes the maximal value.
+Since $\phi(\mathfrak{r})=\mathfrak{r}$, we get 
+\[x_i(\mathfrak{r})=x_i(\gamma\cdot \mathfrak{r})\]
+for all $\gamma\in\Gamma$.
+
+Since $\mathfrak{C}$ is minimal, $x_i$ is constant on $\mathfrak{C}$.
+Since $i$ is arbitrary, the statement follows.
+\qeds
+
+
+\parit{Proof of Theorem~\ref{thm:hilbert-quotient}.}
+The ``if'' part is left as an exercise;
+let us prove the ``only if'' part.
+
+Fix a point array $a_1,\dots, a_n$ in $X$.
+Consider the complete graph $K_n$ with $\{1,\dots,n\}$ as the set of vertexes.
+
+
+Let $\~ K_n\to K_n$ be the universal covering of the complete graph $K_n$.
+Denote by $\~ V$ the set of vertexes of $\~ K_n$;
+given a vetex $\~ v\in\~V$ denote by $v$ the corresponding vertex of $K_n$.
+
+By multipolar comparison, we have the following:
+
+\begin{enumerate}[$({*})$]
+\item There is a map $f\:\~V\to\HH$ such that 
+\[|f(\~v)-f(\~w)|_\HH\ge |a_v-a_w|_X\]
+for any two vertexes $\~v,\~w\in \~ V$ and the equality holds if $(\~v,\~w)$ is an edge in $\~ K_n$.
+\end{enumerate}
+
+The fundamental group $\Gamma=\pi_1K_n$ acts on $\~ K_n$ by deck transformations.
+Let us show that the map $f$ can be chousen so that the action of $\Gamma$ extends to an isometric action of $\HH$.
+That is, there is an isometric actio $\Gamma\acts \HH$, such that $f(\gamma\cdot \~v)=\gamma\cdot f(\~v)$ for any vertex $\~v\in\~V$. %???right-or-left
+
+Take a copy of the real line $\RR$ for each pair of vertexes $\~v,\~w$ in $\~V$ and
+consider the product space $\RR^\infty$ of all these lines. 
+The group $\Gamma$ naturally acts on $\RR^\infty$ by permuting coordinates.
+
+Denote by $\mathfrak{r}_f$ the point in $\RR^\infty$ with the coordinates $x_{\~v,\~w}=|f(\~v)-f(\~w)|_\HH^2$ for each pair $(\~v,\~w)$ of vertexes in $\~V$.
+Note that for any $\gamma\in\Gamma$, we have
+\[\gamma\cdot\mathfrak{r}_f=\mathfrak{r}_{\gamma\cdot f},\]
+where $(\gamma\cdot f)(\~v):= f(\gamma\cdot \~v)$.
+ 
+Denote by $\mathfrak{C}$ the set of all vectors $\mathfrak{r}_f\in\RR^\infty$ for the maps $f$ which satisfy the condition $({*})$.
+
+Note that $\mathfrak{C}$ is a compact subset in $\RR^\infty$.
+
+Indeed, evidently $\mathfrak{C}$ is closed.
+Further, for any pair of vertexes $\~v,\~w\in\~V$, there is a path $\~v=\~v_0,\dots,\~v_k=\~w$ so that each pair $(\~v_{i-1},\~v_i)$ are adjacent.
+Set 
+\[s_{\~v,\~w}=|a_{v_0}-a_{v_1}|_X+\dots+|a_{v_{k-1}}-a_{v_k}|_X.\]
+By triangle inequality 
+\[|f(\~v)-f(\~w)|_\HH\le s_{v,w}\]
+It follows that $\mathfrak{C}$ lies in the product of the intervals $[0,s_{\~v,\~w}^2]$
+for all pairs $(\~v,\~w)$ of vertexes in $\~V$.
+By Tikhonov's theorem, the product of these intervals is compact;
+hence so is~$\mathfrak{C}$.
+
+Note that $\mathfrak{C}$ is a convex subset of $\RR^\infty$.
+
+Indeed, assume $f,h\:\~V\to H$ be two maps satisfying $({*})$.
+Fix $\alpha\in[0,\tfrac\pi2]$ and 
+consider the map $g\:K_n\to \HH=\HH\times \HH$ defined by
+\[g(v)=(\cos\alpha\cdot f(v),\sin\alpha\cdot f(v))\]
+Note that $g$ satisfies the condition $({*})$ and 
+\[\mathfrak{r}_g=(\cos\alpha)^2\cdot\mathfrak{r}_f+(\sin\alpha)^2\cdot\mathfrak{r}_h;\]
+that is, $\mathfrak{r}_g$ is the convex combination of  $\mathfrak{r}_f$ and $\mathfrak{r}_h$ with the weights  $(\cos\alpha)^2$ and $(\sin\alpha)^2$.
+Hence the convexity of $\mathfrak{C}$ follows.
+
+By Lemma~\ref{lem:tikhonov}, the action $\Gamma\acts\RR^\infty$ has a fixed point in $\mathfrak{C}$.
+The corresponding map $f\:\~V\to \HH$ has the needed property.
+
+Indeed, let $\HH_1$ be the minimal affine subspace of $\HH$ containing $f(\~V)$.
+Then the map $\iota_\gamma\:f(v)\mapsto f(\gamma\cdot v)$ is distance preserving.
+It follows that $\iota_\gamma$ admits a unique extension to an isometry $\bar\iota_\gamma\:\HH_1\to\HH_1$.
+The map $\gamma\mapsto \bar \iota_\gamma$ describes an isometric group action of $\Gamma$ on $\HH_1$.
+
+It remains to extend the obtained action on whole $\HH$;
+for example as the diagonal action on $\HH=\HH_1\times\HH_2$,
+where $\HH_2$ be the orthogonal complement of $\HH_1$ in $\HH$.
+
+Since $X$ is separable, it contains a countable everywhere dense set $\{a_1,a_2,\dots\}$. 
+Applying the statement above for $X_n=\{a_1,\dots a_n\}$, we get an isometric action $\Gamma_n\acts\HH$ and invariant sets $Y_n=f(\~V_n)\subset \HH$ such that $X_n$ is isometric to $Y_n/\Gamma_n$.
+
+It remains to fix an ultra filter $\omega$ on $\NN$ and pass to the $\omega$-limit action on $\HH$. %???
+\qeds
+
+\begin{thm}{Proposition}
+Suppose $G$ be a compct Lie group with bi-invariant metric, so the action $G\times G\acts G$ defined by $(h_1,h_2)\cdot g=h_1\cdot g h_2^{-1}$ is isometric. 
+Then for any closed subgroup $H<G\times G$, the bi-quotient space $G/\!\!/H$ satisfies multipolar comparison.
+\end{thm}
+
+As a result we have many examples of spaces satisfying all tree comparison;
+for example, since $\SS^n=\SO(n)/\SO(n-1)$, any round sphere satisfies multipolar comparison.
+
+We present a proof suggested by Alexander Lytchak, it is simplified vesrion of the construction of Chuu-Lian Terng and Gudlaugur Thorbergsson given in \cite[Section 4]{terng-thorbergsson}.
+
+
+\parit{Proof.}
+Denote by $G^n$ the direct product of $n$ copies of $G$.
+Consider the map $\phi_n\:G^n\to G$ defined by
+\[\phi_n\:(\alpha_1,\dots,\alpha_n)\mapsto \alpha_1\cdots\alpha_n.\]
+Note that $\phi_n$ is a quotient map for the $H\times G^{n-1}$-action on $G^n$ defined by
+\[(\beta_0,\dots,\beta_n)\cdot(\alpha_1,\dots,\alpha_n)=(\gamma_1\cdot \alpha_1\cdot\beta_1^{-1},\beta_1\cdot\alpha_2\cdot\beta_2^{-1},\dots,\beta_{n-1}\cdot\alpha_n\cdot\gamma_2^{-1}),\]
+where $\beta_i\in G$ and $(\beta_0,\beta_n)\in H<G\times G$. 
+
+Denote by $\rho_n$ the product metric on $G^n$ rescaled with factor $\sqrt{n}$.
+Note that the quotient $(G^n,\rho_n)/(H\times G^{n-1})$ is isometric to $G/\!\!/H=(G,\rho_1)/\!\!/H$.
+
+As $n\to\infty$ the curvature of $(G^n,\rho_n)$ converges to zero and its injectivity radius goes to infinity.
+Therefore passing to the ultra-limit of $G^n$ as $n\to\infty$ we get the Hilbert space.
+It remains to observe that the limit action has the required property.
+\qeds
