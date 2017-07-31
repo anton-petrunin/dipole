@@ -59,58 +59,104 @@ Any Alexandrov space with nonnegative curvature satisfies the tree comparison fo
 
 \end{thm}
 
-\parit{Proof.} First we will show the statement for the first tree and use this in the proofs for the second and third trees.
-The latter two proofs are neraly identical.
+\parbf{Pivotal configurations.}
+Let $T$ be a dipolar tree.
+Label the poles of $T$ by $p_1$ and $p_2$ and the reaming vertexes by $x_1,x_2,\dots,x_n$.
 
-Let us label the poles by $p_1$ and $p_2$ and the reaming 3 vertexes by $x_1,x_2,x_3$.
+A point array $p_1,p_2,x_1,\dots x_n\in A$ together with choice one geodesic connecting adjacent vertexes of $T$ will be called \emph{geodesic $T$-tree};
+it contains one geodesic $[p_1,p_2]$ and $n$ geodesics  $[p_i,x_j]$.
 
-The required model configuration $\~p_1$, $\~p_2$, $\~x_1$, $\~x_2$, $\~x_3\in \RR^3$ will be found among the configurations where in addition the angle between $[\~p_1,\~p_2]$ and the remaining edges $[p_j,x_j]$ of the tree are the same as the corresponding angles in $A$; these type of configurations will be called \emph{pivotal}.
+A model configuration $\~p_1$, $\~p_2$, $\~x_1,\dots\~x_n\in \RR^n$ will be called \emph{pivotal configuration} of the $T$-tree in $A$
+if 
+\begin{enumerate}[(i)]
+\item $|\~p_1-\~p_2|= |p_1-p_2|$,
+\item $|\~p_i-\~x_j|= |p_i-p_j|$ for any edge $p_ix_j$ in $T$ and
+\item $\measuredangle[\~p_j\,^{\~x_k}_{\~p_i}]_{\RR^n}=\measuredangle[\~p_j\,^{\~x_k}_{\~p_i}]_A$
+for any hinge  $[p_j\,^{x_k}_{\~p_i}]$ in $T$.
+\end{enumerate}
 
-Up to a motion of the space, the configuration of that type is completely described by 6 angles $\alpha_{i,j}$ between the planes $\~p_1 \~p_2 \~x_i$ and $\~p_1\~p_2 \~x_j$.
+By angle comparison 
+\[|\~x_i-\~p_j|_{\RR^n}\ge |x_i-p_j|_A\]
+for any $i$ and $j$.
+Therefore, in order to check that a pivotal configuration $\~p_1$, $\~p_2$, $\~x_1,\dots\~x_n\in \RR^n$ satisfies the conditions in the $T$-tree comparison (see Section~\ref{sec:intro}) it is sufficient to check that 
+\[|\~x_i-\~x_j|_{\RR^n}\ge |x_i-x_j|_A\]
+for all $i,j$.
+
+Note that up to a motion of $\RR^n$, a pivotal configuration is completely described by the angles $\alpha_{i,j}$ between the half-planes passing $\~x_i$ and $\~x_j$ with $\~p_1 \~p_2$ as the the boundary line.
 
 Denote by $\beta_{i,j}$ the minimal angle between the planes $\~p_1 \~p_2 \~x_i$ and $p_1p_2 x_j$ such that $|\~x_i-\~x_j|_{\RR^3}\ge|\~x_i-\~x_j|_A$. 
 Note that the configuration $\~p_1,\~p_2,\~x_1,\~x_2,\~x_3,\~x_4$ is valid if $\alpha_{i,j}\ge \beta_{i,j}$ for all pairs $(i,j)$.
 
-Note that $\beta_{i,j}\le \pi$ for any pair $(i,j)$.
 
-In other words, we need to show that if $\~p_1,\~p_2,\~x_i,\~x_j$ is a model configuration with $\alpha_{i,j}=\pi$ then 
-\[|\~x_i-\~x_j|_{\RR^3}\ge |x_i-x_j|_{A}.\eqlbl{|x-x|}\]
-Note that in this configuration the line segment $[\~x_i,\~x_j]$ intersects the line $\~p_1\~p_2$;
+\begin{thm}{Lemma}\label{|x-x|}
+For any dipolar tree as above we have 
+\[\beta_{i,j}\le \pi\]
+for any pair $i$ and $j$.
+
+In other words, for any broken geodesic line $x_1p_1p_2x_2$ in a nonnegatively curved Alexandrov space $A$ there is a pivotal configuaration $\~p_1,\~p_2,\~x_1,\~x_2\in \RR^2$ such that 
+\[|\~x_1-\~x_2|_{\RR^2}\ge |x_1-x_2|_A.\]
+
+\end{thm}
+
+\parit{Proof.}
+Consider the pivotal configuaration $\~p_1\~p_2\~x_1\~x_2\in \RR^2$ such that $\~x_1$ and $\~x_2$ lie on the opposite sides from the line $\~p_1\~p_2$.
+Note that the line segment $[\~x_1,\~x_2]$ intersects the line $\~p_1\~p_2$;
 denote by $\~z$ the point of intersection.
 
 If $\~z\in [\~p_1,\~p_2]$, consider the corresponding point $z\in [p_1,p_2]$.
-In the remaining case, $\~z\notin [\~p_1,\~p_2]$, without loss of generality, we can assume that $\~z$ lies on the half line $\~p_1\~p_2$.
-In this set $z$ to be the image of $p_2$ for the $(\tfrac12\cdot \dist_{p_1}^2)$-gradient flow of $p_2$ for time $t=\ln \tfrac{|\~z-\~p_1|}{|\~p_2-\~p_1|}$.
+In the remaining case, $\~z\notin [\~p_1,\~p_2]$, without loss of generality, we can assume that $\~z$ lies on the half line starting at $\~p_1$.
+In this case set $z$ to be the image of $p_2$ for the $(\tfrac12\cdot \dist_{p_1}^2)$-gradient flow of $p_2$ for time $t=\ln \tfrac{|\~z-\~p_1|}{|\~p_2-\~p_1|}$.
 In both cases the comparsison implies 
 \begin{align*}
-|x_i-z|_A &\le |\~x_i-\~z|_{\RR^3},
+|x_i-z|_A &\le |\~x_i-\~z|_{\RR^2},
 &
-|x_j-z|_A &\le |\~x_j-\~z|_{\RR^3}.
+|x_j-z|_A &\le |\~x_j-\~z|_{\RR^2}.
 \end{align*}
-From the triangle inequality, \ref{|x-x|}
-follows.
+From the triangle inequality, the lemma follows.
+\qeds
 
-Along the same lines we can show that 
-\[\beta_{i,j}+\beta_{j,k}+\beta_{k,i}\le 2\cdot \pi\eqlbl{sum=<2pi}\] 
-for any triple $(i,j,k)$.
+The following lemma is proved along the same lines.
+
+\begin{thm}{Lemma}
+For any dipolar tree as above we have 
+\[\beta_{i,j}+\beta_{j,k}+\beta_{k,i}\le 2\cdot\pi.\]
+for any triple $i$, $j$ and $k$.
+
+In other words, for any geodesic (2-1)-tree $x_1p_1p_2x_2$ in a nonnegatively curved Alexandrov space $A$ there is a pivotal configuaration $\~p_1,\~p_2,\~x_1,\~x_2,x_3\in \RR^3$ such that 
+\begin{align*}
+|\~x_1-\~x_2|_{\RR^2}&\ge |x_1-x_2|_A,
+\\
+|\~x_2-\~x_3|_{\RR^2}&\ge |x_2-x_3|_A,
+\\
+|\~x_3-\~x_1|_{\RR^2}&\ge |x_3-x_1|_A.
+\end{align*}
 
 
-Indeed, assume contrary.
+
+\end{thm}
+
+
+
+\parit{Proof.}
+Assume contrary; that is 
+\[\beta_{i,j}+\beta_{j,k}+\beta_{k,i}> 2\cdot\pi.\eqlbl{eq>2pi}\]
 Since $\beta_{i,k}\le \pi$, it follows that 
 \[\beta_{i,j}+\beta_{j,k}> \pi.\eqlbl{sum>=pi}\] 
-Consider a configuration $\~p_1,\~p_2,\~x_i,\~x_j,\~x_k\in\RR^3$ such that 
-$\alpha_{i,j}=\beta_{i,j}$, $\alpha_{j,k}=\beta_{j,k}$ and the points $x_i$ and $x_k$ lie on the opposite sides from the plane $\~p_1\~p_2\~x_j$.
+Consider the pivotal configuration $\~p_1,\~p_2,\~x_i,\~x_j,\~x_k\in\RR^3$ such that 
+$\alpha_{i,j}=\beta_{i,j}$, $\alpha_{j,k}=\beta_{j,k}$ and the points $\~x_i$ and $\~x_k$ lie on the opposite sides from the plane $\~p_1\~p_2\~x_j$.
 By \ref{sum>=pi}, $[\~x_i\~x_j\~x_k]$ intersects the line $\~p_1\~p_2$;
 denote by $\~z$ the point of intersection.
 
-Let us construct a point $z\in A$ which corresponds to $\~z$ the same way as above.
-By construction 
+Let us construct a point $z\in A$ which corresponds to $\~z$ the same way as in the proof of Lemma~\ref{|x-x|}.
+By construction, 
 \begin{align*}
 |x_i-x_j|_A &= |\~x_i-\~x_j|_{\RR^3},
 &
-|x_j-x_k|_A &\le |\~x_j-\~x_k|_{\RR^3}.
+|x_j-x_k|_A &= |\~x_j-\~x_k|_{\RR^3}.
 \end{align*}
-By comparison implies 
+From \ref{eq>2pi},
+\[|x_i-x_k|_A &> |\~x_i-\~x_k|_{\RR^3}\]
+By comparison
 \begin{align*}
 |x_i-z|_A &\le |\~x_i-\~z|_{\RR^3},
 &
@@ -118,9 +164,8 @@ By comparison implies
 &
 |x_k-z|_A &\le |\~x_k-\~z|_{\RR^3}.
 \end{align*}
-By comparison, 
-\[|x_i-x_k|_A \le  |\~x_i-\~x_k|_{\RR^3};\]
-hence \ref{sum=<2pi} follows.
+Which leads to a contradiction. %???
+\qeds
 
 
 Assume one of the triangle inequalities 
