@@ -1,12 +1,12 @@
 \section{Upper dipolar comparison}
 
 Let $M$ be a Riemannian manifold.
-The tangent injectivity locus at the point $p\in M$ (briefly $\TIL_p$)is defined as the maximal open subset of the tangent vectors $v\in\T_p$ such that the geodesic path $\gamma(t)=\exp_p(v\cdot t)$, $t\in [0,1]$ is a minimizing.
-If the tangent injectivity locus at any point $p\in M$ is convex we say that $M$ satisfies convexity of  tangent injectivity locus or briefly CTIL.
+The tangent injectivity locus at the point $p\in M$ (briefly $\TIL_p$) is defined as the maximal open subset of the tangent vectors $v\in\T_p$ such that the geodesic path $\gamma(t)=\exp_p(v\cdot t)$, $t\in [0,1]$ is a minimizing.
+If the tangent injectivity locus at any point $p\in M$ is convex we say that $M$ satisfies \emph{convexity of  tangent injectivity locus} or briefly $M$ is CTIL.
 
 {
 
-\begin{wrapfigure}{r}{24 mm}
+\begin{wrapfigure}[5]{r}{24 mm}
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
 
@@ -29,24 +29,21 @@ If the tangent injectivity locus at any point $p\in M$ is convex we say that $M$
 \end{wrapfigure}
 
 \begin{thm}{Proposition}\label{T=>CTIL}
-Let $T$ be the bipolar tree as on the diagram.
-If a Riemannian manifold $M$ satisfies the $T$-tree comparison for the tree on the diagram then $M$ satisfies convexity of  tangent injectivity locus (CTIL).
+If a Riemannian manifold $M$ satisfies the $T$-tree comparison for the tree on the diagram then $M$ is CTIL.
 \end{thm}
 
 \parit{Proof.}
-Assume contrary; that is, there is $p\in M$ and $u,v\zz\in \TIL_p$ such that $w=\tfrac12\cdot(u+v)\notin \TIL_p$.
+Assume the contrary; that is, there is $p\in M$ and $u,v\zz\in \TIL_p$ such that $w=\tfrac12\cdot(u+v)\notin \TIL_p$.
+
+Let $\tau$ be the maximal value such that the geodesic $\gamma(t)=\exp_p(w\cdot t)$ is a length-minimizing on $[0,\tau]$.
+Note that $\tau<1$ and $w'=\tau\cdot w\in\partial \TIL_p$.
 
 }
 
-Let $\tau$ be the maximal value such that the geodesic $\gamma(t)=\exp_p(w\cdot t)$ is a length-minimizing on $[0,\tau]$.
-Note that $\tau<1$ and $w'=\tau\cdot w\in\partial \TIL_p$; that is there is $w''\in\TIL_p$ such that $\exp_pw'=\exp_pw''$.
+Set $q=\exp_p z$.
+By general position argument, we can assume that there are at least two minimizing geodesics connecting $p$ to $q$; see \cite{karcher}.
 
-
-
-According to \cite{karcher}, for generic point on $z\in\partial \TIL_p$ there are at least two minimizing geodesics connecting $p$ to $q=\exp_p z$.
-By general position argument we can assume that this is the case for $z=w'$.
-
-\begin{wrapfigure}{r}{26 mm}
+\begin{wrapfigure}[7]{r}{26 mm}
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=8mm}]
 
@@ -56,7 +53,7 @@ By general position argument we can assume that this is the case for $z=w'$.
   \node[main node] (3) at (1,1){$p$};
   \node[main node] (4) at (1,2) {$y'$};
   \node[main node] (5) at (2,0) {$q'$};
-  \node[main node] (6) at (2,1) {$q$};
+  \node[main node] (6) at (2,1) {$q^*$};
 
   \path[every node/.style={font=\sffamily\small}]
      (0) edge node[above]{}(3)
@@ -68,11 +65,10 @@ By general position argument we can assume that this is the case for $z=w'$.
 \end{tikzpicture}
 \end{wrapfigure}
 
-It remains to produce an array of 7 points which fail the $T$-tree comparison.
-
-Fix $\eps_1,\eps_2,$ and $\eps_3>0$, consider the points
+Fix small positive real numbers $\eps_1,\eps_2,$ and $\eps_3$.
+Consider the points
 \begin{align*}
-q&=\exp_p(1-\eps_2)\cdot w',
+q^*&=\exp_p(1-\eps_2)\cdot w',
 &
 q'&=\exp_p(\eps_3\cdot w''),
 \\
@@ -84,36 +80,35 @@ y&=\exp_p v,
 &
 y'&=\exp_p (-\eps_1\cdot v).
 \end{align*}
-Let us show that for some $\eps$ and $\delta$ the array $p,x,x',y,y',q,q'$ does not satisfy the $T$-tree comparison to the labeling as on the diagram.
+Let us show that for some choice of $\eps_i$, the array $p,x,x',y,y',q^*,q'$ does not satisfy the $T$-tree comparison to the labeling as on the diagram.
 
-Assume contrary; that is, given $\eps,\delta>0$ there is a point array $\~p$, $\~x$, $\~x'$, $\~y$, $\~y'$, $\~q$, $\~q'\in\HH$ as in the definition of $T$-tree comparison.
-Without loss of generality, we can assume that $\~p$.
+Assume contrary; that is, given $\eps_1,\eps_2,\eps_3>0$ there is a point array $\~p$, $\~x$, $\~x'$, $\~y$, $\~y'$, $\~q^*$, $\~q'\in\HH$ as in the definition of $T$-tree comparison.
 
-By $T$-comparison, we have that $\~p$ lies on the line segments $[\~x,\~x']$ and $[\~y,\~y']$.
+By $T$-tree comparison, $\~p$ lies on the line segments $[\~x,\~x']$ and $[\~y,\~y']$.
 Further, as $\eps_1\to 0$ we have 
 \begin{align*}
 \measuredangle[\~p\,^{\~x'}_{\~y}]&\to \measuredangle[p\,^{x'}_{y}],
 &
 \measuredangle[\~p\,^{\~y'}_{\~x}]&\to \measuredangle[p\,^{y'}_{x}],
 \\
-\measuredangle[\~p\,^{\~x'}_{\~q}]&\to \measuredangle[p\,^{x'}_{q}],
+\measuredangle[\~p\,^{\~x'}_{\~q^*}]&\to \measuredangle[p\,^{x'}_{q^*}],
 &
-\measuredangle[\~p\,^{\~y'}_{\~q}]&\to \measuredangle[p\,^{y'}_{q}],
+\measuredangle[\~p\,^{\~y'}_{\~q^*}]&\to \measuredangle[p\,^{y'}_{q^*}],
 \end{align*}
 
 Let us pass to the limit configuration as $\eps_1\to0$;
-it will be also denote by $\~p,\~x,\~x',\~y,\~y',\~q,\~q'$.
+it will be also denote by $\~p,\~x,\~x',\~y,\~y',\~q^*,\~q'$.
 Note that $\~x'=\~y'=\~p$ and 
 \begin{align*}
 \measuredangle[\~p\,^{\~x}_{\~y}]&= \measuredangle[p\,^{x}_{y}],
 &
-\measuredangle[\~p\,^{\~y}_{\~q}]&\to \measuredangle[p\,^{y}_{q}],
+\measuredangle[\~p\,^{\~y}_{\~q^*}]&= \measuredangle[p\,^{y}_{q^*}],
 &
-\measuredangle[\~p\,^{\~x}_{\~q}]&\to \measuredangle[p\,^{x}_{q}].
+\measuredangle[\~p\,^{\~x}_{\~q^*}]&= \measuredangle[p\,^{x}_{q^*}].
 \end{align*}
 
-Now let us pass to the limit as $\eps_2\to0$.
-By $T$-tree comparison,
+Note that $q^*\to q$ as $\eps_2\to0$.
+Passing to the limit we get a configuration $\~p$, $\~x$, $\~x'$, $\~y$, $\~y'$, $\~q^*=\~q$, $\~q'$ such that in addition we have
 \begin{align*}
 |\~q-\~q'|&=|q-q'|,
 &
@@ -128,10 +123,12 @@ which is impossible for small $\eps_3$. %???why
 
 Xi-Nan Ma, Neil Trudinger and Xu-Jia Wang, Xu-Jia introduced a global differential geometric condition which is now called MTW condition, see \cite{MTW}.
 As well as CTIL described above, the MTW condition provides a necessary condition for regularity of optimal transport on Riemannian manifold $M$.
+Moreover, a slightly stronger version of these conditions gives the converse.
+
 Cédric Villani gave the following global geometric interpretation MTW condition (see \cite[2.6]{MTW+CTIL}) which will be used in our proof.
 
 \begin{thm}{MTW condition}\label{MTW}
-Let $M$ be a Riemannian manifold satisfying the CTIL condition. 
+Assume $M$ be a CTIL Riemannian manifold. 
 Then $M$ satisfies the MTW condition if and only if the following property
 holds true. 
 
