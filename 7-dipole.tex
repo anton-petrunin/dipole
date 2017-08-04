@@ -51,17 +51,21 @@ More precisely, we will use the following reformulation of which can be proved t
 Assume $u,v\in \T_p$ and $w=\tfrac12\cdot(u+v)$
 and $x=\exp_p u$, $y=\exp_pv$ and $q=\exp_pw$.
 If the three geodesic paths $[p,x]$, $[p,y]$ and $[p,q]$ described by the paths 
-$t\mapsto\exp_p(t\cdot u)$,  $t\mapsto\exp_p(t\cdot v)$, $t\mapsto\exp_p(t\cdot w)$ for $t\in[0,1]$, then $[p,q]$ is called \emph{median} of the hinge $[p\,^x_y]$.
+$t\mapsto\exp_p(t\cdot u)$,  $t\mapsto\exp_p(t\cdot v)$, $t\mapsto\exp_p(t\cdot w)$ for $t\in[0,1]$ are minimizing, then $[p,q]$ is called \emph{median} of the hinge $[p\,^x_y]$.
 Note that in a CTIL Riemannian manifold, any hinge has a median.
 
 \begin{thm}{MTW condition}\label{MTW}
 Assume $M$ be a CTIL Riemannian manifold. 
 Then $M$ is MTW if and only if for a median $[p,q]$ of any hinge $[p\,^x_y]$ one of the following inequalities
-\begin{align*}
-|p-q|^2_M-|z-q|^2_M&\le |p-x|^2_M-|z-x|^2_M
-\intertext{or}
+\[
+\left[
+\begin{aligned}
+|p-q|^2_M-|z-q|^2_M&\le |p-x|^2_M-|z-x|^2_M,
+\\
 |p-q|^2_M-|z-q|^2_M&\le |p-y|^2_M-|z-y|^2_M.
-\end{align*}
+\end{aligned}
+\right.
+\]
 holds for any $z\in M$.
 \end{thm}
 
@@ -84,7 +88,7 @@ That is, there is $w''\in \partial \TIL_p$ such that $w''\ne w'$ and $\exp_pw'=\
 \lbl[t]{18.5,2;$x'$}
 \lbl[t]{32.5,2;$y'$}
 \lbl[t]{26,4.5;$p$}
-\lbl[r]{23,16;$z$}
+\lbl[r]{22.5,16;$z$}
 \lbl[r]{25,32;$q$}
 \lbl[l]{28.5,27;$q'$}
 \end{lpic}
@@ -182,17 +186,7 @@ $\~p, \~x,\~y,\~q'=\~q'(\eps),\~z=\~z(\zeta)$ such that
 &
 \measuredangle[\~p\,^{\~x}_{\~q'}]&= \measuredangle[p\,^{x}_{q'}].
 \end{align*}
-In other words, the map defined by
-\begin{align*}
-0&\mapsto \~p,
-&
-u&\mapsto \~x,
-& 
-v&\mapsto \~y,
-&
-w'&\mapsto \~q'
-\end{align*}
-is distance preserving.
+In other words, the map sending 4 points $0,u,v,w'\in\T_p$ to $\~p,\~x,\~y,\~q\in\HH$ correspondingly is distance preserving.
 
 Note that $q'\to q$ as $\eps\to0$. 
 Therefore, in the limit,
@@ -207,7 +201,7 @@ we get a configuration $\~p$, $\~x$, $\~y$, $\~q'$, $\~z=\~z(\zeta)$ such that i
 |\~y-\~z|&\ge |y-z|
 \end{align*}
 
-Finally note that if $\zeta$ is small then the last three inequalities 
+Since $w''\ne w'$, for small values $\zeta$ the last three inequalities 
 imply 
 \[|\~q'-\~z|>|q-z|,\]
 a contradiction.
@@ -217,12 +211,14 @@ a contradiction.
 
 
 \parit{(\ref{T=>CTIL:MTW}).}
+Fix a hinge $[p\,^x_y]$ in $M$.
 By \textit{(\ref{T=>CTIL:CTIL})}, $M$ is CTIL.
-In particular any hinge $[p\,^x_y]$ in $M$ has a median $[p,q]$.
+Therefor $[p\,^x_y]$ has a median; denote it by $[p,q]$.
+For $\delta>0$, define $x'=x'(\delta)$ and $y'=y'(\delta)$ as above.
 
 \begin{wrapfigure}{r}{26 mm}
 \begin{tikzpicture}[scale=1,
-  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=8mm}]
+  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=7mm}]
 
   \node[main node] (0) at (1/6,1/2) {$x$};
    \node[main node] (1) at (1/6,3/2) {$x'$};
@@ -242,7 +238,6 @@ In particular any hinge $[p\,^x_y]$ in $M$ has a median $[p,q]$.
 \end{tikzpicture}
 \end{wrapfigure}
 
-For $\delta>0$, define $x'=x'(\delta)$ and $y'=y'(\delta)$ as above.
 Without loss of generality we can assume that $x,y\zz\in\exp_p(\TIL_p)$.
 If $\delta$ is small, the latter implies that $p$ lies on unique minimizing geodesics $[x,x']$ and $[y,y']$.
 
@@ -253,9 +248,16 @@ we get a configuration of 5 points $\~p$, $\~q$, $\~x$, $\~y$ and $\~z$ such tha
 \end{align*}
 $\~q$ is the midpoint of $[\~x, \~y]$.
 In particular,
-\[2\cdot|\~z-\~q|_\HH^2+|\~q-\~x|_\HH^2+|\~q-\~y|_\HH^2
-=
-|\~z-\~x|_\HH^2+|\~z-\~y|_\HH^2.\]
+\begin{align*}
+2\cdot|\~z-\~q|_\HH^2+|\~q-\~x|_\HH^2+|\~q-\~y|_\HH^2
+&=
+|\~z-\~x|_\HH^2+|\~z-\~y|_\HH^2,
+\\
+2\cdot|\~p-\~q|_\HH^2+|\~q-\~x|_\HH^2+|\~q-\~y|_\HH^2
+&=
+|\~p-\~x|_\HH^2+|\~p-\~y|_\HH^2,
+\end{align*}
+
 By the comparison,
 \begin{align*}
 |\~z-\~x|_\HH&\ge |z-x|_M,
@@ -274,7 +276,17 @@ By the comparison,
 &
 |\~q-\~p|_\HH&= |q-p|_M,
 \end{align*}
-Hence one of the condition \ref{MTW} follow.
+Therefore
+\begin{align*}
+2\cdot|z-q|_M^2+|q-x|_M^2+|q-y|_M^2
+&\ge
+|z-x|_M^2+|z-y|_M^2,
+\\
+2\cdot|p-q|_M^2+|q-x|_M^2+|q-y|_M^2
+&\le
+|p-x|_M^2+|p-y|_M^2.
+\end{align*}
+Hence the condition in \ref{MTW} follows.
 \qeds
 
 
