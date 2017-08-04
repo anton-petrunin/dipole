@@ -4,8 +4,8 @@ Let $M$ be a Riemannian manifold.
 The \emph{tangent injectivity locus} at the point $p\in M$ (briefly $\TIL_p$) is defined as the maximal open subset in the tangent space $\T_p$ such that for any $v\in\TIL_p$ the geodesic path $\gamma(t)=\exp_p(v\cdot t)$, $t\in [0,1]$ is a minimizing.
 If the tangent injectivity locus at any point $p\in M$ is convex we say that $M$ satisfies \emph{convexity of  tangent injectivity locus} or briefly $M$ is CTIL.
 
-Xi-Nan Ma, Neil Trudinger and Xu-Jia Wang, Xu-Jia introduced a global differential geometric condition which is now called MTW condition, see \cite{MTW}.
-As well as CTIL described above, the MTW condition provides a necessary condition for regularity of optimal transport on Riemannian manifold $M$.
+Xi-Nan Ma, Neil Trudinger and Xu-Jia Wang, Xu-Jia introduced a global differential geometric condition which is now called MTW, see \cite{MTW}.
+The conditions CTIL and MTW are necessary for the regularity of optimal transport on Riemannian manifold $M$.
 Moreover, a slightly stronger version of these conditions gives the converse.
 
 {
@@ -42,16 +42,17 @@ If a Riemannian manifold $M$ satisfies the $T$-tree comparison then
 
 \end{thm}
 
-Cédric Villani gave a global geometric interpretation MTW condition (see \cite[2.6]{MTW+CTIL}). 
-The formulation stated below will be used in the proof; 
-it can be proved the same way.
+In the proof we will use a reformulation of MTW condition
+given by Cédric Villani \cite[2.6]{MTW+CTIL}.
+More precisely, we will use the following reformulation of which can be proved the same way.
 
 }
 
 Assume $u,v\in \T_p$ and $w=\tfrac12\cdot(u+v)$
 and $x=\exp_p u$, $y=\exp_pv$ and $q=\exp_pw$.
 If the three geodesic paths $[p,x]$, $[p,y]$ and $[p,q]$ described by the paths 
-$t\mapsto\exp_p(t\cdot u)$,  $t\mapsto\exp_p(t\cdot v)$, $t\mapsto\exp_p(t\cdot w)$ for $t\in[0,1]$, then $[p,q]$ is called \emph{median} of the hinge $[p\,^x_y]$
+$t\mapsto\exp_p(t\cdot u)$,  $t\mapsto\exp_p(t\cdot v)$, $t\mapsto\exp_p(t\cdot w)$ for $t\in[0,1]$, then $[p,q]$ is called \emph{median} of the hinge $[p\,^x_y]$.
+Note that in a CTIL Riemannian manifold, any hinge has a median.
 
 \begin{thm}{MTW condition}\label{MTW}
 Assume $M$ be a CTIL Riemannian manifold. 
@@ -68,7 +69,8 @@ holds for any $z\in M$.
 Assume the contrary; that is, there is $p\in M$ and $u,v\zz\in \TIL_p$ such that $w=\tfrac12\cdot(u+v)\notin \TIL_p$.
 
 Let $\tau$ be the maximal value such that the geodesic $\gamma(t)=\exp_p(w\cdot t)$ is a length-minimizing on $[0,\tau]$.
-Note that $\tau<1$ and $w'=\tau\cdot w\in\partial \TIL_p$.
+Set $w'=\tau\cdot w$.
+Note that $\tau<1$ and $w'\in\partial \TIL_p$.
 
 
 Set $q=\exp_p w'$.
@@ -82,7 +84,7 @@ That is, there is $w''\in \partial \TIL_p$ such that $w''\ne w'$ and $\exp_pw'=\
 \lbl[t]{18.5,2;$x'$}
 \lbl[t]{32.5,2;$y'$}
 \lbl[t]{26,4.5;$p$}
-\lbl[r]{23,16;$p'$}
+\lbl[r]{23,16;$z$}
 \lbl[r]{25,32;$q$}
 \lbl[l]{28.5,27;$q'$}
 \end{lpic}
@@ -93,7 +95,7 @@ Consider the points
 \begin{align*}
 q'=q'(\eps)&=\exp_p(1-\eps)\cdot w',
 &
-p'=p'(\zeta)&=\exp_p(\zeta\cdot w''),
+z=z(\zeta)&=\exp_p(\zeta\cdot w''),
 \\
 x&=\exp_p u,
 &
@@ -103,18 +105,18 @@ y&=\exp_p v,
 &
 y'=y'(\delta)&=\exp_p (-\delta\cdot v).
 \end{align*}
-We will  show that for some choice of $\delta,\eps$ and $\zeta$ the array $p,x,x',y,y',q',p'$ does not satisfy the $T$-tree comparison to the labeling as on the diagram below.
+We will  show that for some choice of $\delta,\eps$ and $\zeta$ the array $p,x,x',y,y',q',z$ does not satisfy the $T$-tree comparison with the labeling as on the diagram below.
 
 \begin{wrapfigure}[7]{r}{26 mm}
 \begin{tikzpicture}[scale=1,
-  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=8mm}]
+  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=7mm}]
 
   \node[main node] (0) at (1/6,1/2) {$x$};
    \node[main node] (1) at (1/6,3/2) {$x'$};
   \node[main node] (2) at (1,0){$y$};
   \node[main node] (3) at (1,1){$p$};
   \node[main node] (4) at (1,2) {$y'$};
-  \node[main node] (5) at (2,0) {$p'$};
+  \node[main node] (5) at (2,0) {$z$};
   \node[main node] (6) at (2,1) {$q'$};
 
   \path[every node/.style={font=\sffamily\small}]
@@ -127,10 +129,10 @@ We will  show that for some choice of $\delta,\eps$ and $\zeta$ the array $p,x,x
 \end{tikzpicture}
 \end{wrapfigure}
 
-Assume given  positive numbers $\delta,\eps$ and $\zeta$, there is a point array $\~p$, $\~x$, $\~x'(\delta)$, $\~y$, $\~y'(\delta)$, $\~q'(\eps)$, $\~p'(\zeta)\in\HH$ as in the definition of $T$-tree comparison;
-that is the between points in this array are at least as big as the distances of corresponding points in $M$ and the equality holds if the pair of points are adjacent in $T$.
+Assume that given  positive numbers $\delta,\eps$ and $\zeta$, there is a point array $\~p$, $\~x$, $\~x'(\delta)$, $\~y$, $\~y'(\delta)$, $\~q'(\eps)$, $\~z(\zeta)\in\HH$ as in the definition of $T$-tree comparison;
+that is, the distances between the points in this array are at least as big as the distances of corresponding points in $M$ and the equality holds for the pair adjacent in $T$.
 
-Since $\delta$ is small, we can assume that $p$ lies on a necessary unique minimizing geodesic $[x,x']$.
+Since $\delta$ is small, we can assume that $p$ lies on a necessary unique minimizing geodesic $[x,x']_M$.
 Hence 
 \[|x-x'|_M=|x-p|_M+|p-x'|_M.\]
 By comparison
@@ -143,8 +145,8 @@ By comparison
 \end{align*}
 By triangle inequality,
 \[|\~x-\~x'|_\HH=|\~x-\~p|_\HH+|\~x'-\~p|_\HH;\]
-that is, $\~p$ lies on the line segment $[\~x,\~x']$.
-The same way we see that $\~p$ lies on the line segment and $[\~y,\~y']$.
+that is, $\~p\in [\~x,\~x']_\HH$.
+The same way we see that $\~p\in [\~y,\~y']_\HH$.
 
 Fix $\eps$ and $\zeta$.
 Note that as $\delta\to 0$ we have 
@@ -161,8 +163,18 @@ Note that as $\delta\to 0$ we have
 &
 \measuredangle[\~p\,^{\~y'}_{\~q'}]&\to \measuredangle[p\,^{y'}_{q'}],
 \end{align*}
+It follows that 
+\begin{align*}
+\measuredangle[\~p\,^{\~x}_{\~y}]&\to \measuredangle[p\,^x_y],
+&
+\measuredangle[\~p\,^{\~x}_{\~q'}]&\to \measuredangle[p\,^x_{q'}],
+&
+\measuredangle[\~p\,^{\~y}_{\~q'}]&\to \measuredangle[p\,^y_{q'}].
+\end{align*}
+
+
 Therefore, passing to a partial limit as $\delta\to0$, we get a configuration of 5 points 
-$\~p, \~x,\~y,\~q'(\eps),\~p'(\zeta)$ such that  
+$\~p, \~x,\~y,\~q'=\~q'(\eps),\~z=\~z(\zeta)$ such that  
 \begin{align*}
 \measuredangle[\~p\,^{\~x}_{\~y}]&= \measuredangle[p\,^{x}_{y}],
 &
@@ -170,38 +182,34 @@ $\~p, \~x,\~y,\~q'(\eps),\~p'(\zeta)$ such that
 &
 \measuredangle[\~p\,^{\~x}_{\~q'}]&= \measuredangle[p\,^{x}_{q'}].
 \end{align*}
-In other words,
+In other words, the map defined by
 \begin{align*}
-|\~p -\~x|_\HH&=|u|,
+0&\mapsto \~p,
 &
-|\~p -\~y|_\HH&=|v|,
+u&\mapsto \~x,
+& 
+v&\mapsto \~y,
 &
-|\~p -\~q|_\HH&=|w'|,
-\\
-|\~x -\~x|_\HH&=|u-v|,
-&
-|\~q -\~x|_\HH&=|w'-u|,
-&
-|\~q -\~y|_\HH&=|w'-v|.
+w'&\mapsto \~q'
 \end{align*}
-
+is distance preserving.
 
 Note that $q'\to q$ as $\eps\to0$. 
 Therefore, in the limit,
-we get a configuration $\~p$, $\~x$, $\~y$, $\~q'$, $\~p'$ such that in addition we have
+we get a configuration $\~p$, $\~x$, $\~y$, $\~q'$, $\~z=\~z(\zeta)$ such that in addition we have
 \begin{align*}
-|\~q'-\~p'|&=|q-p'|,
+|\~q'-\~z|&=|q-z|,
 &
-|\~p-\~p'|&\ge |p-p'|,
+|\~p-\~z|&\ge |p-z|,
 \\
-|\~x-\~p'|&\ge |x-p|,
+|\~x-\~z|&\ge |x-p|,
 &
-|\~y-\~p'|&\ge |y-p'|
+|\~y-\~z|&\ge |y-z|
 \end{align*}
 
 Finally note that if $\zeta$ is small then the last three inequalities 
 imply 
-\[|\~q'-\~p'|>|q-p'|,\]
+\[|\~q'-\~z|>|q-z|,\]
 a contradiction.
 
 
@@ -210,7 +218,7 @@ a contradiction.
 
 \parit{(\ref{T=>CTIL:MTW}).}
 By \textit{(\ref{T=>CTIL:CTIL})}, $M$ is CTIL.
-Therefore it is sufficient to check the condition in \ref{MTW}.
+In particular any hinge $[p\,^x_y]$ in $M$ has a median $[p,q]$.
 
 \begin{wrapfigure}{r}{26 mm}
 \begin{tikzpicture}[scale=1,
@@ -234,17 +242,39 @@ Therefore it is sufficient to check the condition in \ref{MTW}.
 \end{tikzpicture}
 \end{wrapfigure}
 
-Let us construct $x'=x'(\delta)$ and $y'=y'(\delta)$ as above.
+For $\delta>0$, define $x'=x'(\delta)$ and $y'=y'(\delta)$ as above.
 Without loss of generality we can assume that $x,y\zz\in\exp_p(\TIL_p)$.
 If $\delta$ is small, the latter implies that $p$ lies on unique minimizing geodesics $[x,x']$ and $[y,y']$.
 
-Applying the limit case of $T$-tree comparison in the limit case as $x',y'\to p$ we get 
-a configuration of 5 points $\~p$, $\~q$, $\~x$, $\~y$ and $\~z$ such that
-$\~z$ is the midpoint of $[\~x, \~y]$ and
+Consider a limit case $T$-tree comparison as $\delta\to 0$;
+we get a configuration of 5 points $\~p$, $\~q$, $\~x$, $\~y$ and $\~z$ such that
 \begin{align*}
-\measuredangle[\~p\,^{\~x}_{\~y}]&=\measuredangle[p\,^x_y]
+\measuredangle[\~p\,^{\~x}_{\~y}]&=\measuredangle[p\,^x_y],
 \end{align*}
-
+$\~q$ is the midpoint of $[\~x, \~y]$.
+In particular,
+\[2\cdot|\~z-\~q|_\HH^2+|\~q-\~x|_\HH^2+|\~q-\~y|_\HH^2
+=
+|\~z-\~x|_\HH^2+|\~z-\~y|_\HH^2.\]
+By the comparison,
+\begin{align*}
+|\~z-\~x|_\HH&\ge |z-x|_M,
+&
+|\~z-\~y|_\HH&\ge |z-y|_M,
+\\
+|\~p-\~x|_\HH&\ge |p-x|_M,
+&
+|\~p-\~y|_\HH&\ge |p-y|_M,
+\\
+|\~q-\~x|_\HH&= |q-x|_M,
+&
+|\~q-\~y|_\HH&= |q-y|_M,
+\\
+|\~q-\~z|_\HH&= |q-z|_M,
+&
+|\~q-\~p|_\HH&= |q-p|_M,
+\end{align*}
+Hence one of the condition \ref{MTW} follow.
 \qeds
 
 
