@@ -1,4 +1,4 @@
-\section{Lower dipolar comparison}
+\section{Six point comparison}
 
 \begin{thm}{Theorem}
 Any Alexandrov space with nonnegative curvature satisfies the tree comparison for the following two trees:
@@ -68,7 +68,7 @@ Label the poles of $T$ by $p_1$ and $p_2$ and the reaming vertexes by $x_1,x_2,\
 A point array $p_1,p_2,x_1,\dots x_n\in A$ together with choice one geodesic connecting adjacent vertexes of $T$ will be called \emph{geodesic $T$-tree};
 it contains one geodesic $[p_1,p_2]$ and $n$ geodesics  $[p_i,x_j]$.
 
-A model configuration $\~p_1$, $\~p_2$, $\~x_1,\dots\~x_n\in \RR^n$ will be called \emph{pivotal configuration} of the $T$-tree in $A$
+A model configuration $\~p_1$, $\~p_2$, $\~x_1,\dots\~x_n\in \RR^n$ will be called \emph{pivotal configuration} of the geodesic $T$-tree in $A$
 if 
 \begin{enumerate}[(i)]
 \item $|\~p_1-\~p_2|= |p_1-p_2|$,
@@ -77,17 +77,17 @@ if
 for any hinge  $[p_j\,^{x_k}_{\~p_i}]$ in $T$.
 \end{enumerate}
 
-By angle comparison 
+Note that by angle comparison 
 \[|\~x_i-\~p_j|_{\RR^n}\ge |x_i-p_j|_A\]
 for any $i$ and $j$.
 Therefore, in order to check that a pivotal configuration $\~p_1$, $\~p_2$, $\~x_1,\dots\~x_n\in \RR^n$ satisfies the conditions in the $T$-tree comparison (see Section~\ref{sec:intro}) it is sufficient to check that 
 \[|\~x_i-\~x_j|_{\RR^n}\ge |x_i-x_j|_A\]
 for all $i,j$.
 
-Note that up to a motion of $\RR^n$, a pivotal configuration is completely described by the angles $\alpha_{i,j}$ between the half-planes passing $\~x_i$ and $\~x_j$ with $\~p_1 \~p_2$ as the the boundary line.
+Up to a motion of $\RR^n$, a pivotal configuration is completely described by the angles $\alpha_{i,j}$ between the half-planes passing $\~x_i$ and $\~x_j$ with $\~p_1 \~p_2$ as the the boundary line.
 
-Denote by $\beta_{i,j}$ the minimal angle between the planes $\~p_1 \~p_2 \~x_i$ and $p_1p_2 x_j$ such that $|\~x_i-\~x_j|_{\RR^3}\ge|\~x_i-\~x_j|_A$. 
-Note that the configuration $\~p_1,\~p_2,\~x_1,\~x_2,\~x_3,\~x_4$ is valid if $\alpha_{i,j}\ge \beta_{i,j}$ for all pairs $(i,j)$.
+Let us denote by $\beta_{i,j}$ the minimal angle between the planes $\~p_1 \~p_2 \~x_i$ and $p_1p_2 x_j$ in a pivotal configuration such that $|\~x_i-\~x_j|_{\RR^3}\ge|\~x_i-\~x_j|_A$. 
+Note that a pivotal  configuration $\~p_1,\~p_2,\~x_1,\dots,\~x_n$ satisfies the conditions in the definition of comparison if and only if $\alpha_{i,j}\ge \beta_{i,j}$ for all pairs $(i,j)$.
 
 
 \begin{thm}{Lemma}\label{|x-x|}
@@ -180,4 +180,27 @@ and attche an edge $(i,j)$ of length $\beta_{i,j}$,
 do the same for the second largest value and so on,
 starting from third step, before adding new edge we have to check that the triangle inequalities does not brake; in other words we want to 
 At the end we get a metric 
+\qeds
+
+\begin{thm}{Lemma}
+Let $A$ be a $\CBB[0]$ length space.
+Assume that for two point arrays $p,x_1,\dots,x_n\in A$ and $\~q, \~x_1,\dots,\~x_n\in \HH$ we have that 
+\[|\~q-\~x_i|\ge |p-x_i|\]
+for any $i$,
+\[|\~x_i-\~x_j|\le |x_i-x_i|\]
+for any pair $(i,j)$ such that $i<j$ except $(1,2)$
+and $\~q$ lies in the interior of convex hull of $\~x_1,\dots,\~x_n$.
+Then 
+\[|\~x_1-\~x_2|\ge |x_1-x_2|.\]
+\end{thm}
+
+\parit{Proof.}
+Assume contrary, that is $|\~x_1-\~x_2|\le |x_1-x_2|$.
+By the generalized Kirszbraun theorem, there is a short map $f\:A\to \HH$
+such that $f(x_i)=\~x_i$.
+For  $\~p=f(p)$ we have
+\[|\~q-\~x_i|\ge |\~p-\~x_i|.\]
+
+Since $\~q$ lies in the interior of convex hull of $\~x_1,\dots,\~x_n$,
+the latter implies that $\~q=\~p$.
 \qeds
