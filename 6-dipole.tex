@@ -181,26 +181,3 @@ do the same for the second largest value and so on,
 starting from third step, before adding new edge we have to check that the triangle inequalities does not brake; in other words we want to 
 At the end we get a metric 
 \qeds
-
-\begin{thm}{Lemma}
-Let $A$ be a $\CBB[0]$ length space.
-Assume that for two point arrays $p,x_1,\dots,x_n\in A$ and $\~q, \~x_1,\dots,\~x_n\in \HH$ we have that 
-\[|\~q-\~x_i|\ge |p-x_i|\]
-for any $i$,
-\[|\~x_i-\~x_j|\le |x_i-x_i|\]
-for any pair $(i,j)$ such that $i<j$ except $(1,2)$
-and $\~q$ lies in the interior of convex hull of $\~x_1,\dots,\~x_n$.
-Then 
-\[|\~x_1-\~x_2|\ge |x_1-x_2|.\]
-\end{thm}
-
-\parit{Proof.}
-Assume contrary, that is $|\~x_1-\~x_2|\le |x_1-x_2|$.
-By the generalized Kirszbraun theorem, there is a short map $f\:A\to \HH$
-such that $f(x_i)=\~x_i$.
-For  $\~p=f(p)$ we have
-\[|\~q-\~x_i|\ge |\~p-\~x_i|.\]
-
-Since $\~q$ lies in the interior of convex hull of $\~x_1,\dots,\~x_n$,
-the latter implies that $\~q=\~p$.
-\qeds
