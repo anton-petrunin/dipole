@@ -1,0 +1,89 @@
+Let us denote by $\RR^\infty$ be the product of countably many real lines equipped with the product topology.
+
+\begin{thm}{Lemma}\label{lem:tikhonov}
+Let $\Gamma\acts \RR^\infty$ be a linear and continuous action of finitely generated group.
+Assume there is a nonempty convex compact $\Gamma$-invariant set $\mathfrak{C}\subset \RR^\infty$.
+Then the action has a fixed point in $\mathfrak{C}$.
+\end{thm}
+
+The following proof admits a straightforward generalization to the actions of finitely generated groups on locally convex spaces.
+Possibly the finitely generated assumption can be removed.
+
+\parit{Proof.}
+Fix a set of generators $S=\{\gamma_1,\dots,\gamma_n\}$ in $\Gamma$.
+Consider the average map
+\[\phi(\mathfrak{r})=\tfrac1{n}\cdot(\gamma_1\cdot \mathfrak{r}+\dots+\gamma_n\cdot \mathfrak{r})\]
+for $\mathfrak{r}\in\RR^\infty$.
+Note that $\phi$ is $\Gamma$ invariant;
+that is $\gamma\cdot \phi(\mathfrak{r})=\phi(\gamma\cdot\mathfrak{r})$ for any $\mathfrak{r}\in\RR^\infty$ and $\gamma\in \Gamma$.
+
+Since $\mathfrak{C}$ is convex and $\Gamma$-invariant, $\phi$ maps $\mathfrak{C}$ in itself.
+The subset of $\mathfrak{C}$ of all fixed points of $\phi$ is a convex closed $\Gamma$-invariant.
+Moreover, by Tikhinov's this set of fixed points is not empty.
+
+Without loss of generality, we can assume that $\mathfrak{C}$ is minimal (with respect to inclusion) set satisfying the assumption of the lemma.
+In this case, $\mathfrak{C}$ contains only fixed vectors;
+that is, $\phi(\mathfrak{r})=\mathfrak{r}$ for any $\mathfrak{r}\in \mathfrak{C}$.
+
+Denote by $x_i(\mathfrak{r})$ the $i$-th coordinate of $\mathfrak{r}$.
+Fix $i$ and choose $\mathfrak{r}\in \mathfrak{C}$ so that $x_i(\mathfrak{r})$ takes the maximal value.
+Since $\phi(\mathfrak{r})=\mathfrak{r}$, we get 
+\[x_i(\mathfrak{r})=x_i(\gamma\cdot \mathfrak{r})\]
+for all $\gamma\in\Gamma$.
+
+Since $\mathfrak{C}$ is minimal, $x_i$ is constant on $\mathfrak{C}$.
+Since $i$ is arbitrary, the statement follows.
+\qeds
+
+
+
+The fundamental group $\Gamma=\pi_1K_n$ acts on $\~ K_n$ by deck transformations.
+Let us show that the map $f$ can be chousen so that the action of $\Gamma$ extends to an isometric action of $\HH$.
+That is, there is an isometric actio $\Gamma\acts \HH$, such that $f(\gamma\cdot \~v)=\gamma\cdot f(\~v)$ for any vertex $\~v\in\~V$. %???right-or-left
+
+Take a copy of the real line $\RR$ for each pair of vertexes $\~v,\~w$ in $\~V$ and
+consider the product space $\RR^\infty$ of all these lines. 
+The group $\Gamma$ naturally acts on $\RR^\infty$ by permuting coordinates.
+
+Denote by $\mathfrak{r}_f$ the point in $\RR^\infty$ with the coordinates $x_{\~v,\~w}=|f(\~v)-f(\~w)|_\HH^2$ for each pair $(\~v,\~w)$ of vertexes in $\~V$.
+Note that for any $\gamma\in\Gamma$, we have
+\[\gamma\cdot\mathfrak{r}_f=\mathfrak{r}_{\gamma\cdot f},\]
+where $(\gamma\cdot f)(\~v):= f(\gamma\cdot \~v)$.
+ 
+Denote by $\mathfrak{C}$ the set of all vectors $\mathfrak{r}_f\in\RR^\infty$ for the maps $f$ which satisfy the condition $({*})$.
+
+Note that $\mathfrak{C}$ is a compact subset in $\RR^\infty$.
+
+Indeed, evidently $\mathfrak{C}$ is closed.
+Further, for any pair of vertexes $\~v,\~w\in\~V$, there is a path $\~v=\~v_0,\dots,\~v_k=\~w$ so that each pair $(\~v_{i-1},\~v_i)$ are adjacent.
+Set 
+\[s_{\~v,\~w}=|a_{v_0}-a_{v_1}|_X+\dots+|a_{v_{k-1}}-a_{v_k}|_X.\]
+By triangle inequality 
+\[|f(\~v)-f(\~w)|_\HH\le s_{v,w}\]
+It follows that $\mathfrak{C}$ lies in the product of the intervals $[0,s_{\~v,\~w}^2]$
+for all pairs $(\~v,\~w)$ of vertexes in $\~V$.
+By Tikhonov's theorem, the product of these intervals is compact;
+hence so is~$\mathfrak{C}$.
+
+Note that $\mathfrak{C}$ is a convex subset of $\RR^\infty$.
+
+Indeed, assume $f,h\:\~V\to H$ be two maps satisfying $({*})$.
+Fix $\alpha\in[0,\tfrac\pi2]$ and 
+consider the map $g\:K_n\to \HH=\HH\times \HH$ defined by
+\[g(v)=(\cos\alpha\cdot f(v),\sin\alpha\cdot f(v))\]
+Note that $g$ satisfies the condition $({*})$ and 
+\[\mathfrak{r}_g=(\cos\alpha)^2\cdot\mathfrak{r}_f+(\sin\alpha)^2\cdot\mathfrak{r}_h;\]
+that is, $\mathfrak{r}_g$ is the convex combination of  $\mathfrak{r}_f$ and $\mathfrak{r}_h$ with the weights  $(\cos\alpha)^2$ and $(\sin\alpha)^2$.
+Hence the convexity of $\mathfrak{C}$ follows.
+
+By Lemma~\ref{lem:tikhonov}, the action $\Gamma\acts\RR^\infty$ has a fixed point in $\mathfrak{C}$.
+The corresponding map $f\:\~V\to \HH$ has the needed property.
+
+Indeed, let $\HH_1$ be the minimal affine subspace of $\HH$ containing $f(\~V)$.
+Then the map $\iota_\gamma\:f(v)\mapsto f(\gamma\cdot v)$ is distance preserving.
+It follows that $\iota_\gamma$ admits a unique extension to an isometry $\bar\iota_\gamma\:\HH_1\to\HH_1$.
+The map $\gamma\mapsto \bar \iota_\gamma$ describes an isometric group action of $\Gamma$ on $\HH_1$.
+
+It remains to extend the obtained action on whole $\HH$;
+for example as the diagonal action on $\HH=\HH_1\times\HH_2$,
+where $\HH_2$ be the orthogonal complement of $\HH_1$ in $\HH$.
