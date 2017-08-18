@@ -26,8 +26,77 @@ It follows that the equality
 \[|\~q-\~x_i|= |p-x_i|.\]
 holds for each $i$.
 
-According to ???, there is a short map $\HH\to \T_p$ such which admits a right inverse $\T_p\to \HH$ such that ...
-
-
-
+According to ???, there is a short map $\HH\to \T_p$ such which admits a right inverse $\T_p\to \HH$ such that ???
 \qeds
+
+\parbf{Cost-concave functions.}
+Let $f\: A\to \RR$ be a semiconcave function defined on Alexandrov space.
+A tangent vector $v\in \T_pA$ is called supporting vector of $f$ at $p$, briefly $v\in\nabla^-_pf$ if
+\[\langle v,x\rangle+d_pf(x)\le 0\]
+for any $x\in \T_p$.
+
+It is straightforward to see that the set of supporting vectors is a convex subset of $\T_p$.
+
+Let $A$ be an Alexandrov space.
+Consider the \emph{cost function} $\cost\:A\times A\to \RR$ defined by \[\cost(x,y)=\tfrac12\cdot|x-y|_A^2.\]
+A function $f\:A\to \RR$ is called cost-concave if thereis a subset of pairs $\mathcal{I}\subset A\times \RR$ such that
+\[f(x)=\inf\set{\cost(p,x)+r}{(p,r)\in\mathcal{I}}.\]
+
+Note that any cost-concave function $f$ is $1$-concave, that is, it satisfies the inequality 
+\[f''\le 1\]
+in the barrier sense (see \cite{AKP-book}).
+On the other hand, inequality $f''\le 1$ does not imply that $f$ is cost-concave.
+
+
+\parbf{Cost-convex spaces.}
+Recall that a tangent vector $v\in\T_p$ is called geodesic if there is a minimizing geodesic $[p,q]$ in the direction of $v$ with length $|v|$;
+in this case we write $q=\exp_pv$.
+The set of all geodesic vectors will be denoted by $\T'_p$;
+
+An Alexandrov space will be called \emph{cost-convex} if 
+for any cost-concave function $f$ any supporting vector $v\in\nabla^-_pf$ is geodesic 
+and for $q=\exp_pv$ the inequality 
+\[\cost(q,x)-\cost(q,p)\ge f(x)-f(p)\]
+holds for any $x\in A$.
+
+The following two observations implies that an Alexandrov space $A$ is cost-convex if and only if $A$ is CTIL and MTW as defiened below. 
+
+\begin{thm}{Observation}
+If $A$ is a cost-concave Alexandrov space then set of geodesic tangent vectors $\T'_p$ is convex for any $p\in A$. 
+\end{thm}
+
+\parit{Proof.}
+Fix $p\in A$ and consider the cost-concave function 
+\[f=\inf\set{\cost(q,x)-\cost(q,p)}{q\in A}.\]
+Note that any $\T'_p\subset \nabla^-_pf$.
+Hence the statement follows.
+\qeds
+
+\parbf{Transport continuity.}
+Consider the space $\mathcal{P}X$ of probability measures on $X$.
+Consider the metric on  $\mathcal{P}X$
+defined by 
+\[|\mu_0-\mu_1|^2_{\mathcal{P}X}=\inf\{\,(\cost\cdot \Pi)(X\times X)\,\},\]
+where the gratest lower bound is taken for all probability measures $\Pi$ on $X\times X$ such that $\Pi(A\times X)=\mu_0(A)$ and $\Pi(X\times A)=\mu_1(A)$ for any Borel set $A\subset X$.
+
+Any measure $\Pi$ satisfying the latter condition is called a \emph{plan} and a measure $\Pi$ for which the minimum is achieved is called \emph{optimal plan}; it minimizes the cost for moving $\mu_0$ into $\mu_1$.
+
+If we assume that $X$ is ???, then the optimal transport exists for any pair of probability measures in $\mathcal{P}X$.
+If in addition $X$ is a geodesic space, then so is $\mathcal{P}X$.
+That is, given two probability measures $\mu_0$ and $\mu_1$ there is one parameter family of measures $\mu_t$, $t\in [0,1]$ such that 
+\[|\mu_a-\mu_b|_{\mathcal{P}_2X}=t\cdot |\mu_0-\mu_1|_{\mathcal{P}_2X}\]
+for any $a,b\in [0,1]$.
+
+The family of measures $\mu_t$ described above is a geodesic path in $\mathcal{P}X$ connecting $\mu_0$ and $\mu_1$. 
+
+Assume that $X$ is equipped with a backgraund metric $\vol$ called \emph{volume};
+that is $X$ is a metric-measure space.
+Denote by $\mathcal{R}$ the subset of regular measures in $\mathcal{P}X$ with the distribution bounded away from zero and infinity.
+If the map $[0,1]\times\mathcal{R}\times\mathcal{R}\to \mathcal{P}X$ defined by $(t,\mu_0,\mu_1)\mapsto \mu_t$ is uniquelly defined and continuous then we say that $X$ satisfies transport continuity property, or briefly $X$ is TCP.
+
+The TCP Riemannian manifolds were studied by 
+Xi-Nan Ma, Neil Trudinger and Xu-Jia Wang, Xu-Jia in \cite{MTW}.
+They introduced a global differential geometric condition which is now called MTW.
+CTIL is an other necessary condition was introduced in ???.
+The conditions CTIL+MTW are necessary for TCP.
+Moreover, a slightly stronger version of these conditions gives the converse.
