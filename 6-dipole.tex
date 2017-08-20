@@ -242,8 +242,13 @@ Note that for any vertex $\~\xi_i$ can not lie in an open hemisphere with all it
 Indeed, if it would be the case then we could move this $\~\xi_i$ increasing the distances to all its adjacent vertexes.
 Along this move the energy decreases which is not possible.
 
+Note that by Corollary \ref{cor:|x-x|}, degree of any vertex is at least 2.
+Indeed existence of a vertex of degree 1 contradicts \ref{cor:|x-x|}\textit{\ref{cor:|x-x|:a}} and existence of a vertex of degree 0 contradicts \ref{cor:|x-x|}\textit{\ref{cor:|x-x|:b}}.
+
+Therefore we are left with the following three graphs.
+
 \hide
-\begin{wrapfigure}{r}{14 mm}
+\begin{center}
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
 
@@ -260,18 +265,7 @@ Along this move the energy decreases which is not possible.
    (3) edge node[above]{}(4)
    (1) edge node[above]{}(4);
 \end{tikzpicture}
-\end{wrapfigure}
-\unhide
-
-Applying the rigidity lemma, we conclude that $\Gamma$ can not be complete; that is, the graph on the diagram.
-
-Note that by Corollary \ref{cor:|x-x|}, degree of any vertex is at least 2.
-Indeed if there is a vertex of degree 1, the statement follows from \textit{(\ref{cor:|x-x|:a})} and if there is a vertex of degree 2 then the statement follows from \textit{(\ref{cor:|x-x|:b})}.
-
-Since energy is minimal, the angle between the edges at every vertex of degree 2 has to be $\pi$; that is, the pair of edges at such vertex continue each other.
-
-\hide
-\begin{wrapfigure}{r}{14 mm}
+\hskip10mm
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
 
@@ -287,19 +281,7 @@ Since energy is minimal, the angle between the edges at every vertex of degree 2
    (3) edge node[above]{}(4)
    (1) edge node[above]{}(4);
 \end{tikzpicture}
-\end{wrapfigure}
-\unhide
-
-Threre are only three graphs with 4 vertexes and all the degrees at least two: they have 6, 5 and 4 edges corrspondingly.
-The complete graph with 6 edges is already forbidden above.
-For the 5-edge graph on the diagram, by the observation above the two triangles in the graph forms an equator.
-The latter contradicts Corollary \ref{cor:|x-x|}\textit{\ref{cor:|x-x|:b}}.
-
-{
-
-\hide
-\begin{wrapfigure}{r}{14 mm}
-
+\hskip10mm
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
 
@@ -314,12 +296,20 @@ The latter contradicts Corollary \ref{cor:|x-x|}\textit{\ref{cor:|x-x|:b}}.
    (3) edge node[above]{}(4)
    (1) edge node[above]{}(4);
 \end{tikzpicture}
-\end{wrapfigure}
+\end{center}
 \unhide
+
+The 6-edege case, that is the complete graph with 4 vertexes can not appear by the rigidity lemma.
+
+To do the remaining two cases, note that since energy is minimal, the angle between the edges at every vertex of degree 2 of $\Gamma$ has to be $\pi$. 
+That is, the pair of edges at such vertex continue each other.
+
+Consider the 5-edge graph on the diagram.
+By the observation above the two triangles in the graph forms an equator.
+The latter contradicts Corollary \ref{cor:|x-x|}\textit{\ref{cor:|x-x|:b}}.
 
 For the 4-edge graph,
 by the same observation we have 4 points lie on the equator; 
-moving one pair to north pole and the other to south pole will increase all the sides, a contradiction.
+moving one pair to north pole and the other to south pole will increase all 4 edges, a contradiction.
 \qeds
 
-}
