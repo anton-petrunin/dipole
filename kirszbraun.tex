@@ -5,28 +5,32 @@ Recall that complete length space with curvature bounded below in the sense of A
 
 Let $A$ be an Alexandrov space.
 Consider the \emph{cost function} $\cost\:A\times A\to \RR$ defined by \[\cost(x,y)=\tfrac12\cdot|x-y|_A^2.\]
-A function $f\:A\to \RR$ is called cost-convex if there is a subset of pairs $\mathcal{I}\subset A\times \RR$ such that
-\[f(x)=\inf\set{r-\cost(p,x)}{(p,r)\in\mathcal{I}}.\]
+A function $f\:A\to (-\infty,\infty]$ is called cost-convex if there is a nonempty subset of pairs $\mathcal{I}\subset A\times \RR$ such that
+\[f(x)=\sup\set{r-\cost(p,x)}{(p,r)\in\mathcal{I}}.\]
 
 If $A$ has nonnegative curvature then any cost-convex function $f$ is $(-1)$-convex, that is, it satisfies the inequality 
-\[f''\ge -1\]
+\[f''\ge -1
+\eqlbl{eq:f''=<-1}\]
 in the barrier sense (see \cite{AKP-book}).
-On the other hand, the inequality $f''\ge -1$ does not imply that $f$ is cost-convex.
+On the other hand, the inequality \ref{eq:f''=<-1} does not imply that $f$ is cost-convex.
 
 
 \parbf{Subgradient.}
-Let $f\: A\to \bar\RR$ be a semiconvex function defined on Alexandrov space $A$
-and $f(p)$ is finite.
-Recall that differential $d_pf\:\T_p\to \bar\RR$ is defined.
+Let $f\: A\to (-\infty,\infty]$ be a semiconvex function defined on Alexandrov space $A$.
+Assume $f(p)$ is finite.
+In this case the differential 
+\[d_pf\:\T_p\zz\to (-\infty,\infty]\] 
+is defined;
+it is a convex positive homogeneous function defined on the tangent cone $\T_p$.
 
-A tangent vector $v\in \T_pA$ is called \emph{subgradient} of $f$ at $p$, briefly $v\in\ushort\nabla_pf$ if
+A tangent vector $v\in \T_pA$ is a \emph{subgradient} of $f$ at $p$, briefly $v\in\ushort\nabla_pf$ if
 \[\langle v,w\rangle\le d_pf(w)\]
 for any $w\in \T_p$.
 Note that the set $\ushort\nabla_pf$ is a convex subset of $\T_p$.
 
-Recall that a tangent vector $v\in\T_p$ is called \emph{geodesic} if there is a minimizing geodesic $[p,q]$ in the direction of $v$ with length $|v|$;
-in this case we write $q\zz=\exp_pv$.
-The set of all geodesic vectors will be denoted by $\T'_p$;
+The sunset of tangent vectors $v\in\T_p$ such that there is a minimizing geodesic $[p,q]$ in the direction of $v$ with length $|v|$ will be denoted as $\overline{\TIL}_p$. 
+For $p,q$ and $v$ as above, we write $q\zz=\exp_pv$.
+
 
 An Alexandrov space will be called \emph{cost-convex} if 
 for any cost-convex function $f$ any subgradient $v\in\ushort\nabla_pf$ is geodesic 
@@ -35,18 +39,19 @@ and for $q=\exp_pv$ the inequality
 holds for any $x\in A$.
 
 \begin{thm}{Observation}
-If $A$ is a cost-convex Alexandrov space, then for any $p\in A$ the set of geodesic tangent vectors $\T'_p$ is a convex subset of $\T_p$. 
+If $A$ is a cost-convex Alexandrov space, then $\overline{\TIL}_p$ is a convex subset of $\T_p$ for any $p\in A$.
 \end{thm}
 
 \parit{Proof.}
 Fix $p\in A$ and consider the cost-concave function 
 \[f=\inf\set{\cost(q,x)-\cost(q,p)}{q\in A}.\]
-Note that any $\T'_p\subset \ushort\nabla_pf$.
+Note that any $\overline{\TIL}_p\subset \ushort\nabla_pf$.
 Hence the statement follows.
 \qeds
 
-For a Riemannian manifold $M$,
-the convexity of $\T'_p$ for any point $p\in M$ is the so called \emph{convexity of tangent injectivity locus}, briefly CTIL.
+Riemannian manifold $M$ satisfies \emph{convexity of tangent injectivity locus},
+or briefly $M$ is CTIL,
+if the set $\overline{\TIL}_p$ is convex for any point $p\in M$.
 This property was considered in ??? as a necessary condition for the \emph{continuity of transport property}, briefly CTP.
 
 The observation above implies that a cost-convex complete Riemannian manifold are CTIL.
@@ -55,7 +60,8 @@ Here MTW is stays for an other necessary condition for CTP introduced by Xi-Nan 
 
 Likely cost-convexity is also sufficient for CTP.
 
-\parbf{Kirszbraun rigidity theorem.}
+\parbf{Kirszbraun theorem.}
+In the proof we will use the rigidity case of the generalized Kirszbraun theorem proved by Urs Lang and Viktor Schroeder in \cite{LS}, see also \cite{AKP}.
 
 \begin{thm}{Kirszbraun rigidity theorem}\label{thm:kirszbraun-rigid}
 Let $A$ be a complete $\CBB[0]$ length space.
@@ -65,10 +71,10 @@ Assume that for two point arrays $p,x_1,\dots,x_n\in A$ and $\~q, \~x_1,\dots,\~
 for any $i$,
 \[|\~x_i-\~x_j|\le |x_i-x_i|\]
 for any pair $(i,j)$
-and $\~q$ lies in the interior of the convex hull $K$ of $\~x_1,\dots,\~x_n$.
+and $\~q$ lies in the interior of the convex hull $\~K$ of $\~x_1,\dots,\~x_n$.
 
 Then equalities hold in all the inequalities above.
-Moreover there is an distance preserving map $f\:K\to A$ such that $f(\~x_i)=x_i$ and $f(\~q)=p$. 
+Moreover there is an distance preserving map $f\:\~K\to A$ such that $f(\~x_i)=x_i$ and $f(\~q)=p$. 
 \end{thm}
 
 \parit{Proof.}
@@ -83,5 +89,32 @@ It follows that the equality
 \[|\~q-\~x_i|= |p-x_i|.\]
 holds for each $i$.
 
-According to ???, there is a short map $\HH\to \T_p$ such which admits a right inverse $\T_p\to \HH$ such that ???
+Consider the tangent vectors $v_i\in\T_p$ such that $\exp_pv_i=x_i$ for each $i$.
+Note that these vectors are uniquely defined,
+all  the vectors lie in an isometric copy of a Euclidean space
+and 
+\[|v_i-v_j|_{\T_p}=|x_i-x_j|_A.\]
+In particular, the convex hull of $\{v_1,\dots,v_n\}$ in $\T_p$ is isometric to $\~K$,
+so we can keep notation  $\~K$ for this convex hull.
+
+Consider the gradient exponent $\gexp_p\:\T_p\to A$;
+it is a short map such that $\gexp_p0=p$ and $\gexp_p v_i=x_i$ for each $i$.
+It remains to show that the restriction $\gexp_p|_{\~K}$ is distance-preserving.
+
+Extend the sequence $v_1,\dots v_n$ to an infinite sequence of vectors $v_i\in\~K$ which is dense in $\~K$.
+Set $x_i=\gexp_pv_i$ for each $i$.
+
+Note that it is sufficient to show that the map $v_i\mapsto x_i$ is distance preserving.
+From above,
+\[|v_i-v_j|_{\T_p}=|x_i-x_j|_A\]
+if $i,j\le n$; it provides a base for induction.
+Assume 
+\[|v_i-v_j|_{\T_p}=|x_i-x_j|_A\]
+for all pairs $i,j\le k-1$.
+Since the gradient exponent is short,
+\[|v_i-v_k|_{\T_p}\ge|x_i-x_k|_A\]
+for each $i\le k$.
+From the first part of theorem we have 
+\[|v_i-v_k|_{\T_p}=|x_i-x_k|_A.\]
+Hence the second statement follows.
 \qeds

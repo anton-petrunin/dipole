@@ -1,26 +1,20 @@
 \section{Seven point comparison}\label{7-dipole}
 
-Let $M$ be a Riemannian manifold.
-The \emph{tangent injectivity locus} at the point $p\in M$ (briefly $\TIL_p$) is defined as the maximal open subset in the tangent space $\T_p$ such that for any $v\in\TIL_p$ the geodesic path $\gamma(t)=\exp_p(v\cdot t)$, $t\in [0,1]$ is a minimizing.
-If the tangent injectivity locus at any point $p\in M$ is convex we say that $M$ satisfies \emph{convexity of  tangent injectivity locus} or briefly $M$ is CTIL.
+In this section we will consider 4(1)-tree comparison.
+This is the simplest tree comparison which does not follow from Alexandrov comparison.
 
-Xi-Nan Ma, Neil Trudinger and Xu-Jia Wang, Xu-Jia introduced a global differential geometric condition which is now called MTW, see \cite{MTW}.
-The conditions CTIL and MTW are necessary for the regularity of optimal transport on Riemannian manifold $M$.
-Moreover, a slightly stronger version of these conditions gives the converse.
-
-{
 \hide
-\begin{wrapfigure}[6]{r}{24 mm}
+\begin{wrapfigure}{r}{30 mm}
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
 
-  \node[main node] (0) at (1/6,1/2) {};
-   \node[main node] (1) at (1/6,3/2) {};
-  \node[main node] (2) at (1,0){};
+  \node[main node] (0) at (3/2,11/6){};
+   \node[main node] (1) at (1/2,1/6){};
+  \node[main node] (2) at (3/2,.1){};
   \node[main node] (3) at (1,1){};
-  \node[main node] (4) at (1,2) {};
-  \node[main node] (5) at (2,0) {};
-  \node[main node] (6) at (2,1) {};
+  \node[main node] (4) at (1/2,11/6){};
+  \node[main node] (5) at (3,1){};
+  \node[main node] (6) at (2,1){};
 
   \path[every node/.style={font=\sffamily\small}]
      (0) edge node[above]{}(3)
@@ -33,9 +27,16 @@ Moreover, a slightly stronger version of these conditions gives the converse.
 \end{wrapfigure}
 \unhide
 
+Let $M$ be a Riemannian manifold.
+The \emph{tangent injectivity locus} at the point $p\in M$ (briefly $\TIL_p$) is defined as the maximal open subset in the tangent space $\T_p$ such that for any $v\in\TIL_p$ the geodesic path $\gamma(t)=\exp_p(v\cdot t)$, $t\in [0,1]$ is a minimizing.
+If the tangent injectivity locus at any point $p\in M$ is convex we say that $M$ satisfies \emph{convexity of  tangent injectivity locus} or briefly $M$ is CTIL.
+
+Xi-Nan Ma, Neil Trudinger and Xu-Jia Wang, Xu-Jia introduced a global differential geometric condition which is now called MTW, see \cite{MTW}.
+The conditions CTIL and MTW are necessary for the regularity of optimal transport on Riemannian manifold $M$.
+Moreover, a slightly stronger version of these conditions gives the converse.
+
 \begin{thm}{Proposition}\label{T=>CTIL+MTW}
-Let $T$ be the tree as on the diagram.
-If a Riemannian manifold $M$ satisfies the $T$-tree comparison then 
+If a Riemannian manifold $M$ satisfies the $4(1)$-tree comparison then 
 \begin{enumerate}[(a)]
 \item\label{T=>CTIL:CTIL} $M$ is CTIL;
 \item\label{T=>CTIL:MTW} $M$ is MTW.
@@ -47,7 +48,7 @@ In the proof we will use a reformulation of MTW condition
 given by Cédric Villani \cite[2.6]{MTW+CTIL}.
 More precisely, we will use the following reformulation of which can be proved the same way.
 
-}
+
 
 Assume $u,v\in \T_p$ and $w=\tfrac12\cdot(u+v)$
 and $x=\exp_p u$, $y=\exp_pv$ and $q=\exp_pw$.
@@ -110,20 +111,25 @@ y&=\exp_p v,
 &
 y'=y'(\delta)&=\exp_p (-\delta\cdot v).
 \end{align*}
-We will  show that for some choice of $\delta,\eps$ and $\zeta$ the array $p,x,x',y,y',q',z$ does not satisfy the $T$-tree comparison with the labeling as on the diagram below.
+
+We will  show that for some choice of $\delta,\eps$ and $\zeta$ the array $p,x,x',y,y',q',z$ does not satisfy the $T$-tree comparison with the labeling as on the diagram.
+
+Assume that given  positive numbers $\delta,\eps$ and $\zeta$, there is a point array $\~p$, $\~x$, $\~x'(\delta)$, $\~y$, $\~y'(\delta)$, $\~q'(\eps)$, $\~z(\zeta)\in\HH$ as in the definition of $T$-tree comparison;
+that is, the distances between the points in this array are at least as big as the distances of corresponding points in $M$ and the equality holds for the pair adjacent in $T$.
+
 
 \hide
-\begin{wrapfigure}[7]{r}{26 mm}
+\begin{wrapfigure}{r}{35 mm}
 \begin{tikzpicture}[scale=1,
-  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=7mm}]
+  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=8mm}]
 
-  \node[main node] (0) at (1/6,1/2) {$x$};
-   \node[main node] (1) at (1/6,3/2) {$x'$};
-  \node[main node] (2) at (1,0){$y$};
+  \node[main node] (0) at (3/2,11/6){$x$};
+   \node[main node] (1) at (1/2,1/6){$x'$};
+  \node[main node] (2) at (3/2,.1){$y$};
   \node[main node] (3) at (1,1){$p$};
-  \node[main node] (4) at (1,2) {$y'$};
-  \node[main node] (5) at (2,0) {$z$};
-  \node[main node] (6) at (2,1) {$q'$};
+  \node[main node] (4) at (1/2,11/6){$y'$};
+  \node[main node] (5) at (3,1){$z$};
+  \node[main node] (6) at (2,1){$q'$};
 
   \path[every node/.style={font=\sffamily\small}]
      (0) edge node[above]{}(3)
@@ -135,9 +141,6 @@ We will  show that for some choice of $\delta,\eps$ and $\zeta$ the array $p,x,x
 \end{tikzpicture}
 \end{wrapfigure}
 \unhide
-
-Assume that given  positive numbers $\delta,\eps$ and $\zeta$, there is a point array $\~p$, $\~x$, $\~x'(\delta)$, $\~y$, $\~y'(\delta)$, $\~q'(\eps)$, $\~z(\zeta)\in\HH$ as in the definition of $T$-tree comparison;
-that is, the distances between the points in this array are at least as big as the distances of corresponding points in $M$ and the equality holds for the pair adjacent in $T$.
 
 Since $\delta$ is small, we can assume that $p$ lies on a necessary unique minimizing geodesic $[x,x']_M$.
 Hence 
@@ -217,20 +220,20 @@ a contradiction.
 Fix a hinge $[p\,^x_y]$ in $M$.
 By \textit{(\ref{T=>CTIL:CTIL})}, $M$ is CTIL.
 Therefor $[p\,^x_y]$ has a median; denote it by $[p,q]$.
-For $\delta>0$, define $x'=x'(\delta)$ and $y'=y'(\delta)$ as above.
+For $\delta>0$, define $x'=x'(\delta)$ and $y'=y'(\delta)$ as in~\textit{(\ref{T=>CTIL:CTIL})}.
 
 \hide
-\begin{wrapfigure}{r}{26 mm}
+\begin{wrapfigure}{r}{36 mm}
 \begin{tikzpicture}[scale=1,
-  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=7mm}]
+  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=8mm}]
 
-  \node[main node] (0) at (1/6,1/2) {$x$};
-   \node[main node] (1) at (1/6,3/2) {$x'$};
-  \node[main node] (2) at (1,0){$y$};
+  \node[main node] (0) at (3/2,11/6){$x$};
+   \node[main node] (1) at (1/2,1/6){$x'$};
+  \node[main node] (2) at (3/2,.1){$y$};
   \node[main node] (3) at (1,1){$p$};
-  \node[main node] (4) at (1,2) {$y'$};
-  \node[main node] (5) at (2,0) {$z$};
-  \node[main node] (6) at (2,1) {$q$};
+  \node[main node] (4) at (1/2,11/6){$y'$};
+  \node[main node] (5) at (3,1){$z$};
+  \node[main node] (6) at (2,1){$q$};
 
   \path[every node/.style={font=\sffamily\small}]
      (0) edge node[above]{}(3)
@@ -246,8 +249,8 @@ For $\delta>0$, define $x'=x'(\delta)$ and $y'=y'(\delta)$ as above.
 Without loss of generality we can assume that $x,y\zz\in\exp_p(\TIL_p)$.
 If $\delta$ is small, the latter implies that $p$ lies on unique minimizing geodesics $[x,x']$ and $[y,y']$.
 
-Consider a limit case $T$-tree comparison as $\delta\to 0$;
-we get a configuration of 5 points $\~p$, $\~q$, $\~x$, $\~y$ and $\~z$ such that
+Consider the limit case of $p/xx'yy'(q/z)$-comparison  as $\delta\to 0$.
+It gives a configuration of 5 points $\~p$, $\~q$, $\~x$, $\~y$ and $\~z$ such that
 \begin{align*}
 \measuredangle[\~p\,^{\~x}_{\~y}]&=\measuredangle[p\,^x_y],
 \end{align*}
