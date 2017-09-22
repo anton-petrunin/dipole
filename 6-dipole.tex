@@ -1,7 +1,7 @@
 \section{Pivotal trees.}
 
 Let $X$ be a metric space.
-A point array $(a_1,\dots,a_n)$ in $X$ together with a choice of a tree with $n$ vertexes labeled by  $(a_1,\dots,a_n)$ and a choice of geodesic $[a_i,a_j]$ for every adjacent pair $(a_i,a_j)$ is called \emph{geodesic tree}.
+A point array $(a_1,\dots,a_n)$ in $X$ together with a choice of a graph with $n$ vertexes labeled by  $(a_1,\dots,a_n)$ and a choice of geodesic $[a_i,a_j]$ for every adjacent pair $(a_i,a_j)$ is called \emph{geodesic graph}.
 
 \hide
 \begin{wrapfigure}{r}{27 mm}
@@ -27,12 +27,12 @@ A point array $(a_1,\dots,a_n)$ in $X$ together with a choice of a tree with $n$
 For geodesic trees we will use the same notation as for labeled combinatoric tree in square brackets; for example $[p,xy(q,vw)]$ will denote the geodesic tree with with combinatorics as on the diagram. 
 
 Fix a geodesic tree $T=[p_1/x_1\dots x_k(p_2/x_{k+1}\dots x_n)]$;
-that is, the tree $T$ has two poles $p_1$, $p_2$ and each of the remaining vertexes are adjacent either to $p_1$ or $p_2$ --- the vertexes $x_1,\dots, x_k$ are connected to $p_1$ and $x_{k+1},\dots, x_n$ to $p_2$.
+that is, $T$ has two poles $p_1$, $p_2$ and each of the remaining vertexes are adjacent either to $p_1$ or $p_2$ --- the vertexes $x_1,\dots, x_k$ are connected to $p_1$ and $x_{k+1},\dots, x_n$ to $p_2$.
 
 Assume $X$ is a nonnegatively curved Alexandrov space;
 in particular the angle is defined for any geodesic hinge. 
 
-A geodesic tree  $\~T=[\~p_1/\~x_1\dots \~x_k(\~p_2/\~x_{k+1}\dots \~x_n)]$ in the Hilbert space $\HH$ will be called \emph{pivotal tree} for $T=[p_1/x_1\dots x_k(p_2/x_{k+1}\dots x_n)]$
+A geodesic tree  $\~T=[\~p_1/\~x_1\dots \~x_k(\~p_2/\~x_{k+1}\dots \~x_n)]$ in the Hilbert space $\HH$ will be called \emph{pivotal tree} for $T$
 if 
 \begin{enumerate}[(i)]
 \item $|\~p_1-\~p_2|_\HH= |p_1-p_2|_X$,
@@ -53,8 +53,8 @@ Then the equality holds in \ref{eq:pivotal-comparison} for each pair $(i,j)$.
 \end{thm}
 
 \parit{Proof.}
-Assume that a point $\~z$ on the line $(\~p_1,\~p_2)$ is given.
-We can assume that $\~z$ lies on the half-line from $\~p_1$ to $\~p_2$;
+Let $\~z$ be a point on the line $(\~p_1,\~p_2)$.
+Assume that $\~z$ lies on the half-line from $\~p_1$ to $\~p_2$;
 otherwise swap the labels of $\~p_1$ and $\~p_2$.
 
 Denote by $\zeta$ the direction of geodesic $[p_1,p_2]$ at $p_1$. 
@@ -88,7 +88,8 @@ we may assume that the dimension of the sphere is $n-1$.
 Note that up to a motion of $\HH$, a pivotal configuration is completely described by the angles $\measuredangle(\~\xi_i,\~\xi_j)$.
 Moreover, the distance $|\~x_i-\~x_j|_\HH$ is determined by $\measuredangle(\~\xi_i,\~\xi_j)$ and the function $\measuredangle(\~\xi_i,\~\xi_j)\mapsto |\~x_i-\~x_j|_\HH$ is nondereasing.
 
-Let us denote by $\alpha_{i,j}$ the minimal angle $\measuredangle(\~\xi_i,\~\xi_j)$ in a pivotal configuration such that \ref{eq:tree-comparison} holds, so the inequality \ref{eq:tree-comparison} is equivalent to
+Let us denote by $\alpha_{i,j}$ the minimal angle $\measuredangle(\~\xi_i,\~\xi_j)$ in a pivotal configuration such that \ref{eq:tree-comparison} holds.
+Note that the inequality \ref{eq:tree-comparison} is equivalent to
 \[\measuredangle(\xi_i,\xi_j)\ge \alpha_{i,j}.\]
 
 \begin{thm}{Corollary}\label{cor:|x-x|}
@@ -153,27 +154,28 @@ It remains to apply the rigidity lemma.
 \parit{(\ref{cor:|x-x|:b}).} By \textit{(\ref{cor:|x-x|:a})}, we can assume that \[\alpha_{1,3}+\alpha_{2,3}>\pi.
 \eqlbl{sum>pi}\]
 
-Consider the pivotal tree $[\~p_1/\~x_1x_2(\~p_2/\~x_3)]$ which lies in a 3-dimesional subspace in such a way that the points $\~x_1$ and $\~x_2$ lie on the opposite sides from the plane containing $\~p_1,\~p_2,\~x_3$, and 
+Consider the pivotal tree $[\~p_1/\~x_1\~x_2(\~p_2/\~x_3)]$ which lies in a 3-dimesional subspace in such a way that the points $\~x_1$ and $\~x_2$ lie on the opposite sides from the plane containing $\~p_1,\~p_2,\~x_3$, and 
 \begin{align*}
 \measuredangle(\~\xi_1,\~\xi_3)&=\alpha_{1,3},
 &
 \measuredangle(\~\xi_2,\~\xi_3)&=\alpha_{2,3}.
 \end{align*}
-By \ref{sum>pi}, the convex hull $\~K$ in the rigidity lemma intersects the line $(\~p_1,\~p_2)$.
-It remains to apply the lemma.
+By \ref{sum>pi}, the convex hull $\~K$ of $\{\~x_1,\~x_2,\~x_3\}$.
+Note that $\~K$ intersects the line $(\~p_1,\~p_2)$.
+It remains to apply the rigidity lemma.
 \qeds
 
-Note that \textit{(\ref{cor:|x-x|:a})} and \textit{(\ref{cor:|x-x|:b})} implies that $X$ satisfies the comparison for the dipolar trees 1(1) and 2(1). 
-However, 1(1)-tree comparison follows from the triangle inequality.
+Note that \textit{(\ref{cor:|x-x|:a})} and \textit{(\ref{cor:|x-x|:b})} implies that nonnegatively curved Alexandrov space satisfies 1(1)-tree and 2(1)-tree comparisons. 
+However, 1(1)-tree comparison follows directly from the triangle inequality.
 
 
 
-\section{Six point comparison}\label{6-dipole}
+\section{2(2)-tree and 3(1)-tree comparisons}\label{6-dipole}
 
 
 \begin{thm}{Theorem}\label{2(2)+3(1)}
 Let $X$ be an nonnegatively curved Alexandrov space.
-Then for any geodesic 2(2)-tree and any 3(1)-tree (see the diagram) there is a pivotal tree satisfying the tree comparison.
+Then for any geodesic 2(2)-tree (or 3(1)-tree) there is a pivotal tree satisfying the corresponding tree comparison.
 
 
 In particular, any nonnegatively curved Alexandrov space satisfies the 2(2)-tree comparison as well as 3(1)-tree comparison.
@@ -239,8 +241,8 @@ Consider the geodesic graph $\Gamma$ with 4 vertexes $\~\xi_1,\~\xi_2,\~\xi_3,\~
 $\~\xi_i$ is adjacent to $\~\xi_j$ if $\measuredangle(\~\xi_i,\~\xi_j)<\alpha_{i,j}$.
 If the comparison does not hold then $\Gamma$ is not empty.
 
-Note that for any vertex $\~\xi_i$ can not lie in an open hemisphere with all its adjacent vertexes. 
-Indeed, if it would be the case then we could move this $\~\xi_i$ increasing the distances to all its adjacent vertexes.
+Note that a vertex of $\Gamma$ can not lie in an open hemisphere with all its adjacent vertexes. 
+Indeed, if it would be the case then we could move this vertex increasing the distances to all its adjacent vertexes.
 Along this move the energy decreases which is not possible.
 
 Note that by Corollary \ref{cor:|x-x|}, degree of any vertex is at least 2.
@@ -309,7 +311,7 @@ Consider the 5-edge graph on the diagram.
 By the observation above the both triangles in the graph run along one equator.
 The latter contradicts Corollary \ref{cor:|x-x|}\textit{\ref{cor:|x-x|:b}}.
 
-For the 4-edge graph,
+For the 4-edge graph (that is, for 4-cycle)
 by the same observation we have 4 points lie on the equator; 
 moving the even pair to the north pole will decrease the energy, a contradiction.
 \qeds

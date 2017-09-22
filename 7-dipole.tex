@@ -1,77 +1,13 @@
-\section{Seven point comparison}\label{7-dipole}
-
-In this section we will consider 4(1)-tree comparison.
-This is the simplest tree comparison which does not follow from Alexandrov comparison.
-
-\hide
-\begin{wrapfigure}{r}{30 mm}
-\begin{tikzpicture}[scale=1,
-  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
-
-  \node[main node] (0) at (3/2,11/6){};
-   \node[main node] (1) at (1/2,1/6){};
-  \node[main node] (2) at (3/2,.1){};
-  \node[main node] (3) at (1,1){};
-  \node[main node] (4) at (1/2,11/6){};
-  \node[main node] (5) at (3,1){};
-  \node[main node] (6) at (2,1){};
-
-  \path[every node/.style={font=\sffamily\small}]
-     (0) edge node[above]{}(3)
-   (1) edge node[above]{}(3)
-   (2) edge node[above]{}(3)
-   (3) edge node[above]{}(6)
-   (4) edge node[above]{}(3)
-   (5) edge node[above]{}(6);
-\end{tikzpicture}
-\end{wrapfigure}
-\unhide
-
-Let $M$ be a Riemannian manifold.
-The \emph{tangent injectivity locus} at the point $p\in M$ (briefly $\TIL_p$) is defined as the maximal open subset in the tangent space $\T_p$ such that for any $v\in\TIL_p$ the geodesic path $\gamma(t)=\exp_p(v\cdot t)$, $t\in [0,1]$ is a minimizing.
-If the tangent injectivity locus at any point $p\in M$ is convex we say that $M$ satisfies \emph{convexity of  tangent injectivity locus} or briefly $M$ is CTIL.
-
-Xi-Nan Ma, Neil Trudinger and Xu-Jia Wang, Xu-Jia introduced a global differential geometric condition which is now called MTW, see \cite{MTW}.
-The conditions CTIL and MTW are necessary for the regularity of optimal transport on Riemannian manifold $M$.
-Moreover, a slightly stronger version of these conditions gives the converse.
-
-\begin{thm}{Proposition}\label{T=>CTIL+MTW}
-If a Riemannian manifold $M$ satisfies the $4(1)$-tree comparison then 
-\begin{enumerate}[(a)]
-\item\label{T=>CTIL:CTIL} $M$ is CTIL;
-\item\label{T=>CTIL:MTW} $M$ is MTW.
-\end{enumerate}
-
-\end{thm}
-
-In the proof we will use a reformulation of MTW condition
-given by Cédric Villani \cite[2.6]{MTW+CTIL}.
-More precisely, we will use the following reformulation of which can be proved the same way.
+\section{4(1)-tree comparison}\label{7-dipole}
 
 
 
-Assume $u,v\in \T_p$ and $w=\tfrac12\cdot(u+v)$
-and $x=\exp_p u$, $y=\exp_pv$ and $q=\exp_pw$.
-If the three geodesic paths $[p,x]$, $[p,y]$ and $[p,q]$ described by the paths 
-$t\mapsto\exp_p(t\cdot u)$,  $t\mapsto\exp_p(t\cdot v)$, $t\mapsto\exp_p(t\cdot w)$ for $t\in[0,1]$ are minimizing, then $[p,q]$ is called \emph{median} of the hinge $[p\,^x_y]$.
-Note that in a CTIL Riemannian manifold, any hinge has a median.
+In this section we will prove Theorem \ref{T=>CTIL:CTIL}.
+Note that according to ???, it is sufficient to show that if a Riemannian manifold $M$ satisfies 4(1)-tree comparison then it is CTIL and MTW.
+These two conditions will be proved separately.
 
-\begin{thm}{MTW condition}\label{MTW}
-Assume $M$ be a CTIL Riemannian manifold. 
-Then $M$ is MTW if and only if for a median $[p,q]$ of any hinge $[p\,^x_y]$ one of the following inequalities
-\[
-\left[
-\begin{aligned}
-|p-q|^2_M-|z-q|^2_M&\le |p-x|^2_M-|z-x|^2_M,
-\\
-|p-q|^2_M-|z-q|^2_M&\le |p-y|^2_M-|z-y|^2_M.
-\end{aligned}
-\right.
-\]
-holds for any $z\in M$.
-\end{thm}
 
-\parit{Proof; (\ref{T=>CTIL:CTIL}).}
+\parit{Proof of CTIL.}
 Assume the contrary; that is, there is $p\in M$ and $u,v\zz\in \TIL_p$ such that $w=\tfrac12\cdot(u+v)\notin \TIL_p$.
 
 Let $\tau$ be the maximal value such that the geodesic $\gamma(t)=\exp_p(w\cdot t)$ is a length-minimizing on $[0,\tau]$.
@@ -112,10 +48,10 @@ y&=\exp_p v,
 y'=y'(\delta)&=\exp_p (-\delta\cdot v).
 \end{align*}
 
-We will  show that for some choice of $\delta,\eps$ and $\zeta$ the array $p,x,x',y,y',q',z$ does not satisfy the $T$-tree comparison with the labeling as on the diagram.
+We will  show that for some choice of $\delta,\eps$ and $\zeta$ the $p/xx'yy'(q'/z)$-tree comparison does not hold.
 
-Assume that given  positive numbers $\delta,\eps$ and $\zeta$, there is a point array $\~p$, $\~x$, $\~x'(\delta)$, $\~y$, $\~y'(\delta)$, $\~q'(\eps)$, $\~z(\zeta)\in\HH$ as in the definition of $T$-tree comparison;
-that is, the distances between the points in this array are at least as big as the distances of corresponding points in $M$ and the equality holds for the pair adjacent in $T$.
+Assume contrary, that is, given any small positive numbers $\delta,\eps$ and $\zeta$, there is a point array $\~p$, $\~x$, $\~x'(\delta)$, $\~y$, $\~y'(\delta)$, $\~q'(\eps)$, $\~z(\zeta)\in\HH$ as in the definition of $T$-tree comparison;
+that is, the distances between the points in this array are at least as big as the distances of corresponding points in $M$ and the equality holds for the pair adjacent in $p/xx'yy'(q'/z)$.
 
 
 \hide
@@ -216,11 +152,10 @@ a contradiction.
 
 
 
-\parit{(\ref{T=>CTIL:MTW}).}
-Fix a hinge $[p\,^x_y]$ in $M$.
-By \textit{(\ref{T=>CTIL:CTIL})}, $M$ is CTIL.
-Therefor $[p\,^x_y]$ has a median; denote it by $[p,q]$.
-For $\delta>0$, define $x'=x'(\delta)$ and $y'=y'(\delta)$ as in~\textit{(\ref{T=>CTIL:CTIL})}.
+\parit{Proof of MTW.}
+Fix a hinge $[p\,^x_y]$ in $M$; from above $M$ is CTIL.
+Therefore $[p\,^x_y]$ has a median; denote it by $[p,q]$.
+For $\delta>0$, define $x'=x'(\delta)$ and $y'=y'(\delta)$ as above.
 
 \hide
 \begin{wrapfigure}{r}{36 mm}

@@ -1,3 +1,94 @@
+These two conditions appear in the study of continuity of optimal transport between regular measures with positive continuous density functions.
+The continuity implies both MTW and CTIL conditions and slightly stronger version of these two conditions imply the continuity;
+see \cite{FRV-Nec+Suf}, \cite{MTW+CTIL} and the references there in.
+
+%MORE???
+
+Note that dipolar comparison provides a uniform way to treat combined CTIL+MTW condition;
+this partially answers the question of Cédric Villani in ???.
+
+Note that 4(1)-tree comparison (as well as any $T$-tree comparison) is stable under passing to the limit.
+Namely, if a sequence of metric spaces $X_n$ satisfies 4(1)-comparison and converges in the sense of Gromov--Hausdorff to the space  then its limit $X_\infty$ also satisfies 4(1)-comparison.
+
+We expect that for Riemannian manifolds, the 4(1)-tree comparison is equivalent to CTP and to MTW+CTIL (see question ???).
+If this is indeed the case then from above it will follow that the properties CTP and MTW+CTIL are stable as well.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%
+
+Let $M$ be a Riemannian manifold.
+The \emph{tangent injectivity locus} at the point $p\in M$ (briefly $\TIL_p$) is defined as the maximal open subset in the tangent space $\T_p$ such that for any $v\in\TIL_p$ the geodesic path $\gamma(t)=\exp_p(v\cdot t)$, $t\in [0,1]$ is a minimizing.
+If the tangent injectivity locus at any point $p\in M$ is convex we say that $M$ satisfies \emph{convexity of  tangent injectivity locus} or briefly $M$ is CTIL.
+
+ introduced a global differential geometric condition which is now called MTW, see .
+The conditions CTIL and MTW are necessary for the regularity of optimal transport on Riemannian manifold $M$.
+Moreover, a slightly stronger version of these conditions gives the converse.
+
+
+
+
+
+
+
+
+
+
+
+
+Define the cost function
+\[\cost(x,y)=\tfrac12\cdot|x-y|_M^2\]
+on the Riemannian manifold $M$.
+The functions which can be presented as exact upper bound for a nonempty set of functions of the type 
+\[x\mapsto a- \cost(x,b)\]
+for a $a\in \RR$ and $b\in M$ will be called cost-convex;
+it takes values in $(-\infty,\infty]$.
+
+Let $f\:M\to (-\infty,\infty]$ be a function which takes a finite value at $p\in M$.
+Consider a subgradient $\ushort\nabla_pf\subset \T_p$; it is a possibly empty convex subset; see next section for precise definition.
+
+The manifold $M$ is called \emph{cost-convex} if for any point $p\in M$ and costconvex function $f$ which takes finite value at $p$ for any $w\in\ushort\nabla_pf$ the geodesic path $t\mapsto \exp_p(t\cdot w)$ for $t\in [0,1]$ is minimizing
+and 
+\[\cost(q,p)-\cost(q,x)\ge f(x)-f(p)\]
+holds for $q=\exp_pw$ and any $x\in M$.
+
+It turns out that any cost-convex manifold is nonnegatively curved.
+
+\parbf{4(1)-tree comparison.}
+In Section~\ref{7-dipole}, we will show that the comparison for the tree 4(1) (see the diagram below) implies
+the curvature condition introduced by Ma--Trudinger--Wang (briefly MTW condition) and convexity of tangent injectivity loci (briefly CTIL condition).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Let us denote by $\RR^\infty$ be the product of countably many real lines equipped with the product topology.
 
 \begin{thm}{Lemma}\label{lem:tikhonov}

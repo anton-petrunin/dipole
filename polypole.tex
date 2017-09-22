@@ -1,19 +1,7 @@
-\section{Multipolar comparison}\label{sec:all-tree}
-
-Recall that a map $f\:W\to X$ between metric spaces is called \emph{submetry} if for any $w\in W$ and $r\ge 0$, we have 
-\[f[B(w,r)_W]=B(f(w),r)_X,\]
-where $B(w,r)_W$ denotes the ball with center $w$ and radius $r$ in the space $W$.
-In other words submetry is a map which is 1-Lipschitz and 1-co-Lipschitz at the same time.
-Note that any submetry is onto. 
-
-\begin{thm}{Theorem}\label{thm:hilbert-quotient}
-A separable metric space $X$ satisfies all tree comparison if and only if
-$X$ is isometric to a target space of submetry defined of a subset  of the Hilbert space.
-\end{thm}
+\section{All tree comparison}\label{sec:all-tree}
 
 
-
-\parit{Proof.}
+\parit{Proof of Theorem~\ref{thm:hilbert-quotient}.}
 The ``if'' part is left as an exercise;
 let us prove the ``only if'' part.
 
@@ -25,7 +13,7 @@ Let $\~ K_n\to K_n$ be the universal covering of the complete graph $K_n$.
 Denote by $\~ V$ the set of vertexes of $\~ K_n$;
 given a vetex $\~ v\in\~V$ denote by $v$ the corresponding vertex of $K_n$.
 
-By multipolar comparison, we have the following:
+Applying the tree comparison for finite subtrees in $\~ K_n$ and passing to a partial limit,  we get the following:
 
 \begin{enumerate}[$({*})$]
 \item There is a map $f\:\~V\to\HH$ such that 
@@ -41,7 +29,7 @@ a submetry from $Y_n=f_n(\~V_n)\subset \HH$ to $X_n$.
 
 It remains to pass to the ulralimit $Y$ of the subspaces $Y_n$.
 Clearly $Y$ admits an isometric embedding into $\HH$ 
-and a submetry on $X$.
+and it admits submetry on $Y\to X$.
 Hence the statement follows.
 \qeds
 
@@ -56,11 +44,13 @@ for example, since $\SS^n=\SO(n)/\SO(n-1)$, any round sphere satisfies multipola
 We present a proof suggested by Alexander Lytchak, it is simplified vesrion of the construction of Chuu-Lian Terng and Gudlaugur Thorbergsson given in \cite[Section 4]{terng-thorbergsson}.
 
 
-\parit{Proof.}
+\parit{Proof of Proposition~\ref{prop:group}.}
 Denote by $G^n$ the direct product of $n$ copies of $G$.
-Consider the map $\phi_n\:G^n\to G$ defined by
-\[\phi_n\:(\alpha_1,\dots,\alpha_n)\mapsto \alpha_1\cdots\alpha_n.\]
-Note that $\phi_n$ is a quotient map for the $H\times G^{n-1}$-action on $G^n$ defined by
+Consider the map $\phi_n\:G^n\to G/\!\!/H$ defined by
+\[\phi_n\:(\alpha_1,\dots,\alpha_n)\mapsto [\alpha_1\cdots\alpha_n]_H,\]
+where $[x]_H$ denotes the $H$-orbit of $x$ in $G$.
+
+Note that $\phi_n$ is a quotient map for the action of $H\times G^{n-1}$ on $G^n$ defined by
 \[(\beta_0,\dots,\beta_n)\cdot(\alpha_1,\dots,\alpha_n)=(\gamma_1\cdot \alpha_1\cdot\beta_1^{-1},\beta_1\cdot\alpha_2\cdot\beta_2^{-1},\dots,\beta_{n-1}\cdot\alpha_n\cdot\beta_n^{-1}),\]
 where $\beta_i\in G$ and $(\beta_0,\beta_n)\in H<G\times G$. 
 

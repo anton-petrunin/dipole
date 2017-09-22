@@ -1,70 +1,90 @@
-\section{Preliminaries}
+\section{On cost-convex manifolds}
+
+In this section we review necessary material from ???.
 
 \parbf{Cost-convex functions.}
-Recall that complete length space with curvature bounded below in the sense of Alexandrov will be called \emph{Alexandrov space}.
+Let $M$ be a Riemannian manifold.
+Consider the \emph{cost function} $\cost\:M\times M\to \RR$ defined by \[\cost(x,y)=\tfrac12\cdot|x-y|_M^2.\]
 
-Let $A$ be an Alexandrov space.
-Consider the \emph{cost function} $\cost\:A\times A\to \RR$ defined by \[\cost(x,y)=\tfrac12\cdot|x-y|_A^2.\]
-A function $f\:A\to (-\infty,\infty]$ is called cost-convex if there is a nonempty subset of pairs $\mathcal{I}\subset A\times \RR$ such that
+A function $f\:M\to (-\infty,\infty]$ is called \emph{cost-convex} if there is a nonempty subset of pairs $\mathcal{I}\subset M\times \RR$ such that
 \[f(x)=\sup\set{r-\cost(p,x)}{(p,r)\in\mathcal{I}}.\]
 
-If $A$ has nonnegative curvature then any cost-convex function $f$ is $(-1)$-convex, that is, it satisfies the inequality 
-\[f''\ge -1
+If $M$ has nonnegative curvature then any cost-convex function $f$ is $(-1)$-convex, that is, it satisfies the inequality 
+\[(f\circ\gamma)''\ge -1
 \eqlbl{eq:f''=<-1}\]
-in the barrier sense (see \cite{AKP-book}).
+in the barrier sense for any unit speed geodesic $\gamma$.
 On the other hand, the inequality \ref{eq:f''=<-1} does not imply that $f$ is cost-convex.
 
 
 \parbf{Subgradient.}
-Let $f\: A\to (-\infty,\infty]$ be a semiconvex function defined on Alexandrov space $A$.
+Let $f\: M\to (-\infty,\infty]$ be a semiconvex function defined on Riemannian manifold $M$.
 Assume $f(p)$ is finite.
 In this case the differential 
 \[d_pf\:\T_p\zz\to (-\infty,\infty]\] 
 is defined;
-it is a convex positive homogeneous function defined on the tangent cone $\T_p$.
+it is a convex positive homogeneous function defined on the tangent space $\T_p$.
 
-A tangent vector $v\in \T_pA$ is a \emph{subgradient} of $f$ at $p$, briefly $v\in\ushort\nabla_pf$ if
+A tangent vector $v\in \T_pM$ is a \emph{subgradient} of $f$ at $p$, briefly $v\in\ushort\nabla_pf$ if
 \[\langle v,w\rangle\le d_pf(w)\]
 for any $w\in \T_p$.
 Note that the set $\ushort\nabla_pf$ is a convex subset of $\T_p$.
 
-The sunset of tangent vectors $v\in\T_p$ such that there is a minimizing geodesic $[p,q]$ in the direction of $v$ with length $|v|$ will be denoted as $\overline{\TIL}_p$. 
+The subset of tangent vectors $v\in\T_p$ such that there is a minimizing geodesic $[p,q]$ in the direction of $v$ with length $|v|$ will be denoted as $\overline{\TIL}_p$. 
 For $p,q$ and $v$ as above, we write $q\zz=\exp_pv$.
 
-
-An Alexandrov space will be called \emph{cost-convex} if 
-for any cost-convex function $f$ any subgradient $v\in\ushort\nabla_pf$ is geodesic 
+\begin{thm}{Definition}
+A Riemannian manifold will be called \emph{cost-convex} if 
+for any point $p$ and any cost-convex function $f$ which is finite at $p$ we have $\ushort\nabla_pf\subset\overline{\TIL}_p$
 and for $q=\exp_pv$ the inequality 
 \[\cost(q,p)-\cost(q,x)\ge f(x)-f(p)\]
-holds for any $x\in A$.
-
-\begin{thm}{Observation}
-If $A$ is a cost-convex Alexandrov space, then $\overline{\TIL}_p$ is a convex subset of $\T_p$ for any $p\in A$.
+holds for any $x\in M$.
 \end{thm}
 
-\parit{Proof.}
-Fix $p\in A$ and consider the cost-concave function 
-\[f=\inf\set{\cost(q,x)-\cost(q,p)}{q\in A}.\]
-Note that any $\overline{\TIL}_p\subset \ushort\nabla_pf$.
-Hence the statement follows.
-\qeds
+It is easy to see that any cost-convex maniflold is nonnegatively curved.
+According to ???, if $M$ is CTP then it is cost-convex.
+The converse is unknown, likely it holds,
+but there is a slightly stronger version of this condition which implies CTP.
 
-Riemannian manifold $M$ satisfies \emph{convexity of tangent injectivity locus},
-or briefly $M$ is CTIL,
-if the set $\overline{\TIL}_p$ is convex for any point $p\in M$.
-This property was considered in ??? as a necessary condition for the \emph{continuity of transport property}, briefly CTP.
+\parbf{CTIL and MTW.}
+Let us formulat other tow conditions on Riemannian manifolds which are together equivalent to the cost-convexity.
+These two conditions will be used in the proof.
 
-The observation above implies that a cost-convex complete Riemannian manifold are CTIL.
-Therefore, as it follows from \cite{loeper}, cost-convexity of complete Riemannian manifold is equivalent to MTW+CTIL condition.
-Here MTW is stays for an other necessary condition for CTP introduced by Xi-Nan Ma, Neil Trudinger and Xu-Jia Wang, Xu-Jia in \cite{MTW}.
+Let $M$ be a Riemannian manifold.
+The \emph{tangent injectivity locus} at the point $p\in M$ (briefly $\TIL_p$) is defined as the maximal open subset in the tangent space $\T_p$ such that for any $v\in\TIL_p$ the geodesic path $\gamma(t)=\exp_p(v\cdot t)$, $t\in [0,1]$ is a minimizing.
+If the tangent injectivity locus at any point $p\in M$ is convex we say that $M$ satisfies \emph{convexity of  tangent injectivity locus} or briefly $M$ is CTIL.
 
-Likely cost-convexity is also sufficient for CTP.
+Note that $\overline{\TIL}_p$ defiend above is closure of $\TIL_p$ in $\T_p$.
+Therefore, $M$ is CTIL if and only if the set $\overline{\TIL}_p$ is convex for any point $p\in M$.
 
-\parbf{Kirszbraun theorem.}
+The second condition is called MTW for Ma--Trudinger--Wang.
+We will use its reformulation close to the one given by Cédric Villani \cite[2.6]{MTW+CTIL}; it can be proved the same way.
+
+Assume $u,v\in \T_p$ and $w=\tfrac12\cdot(u+v)$
+and $x=\exp_p u$, $y=\exp_pv$ and $q=\exp_pw$.
+If the three geodesic paths $[p,x]$, $[p,y]$ and $[p,q]$ described by the paths 
+$t\mapsto\exp_p(t\cdot u)$,  $t\mapsto\exp_p(t\cdot v)$, $t\mapsto\exp_p(t\cdot w)$ for $t\in[0,1]$ are minimizing, then $[p,q]$ is called \emph{median} of the hinge $[p\,^x_y]$.
+Note that in a CTIL Riemannian manifold, any hinge has a median.
+
+\begin{thm}{MTW condition}\label{MTW}
+Assume $M$ be a CTIL Riemannian manifold. 
+Then $M$ is MTW if and only if for a median $[p,q]$ of any hinge $[p\,^x_y]$ one of the following inequalities
+\[
+\left[
+\begin{aligned}
+|p-q|^2_M-|z-q|^2_M&\le |p-x|^2_M-|z-x|^2_M,
+\\
+|p-q|^2_M-|z-q|^2_M&\le |p-y|^2_M-|z-y|^2_M.
+\end{aligned}
+\right.
+\]
+holds for any $z\in M$.
+\end{thm}
+
+\section{On Kirszbraun's rigidity}
 In the proof we will use the rigidity case of the generalized Kirszbraun theorem proved by Urs Lang and Viktor Schroeder in \cite{LS}, see also \cite{AKP}.
 
 \begin{thm}{Kirszbraun rigidity theorem}\label{thm:kirszbraun-rigid}
-Let $A$ be a complete $\CBB[0]$ length space.
+Let $A$ be an Alexandrov space with nonnegative curvature.
 
 Assume that for two point arrays $p,x_1,\dots,x_n\in A$ and $\~q, \~x_1,\dots,\~x_n\in \HH$ we have that 
 \[|\~q-\~x_i|\ge |p-x_i|\]
@@ -89,6 +109,8 @@ It follows that the equality
 \[|\~q-\~x_i|= |p-x_i|.\]
 holds for each $i$.
 
+???
+
 Consider the tangent vectors $v_i\in\T_p$ such that $\exp_pv_i=x_i$ for each $i$.
 Note that these vectors are uniquely defined,
 all  the vectors lie in an isometric copy of a Euclidean space
@@ -97,14 +119,15 @@ and
 In particular, the convex hull of $\{v_1,\dots,v_n\}$ in $\T_p$ is isometric to $\~K$,
 so we can keep notation  $\~K$ for this convex hull.
 
-Consider the gradient exponent $\gexp_p\:\T_p\to A$;
-it is a short map such that $\gexp_p0=p$ and $\gexp_p v_i=x_i$ for each $i$.
+Consider the gradient exponent $\gexp_p\:\T_p\to A$ see \cite{AKP-book}.
+It is a short map, $\gexp_p0=p$ and $\gexp_p v_i=x_i$ for each $i$.
 It remains to show that the restriction $\gexp_p|_{\~K}$ is distance-preserving.
 
 Extend the sequence $v_1,\dots v_n$ to an infinite sequence of vectors $v_i\in\~K$ which is dense in $\~K$.
 Set $x_i=\gexp_pv_i$ for each $i$.
 
 Note that it is sufficient to show that the map $v_i\mapsto x_i$ is distance preserving.
+
 From above,
 \[|v_i-v_j|_{\T_p}=|x_i-x_j|_A\]
 if $i,j\le n$; it provides a base for induction.
@@ -116,5 +139,5 @@ Since the gradient exponent is short,
 for each $i\le k$.
 From the first part of theorem we have 
 \[|v_i-v_k|_{\T_p}=|x_i-x_k|_A.\]
-Hence the second statement follows.
+It proves the induction step and hence the second statement follows.
 \qeds

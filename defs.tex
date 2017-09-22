@@ -43,14 +43,12 @@ If we do not need the labeling of vertexes,
 it is sufficient to write the number of leafs in the brackets;
 this way we can write 2(2) instead of $p/xy(q/vw)$ since the root ($p$) has two leafs ($x$ and $y$) and yet another child ($q$) has two leafs ($v$ and $w$).  
 The same tree can be written as (1(2)) meaning that the root $x$ has no leafs, $p$ has one leaf $y$ and one child $q$ with two leafs $v$ and $w$.
-Every vertex which is not the root and not a leaf corresponds to a pair of bracketsin this notation.
-
+Every vertex which is not the root and not a leaf corresponds to a pair of brackets in this notation.
 
 Using the described notation, we could say that a metric space \emph{satisfies the 2(2)-tree comparison},  meaning that it satisfies the tree comparison on the diagram.
-We could also say \emph{``applying the $p/xy(q/vw)$-tree comparison we get...''} meaning that we apply the comparison for these 6 points and the tree on the diagram.
+We could also say \emph{``applying the $p/xy(q/vw)$-tree comparison...''} meaning that we apply the comparison for these 6 points and the tree on the diagram.
 
-A vertex of a tree is called \emph{pole}
-that is they have one vertex (\emph{pole}) adjacent to all other vertexes.
+A vertex of a tree of degree at least two will be called \emph{pole}.
 
 \hide
 \begin{wrapfigure}{r}{20 mm}
@@ -70,29 +68,17 @@ that is they have one vertex (\emph{pole}) adjacent to all other vertexes.
 \end{wrapfigure}
 \unhide
 
-\parbf{Monopolar comparisons.}
-We define \emph{Alexandrov space} as complete length space with curvature bounded below in the sense of Alexandrov;
+Note that \emph{Alexandrov space} is defined as complete length space with curvature bounded below in the sense of Alexandrov;
 the latter is equivalent to the 3-tree comparison for the tripod-tree on the diagram. 
 
 Using the introduced notation, Theorem 4.1. in \cite{AKP} can be restated the following way: \emph{If length-metric space satisfies $3$-tree comparison, then it also satisfies $n$-tree comparison for every positive integer~$n$.}
 
-In this example the trees are \emph{monopolar};
-that is, they have one pole.
-
-\parbf{Dipolar comparison.} 
-A tree will be called \emph{dipoar} if it has exactly two poles;
-that is, two vertexes of degree at least two.
-
-Equivalently, dipolar trees could be defined as the trees with diameter 3
-or as the trees which admit an encoding $m(n)$ for positive integers $m$ and $n$; 
-in this tree $m$ vertexes are adjacent to the first pole which is the root
-and $n$ vertexes are adjacent to the second pole and the two poles are adjacent.
-
-In Section~\ref{6-dipole} we will show that the comparison for the any Alexandrov space with nonnegative curvature satisfies the comparisons for the trees 2(2) and 3(1) --- the first two trees an the following diagram.
+The simplest new cases are 3(1)-tree and 2(2)-tree comparisons.
+They also follow Alexandrov's comparison;
+namely the following theorem holds.
 
 \hide
 \begin{center}
-
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
 
@@ -131,13 +117,12 @@ In Section~\ref{6-dipole} we will show that the comparison for the any Alexandro
 \end{center}
 \unhide
 
-
-\parbf{CTP, MTW and CTIL.}
-In Section~\ref{7-dipole}, we will show that the comparison for the tree 4(1) (see the diagram below) implies
-the curvature condition introduced by Ma--Trudinger--Wang (briefly MTW condition) and convexity of tangent injectivity loci (briefly CTIL condition).
+\begin{thm}{Theorem}
+Any Alexandrov space with curvature bounded below satisfies  3(1)-tree and 2(2)-tree comparisons.
+\end{thm}
 
 \hide
-\begin{center}
+\begin{wrapfigure}{r}{29 mm}
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
 
@@ -157,27 +142,40 @@ the curvature condition introduced by Ma--Trudinger--Wang (briefly MTW condition
    (4) edge node[above]{}(3)
    (5) edge node[above]{}(6);
 \end{tikzpicture}
-
-\end{center}
+\end{wrapfigure}
 \unhide
 
-These two conditions appear in the study of continuity of optimal transport between regular measures with positive continuous density functions.
-The continuity implies both MTW and CTIL conditions and slightly stronger version of these two conditions imply the continuity;
-see \cite{FRV-Nec+Suf}, \cite{MTW+CTIL} and the references there in.
+The next simplest case is 4(1)-tree comparison.
+It turns out to be related to the  so called \emph{continuity of transport property}, briefly CTP.
+A compact Riemannian manifold $M$ is CTP 
+if for any two regular measures with density functions bounded away from zero and infinity,
+the optimal transport can be described by a continuous map.
 
-%MORE???
 
-Note that dipolar comparison provides a uniform way to treat combined CTIL+MTW condition;
-this partially answers the question of Cédric Villani in ???.
 
-Note that 4(1)-tree comparison (as well as any $T$-tree comparison) is stable under passing to the limit.
-Namely, if a sequence of metric spaces $X_n$ satisfies 4(1)-comparison and converges in the sense of Gromov--Hausdorff to the space  then its limit $X_\infty$ also satisfies 4(1)-comparison.
+A necessary condition for CTP was given by Xi-Nan Ma, Neil Trudinger and Xu-Jia Wang in \cite{MTW}.
+A key step in the understanding this condition was made by Grégoire Loeper in~\cite{loeper}.
+The manifolds satisfying this condition will be called \emph{cost-convex}.
+We define it in the next section.
 
-We expect that for Riemannian manifolds, the 4(1)-tree comparison is equivalent to CTP and to MTW+CTIL (see question ???).
-If this is indeed the case then from above it will follow that the properties CTP and MTW+CTIL are stable as well.
+\begin{thm}{Theorem}\label{T=>CTIL:CTIL}
+If a Riemannian manifold satisfies 4(1)-tree comparison then it is cost-convex.
+\end{thm}
 
-\parbf{All tree comparisons.}
-In Section~\ref{sec:all-tree} we show that if the space satisfies all tree comparisons then it is a target space of submetry from a subset in Hilbert space.
+Finally we consider spaces satisfying \emph{all tree comparison}.
 
-We also show that all bi-quotients of compact Lie groups with bi-invariant metrics satisfy all tree comparison.
+Recall that a map $f\:W\to X$ between metric spaces is called \emph{submetry} if for any $w\in W$ and $r\ge 0$, we have 
+\[f[B(w,r)_W]=B(f(w),r)_X,\]
+where $B(w,r)_W$ denotes the ball with center $w$ and radius $r$ in the space $W$.
+In other words submetry is a map which is 1-Lipschitz and 1-co-Lipschitz at the same time.
+Note that any submetry is onto.
 
+\begin{thm}{Theorem}\label{thm:hilbert-quotient}
+A separable metric space $X$ satisfies all tree comparison if and only if
+$X$ is isometric to a target space of submetry defined of a subset  of the Hilbert space.
+\end{thm}
+
+\begin{thm}{Proposition}\label{prop:group}
+Suppose $G$ be a compact Lie group with bi-invariant metric, so the action $G\times G\acts G$ defined by $(h_1,h_2)\cdot g=h_1\cdot g\cdot  h_2^{-1}$ is isometric. 
+Then for any closed subgroup $H<G\times G$, the bi-quotient space $G/\!\!/H$ satisfies multipolar comparison.
+\end{thm}
