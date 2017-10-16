@@ -1,0 +1,137 @@
+\section{Pull-back convexity}\label{convexity}
+
+\begin{thm}{Proposition}\label{prop:convexity}
+If a Riemannian manifold $M$ satisfies $4(1)$-tree comparison then
+\begin{enumerate}[(a)]
+\item\label{prop:convexity:a} The set $\TIL_p$ is convex in the tangent space $\T_p$.
+\item\label{prop:convexity:b} The restriction  
+\[f_{q,p}=\tfrac12\cdot\dist_q^2\circ\exp_p|_{\TIL_p}\] 
+is $1$-concave.
+\end{enumerate}
+
+Converse also holds.
+Moreover the conditions (\ref{prop:convexity:a}) and (\ref{prop:convexity:b}) implies that $M$ satisfies all bipolar trees comparisons; that is the $m(n)$-tree comparison for any $m$ and $n$.
+\end{thm}
+
+Before going to a proof let us introduce a notation.
+Given a continuous function $f$ defined on metric space we write 
+$f''\le \lambda$ if for any unit-speed geodesic $\gamma$ the function
+\[t\mapsto f\circ\gamma(t)-\lambda\cdot \tfrac{t^2}{2}\]
+is a concave real-to-real function.
+
+\parit{Proof.}
+It is sufficient to prove in the case $n=4$.
+Assume $M$ satisfies 4(1)-tree comparison.
+
+Since 4(1)-tree comparison implies 3-tree comparison,
+$M$ has nonnegative sectional curvature.
+
+Fix $u,v\in \TIL_p$ and $w\in [u,v]$.
+It is sufficient to show that if $g$ is the function on $[u,v]$ on the segment which is 
+uniquely defined by conditions:
+$g''=1$, $g(u)=f(u)$ and $g(w)=f(w)$ we will have that $g(v)\ge f(v)$.
+
+Fix small $\eps>0$ and set
+\begin{align*}
+x&=\exp_p u, 
+&y&=\exp_p v, 
+&z&=\exp_pw,
+\\
+x'&=\exp_p(-\eps\cdot  u),
+&y'&=\exp_p(-\eps\cdot  v)
+\end{align*}
+Let us apply $p/xyx'y'(z/q)$ comparison and pass to the limit as $\eps\to 0$.
+We obtain points $\~p, \~x, \~y, \~z, \~q\in\HH$, satisfying corresponding comparisons and
+such that
+\begin{align*}
+\measuredangle[\~p\,^{\~x}_{\~y}]&= \measuredangle[p\,^{x}_{y}],
+&\measuredangle[\~p\,^{\~x}_{\~z}]&= \measuredangle[p\,^{x}_{z}],
+&\measuredangle[\~p\,^{\~z}_{\~y}]&= \measuredangle[p\,^{z}_{y}].
+\end{align*}
+In particular,
+from above and Toponogov comparison, we have
+\begin{align*}
+|\~x-\~y|_\HH&=|u-v|_{\T_p},
+&|\~z-\~y|_\HH&=|w-v|_{\T_p},
+&|\~x-\~z|_\HH&=|u-w|_{\T_p},
+\\
+|\~q-\~z|_\HH&=|q-z|_M,
+&|\~q-\~x|_\HH&\ge|q-x|_M,
+&|\~q-\~y|_\HH&\ge|q-y|_M.
+\end{align*}
+
+Let $q^*\in \HH$ be the point
+such that 
+\begin{align*}
+|q^*-\~z|&=|q-z|, 
+&|q^*-\~x|&=|q-x|
+\end{align*}
+
+Let
+$\varphi$ be an isometry between segments in $\T_pM$ and $\HH$ such that
+$\varphi(u)=\~x$, $\varphi(v)=\~y$ and
+$\varphi(w)=\~z$.
+
+Then we can take $g:=\dist^2_{q^*}\circ\varphi$. We have, that $g''=1$ and
+$$g(u)=|q^*-\~x|^2=|q-x|^2=f(u),\quad
+g(w)=|q^*-\~z|^2=|q-z|^2=f(w)$$
+$$g(v)=|q^*-\~y|^2=|q-y|^2\ge f(u).$$ 
+
+\parit{Converse.}
+Now assume $M$ satisfies the conditions (\ref{prop:convexity:a}) and (\ref{prop:convexity:b}).
+
+Fix points $p$ and $q$ in $M$;
+set $\~q=\log_pq\in\T_p$.
+Note that condition (\ref{prop:convexity:b}) implies that 
+\[f\le \~f,\eqlbl{eq:f=<f}\] 
+where 
+\[f=\tfrac12\cdot \dist_q^2\circ\exp_p|_{\TIL_p}\quad\text{and}\quad\~f=\tfrac12\cdot \dist_{\~q}^2.\]
+Further note that the inequality \ref{eq:f=<f} is equivalent to the Toponogov comparison for all hinges $[p\,{}^x_q]$ in $M$.
+It follows that $M$ has nonnegative sectional curvature. 
+
+\medskip
+
+Now fix a geodesic tree $[p/x_1\dots x_n(q/y_1\dots y_m)]$ in $M$.
+Set 
+\[\~p=0=\log_pp,\quad \~q=\log_pq,\quad\text{and}\quad \~x_i=\log_px_i\]
+for each $i$. 
+
+
+Since sectional curvature of $M$ is nonnegative, the restriction $\exp_p|_{\TIL_p}$ is short.
+In particular, the linear map $\T_q\to \T_p$ defined by $\nabla_{q}h\mapsto \nabla_{\~q}(h\circ\exp_p)$ is short.
+Hence there is a linear map $z\:\T_q\to\T_p$ such that, the map $\zeta\:\T_q\to \T_p\oplus\T_p$ defined by
+\[\zeta\:\nabla_q h\mapsto \nabla_{\~q}(h\circ\exp_p)\oplus z(\nabla_q h)\]
+is distance preserving.
+
+Further set 
+\[h_i=\tfrac12\cdot\dist_{y_i}^2
+\quad
+f_i=h_i\circ\exp_p|_{\TIL_p}
+\quad
+\~y_i=\~q-\zeta(\nabla_q h_i).
+\]
+
+
+By construction
+\[|\~y_i-\~q|_{\T_p\oplus\T_p}=|y_i-q|_M.\]
+
+At the point $\~q$ the restriction functions $\~f_i=\tfrac12\cdot\dist^2_{\~w}|_{\T_p}$ and the function $f_i$ have the same value and gradient.
+Since $f_i''\le 1$ and $\~f_i''=1$, we get $\~f_i\ge f_i$. 
+The latter implies
+\[
+|\~y_i-\~p|_{\T_p\oplus\T_p}\ge|y_i-p|_M
+\quad
+\text{and}
+\quad
+|\~y_i-\~x_j|_{\T_p\oplus\T_p}\ge|y_i-x_j|_M.\]
+for any $i$ and $j$.
+
+Since $\T_p\oplus\T_p$ admits an isometric embedding into the Hilbert space,
+we get the needed configuration.
+\qeds
+
+The proof above is generalizable to complete length spaces therefore we get the following corollary.
+
+\begin{thm}{Corollary}\label{cor:4(1)=>n(1)}
+If a complete length space $X$ satisfies $4(1)$-tree comparison then it satisfies any bipolar tree comparisons.
+\end{thm}
