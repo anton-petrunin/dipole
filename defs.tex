@@ -1,16 +1,20 @@
 \section{Introduction}\label{sec:intro}
 
-\parbf{Tree comparison.}
 We will denote by $|a-b|_X$ the distance between points $a$ and $b$ in the metric space $X$.
 
-Let $(a_1,\dots a_n)$ be a point array in a metric space $X$ and $T$ be a 
-tree with the vertexes labeled by $\{a_1,\dots,a_n\}$.
+\parbf{Tree comparison.}
+Fix a tree $T$ with $n$ vertexes.
+
+Let $(a_1,\dots a_n)$ be a point array in a metric space $X$ labeled by the vertexes of $T$.
 We say that $(a_1,\dots a_n)$  satisfies the \emph{$T$-tree comparison} if there is a point array $(\~a_1,\dots, \~a_n)$ in the Hilbert space $\HH$ such that 
 \[|\~a_i-\~a_j|_\HH\ge|a_i-a_j|_X\]
 for any $i$ and $j$ and the equality holds if $a_i$ and $a_j$ are adjacent in $T$.
 
 We say that a metric space $X$ satisfies the \emph{$T$-tree comparison} if 
 every $n$-points arrays in $X$ satisfies the $T$-tree comparison.
+
+Instead of the Hilbert space $\HH$ we use infinite dimensional sphere or infinite dimensional hyperbolic space.
+In this case we will arrive to spherical and hyperbolic tree comparisons.
 
 \hide
 \begin{wrapfigure}{r}{27 mm}
@@ -41,13 +45,15 @@ Taking another root for the same tree, we get different encodings, for eaxample 
 
 If we do not need the labeling of vertexes,
 it is sufficient to write the number of leafs in the brackets;
-this way we can write 2(2) instead of $p/xy(q/vw)$ since the root ($p$) has two leafs ($x$ and $y$) and yet another child ($q$) has two leafs ($v$ and $w$).  
-The same tree can be written as (1(2)) meaning that the root $x$ has no leafs, $p$ has one leaf $y$ and one child $q$ with two leafs $v$ and $w$.
+this way we can write 2(2) instead of $p/xy(q/vw)$ since the root ($p$) has 2 leafs ($x$ and $y$) and yet another child ($q$) has 2 leafs ($v$ and $w$).  
+The same tree can be written as (1(2)) meaning that the root $x$ has no leafs, 
+$p$ has 1 leaf $y$ and one child $q$ with 2 leafs $v$ and $w$.
 Every vertex which is not the root and not a leaf corresponds to a pair of brackets in this notation.
 
 Using the described notation, we could say that a metric space \emph{satisfies the 2(2)-tree comparison},  meaning that it satisfies the tree comparison on the diagram.
 We could also say \emph{``applying the $p/xy(q/vw)$-tree comparison...''} meaning that we apply the comparison for these 6 points and the tree on the diagram.
 
+\parbf{Monopolar trees.}
 A vertex of a tree of degree at least two will be called \emph{pole}.
 
 \hide
@@ -68,14 +74,13 @@ A vertex of a tree of degree at least two will be called \emph{pole}.
 \end{wrapfigure}
 \unhide
 
-Note that \emph{Alexandrov space} is defined as complete length space with curvature bounded below in the sense of Alexandrov;
-the latter is equivalent to the 3-tree comparison for the tripod-tree on the diagram. 
+Recall that \emph{Alexandrov space} is defined as complete length space with curvature bounded below in the sense of Alexandrov;
+the latter is equivalent to the 3-tree comparison; that is, the comparison for the tripod-tree on the diagram. 
 
-Using the introduced notation, Theorem 4.1. in \cite{AKP} can be restated the following way: \emph{If length-metric space satisfies $3$-tree comparison, then it also satisfies $n$-tree comparison for every positive integer~$n$.}
+Using the introduced notation, a theorem in \cite{AKP} can be restated the following way: \emph{If length-metric space satisfies $3$-tree comparison, then it also satisfies $n$-tree comparison for every positive integer~$n$; in other words it satisfies all monopolar tree comparisons.}
 
-The simplest new cases are 3(1)-tree and 2(2)-tree comparisons.
-They also follow Alexandrov's comparison;
-namely the following theorem holds.
+\parbf{Bipolar trees.}
+The simplest bipolar trees  are 3(1) and 2(2) shown on the diagram.
 
 \hide
 \begin{center}
@@ -116,9 +121,10 @@ namely the following theorem holds.
 \end{tikzpicture}
 \end{center}
 \unhide
+The following theorem staates that these two comparisons also follow form  Alexandrov's comparison.
 
-\begin{thm}{Theorem}
-Any Alexandrov space with curvature bounded below satisfies  3(1)-tree and 2(2)-tree comparisons.
+\begin{thm}{Theorem}\label{thm:3(1)+2(2)}
+Any Alexandrov space with nonnegative curvature satisfies  3(1)-tree and 2(2)-tree comparisons.
 \end{thm}
 
 \hide
@@ -145,7 +151,7 @@ Any Alexandrov space with curvature bounded below satisfies  3(1)-tree and 2(2)-
 \end{wrapfigure}
 \unhide
 
-The next simplest case is 4(1)-tree comparison.
+The next bipolar tree comparison is for the tree 4(1).
 It turns out to be related to the  so called \emph{continuity of transport property}, briefly CTP.
 A compact Riemannian manifold $M$ is CTP 
 if for any two regular measures with density functions bounded away from zero and infinity,
@@ -159,23 +165,29 @@ The manifolds satisfying this condition will be called \emph{cost-convex}.
 We define it in the next section.
 
 \begin{thm}{Theorem}\label{T=>CTIL:CTIL}
-If a Riemannian manifold satisfies 4(1)-tree comparison then it is cost-convex.
+If a Riemannian manifold satisfies 4(1)-tree comparison then it is cost-convex; moreover it satisfies all bipolar tree comparisons.
 \end{thm}
 
-Finally we consider spaces satisfying \emph{all tree comparison}.
+It is straightforward to check that the spherical 4(1)-tree comparison implies the strict cost-convexity, which in turns implies CTP.
+
+\parbf{All tree comparisons.}
+Finally we consider spaces satisfying \emph{all tree comparisons}.
 
 Recall that a map $f\:W\to X$ between metric spaces is called \emph{submetry} if for any $w\in W$ and $r\ge 0$, we have 
 \[f[B(w,r)_W]=B(f(w),r)_X,\]
 where $B(w,r)_W$ denotes the ball with center $w$ and radius $r$ in the space $W$.
 In other words submetry is a map which is 1-Lipschitz and 1-co-Lipschitz at the same time.
-Note that any submetry is onto.
+Note that by the definition, any submetry is onto.
 
 \begin{thm}{Theorem}\label{thm:hilbert-quotient}
 A separable metric space $X$ satisfies all tree comparison if and only if
 $X$ is isometric to a target space of submetry defined of a subset  of the Hilbert space.
 \end{thm}
 
+The following proposition provides a source of examples of spaces satisfying all tree comparisons.
+For example, since $\SS^n=\SO(n)/\SO(n-1)$, any round sphere has this property.
+
 \begin{thm}{Proposition}\label{prop:group}
-Suppose $G$ be a compact Lie group with bi-invariant metric, so the action $G\times G\acts G$ defined by $(h_1,h_2)\cdot g=h_1\cdot g\cdot  h_2^{-1}$ is isometric. 
-Then for any closed subgroup $H<G\times G$, the bi-quotient space $G/\!\!/H$ satisfies multipolar comparison.
+Suppose $G$ is a compact Lie group with bi-invariant metric, so the action $G\times G\acts G$ defined by $(h_1,h_2)\cdot g=h_1\cdot g\cdot  h_2^{-1}$ is isometric. 
+Then for any closed subgroup $H<G\times G$, the bi-quotient space $G/\!\!/H$ satisfies all tree comparisons.
 \end{thm}

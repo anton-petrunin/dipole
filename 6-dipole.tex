@@ -72,7 +72,7 @@ It remains to apply Kirszbraun rigidity theorem (\ref{thm:kirszbraun-rigid}).
 
 Recall that $X$ is a nonnegatively curved Alexandrov space.
 
-Assume $[\~p_1,\~x_1\dots \~x_k(\~p_2,\~x_{k+1}\dots \~x_n)]$ is a pivotal tree in $\HH$ for the geodesic tree $[p_1,x_1\dots x_k(p_2,x_{k+1}\dots x_n)]$ in $X$.
+Assume $[\~p_1/\~x_1\dots \~x_k(\~p_2/\~x_{k+1}\dots \~x_n)]$ is a pivotal tree in $\HH$ for the geodesic tree $[p_1/x_1\dots x_k(p_2/x_{k+1}\dots x_n)]$ in $X$.
 Note that by angle comparison, for any $i$ and $j$ we have
 \[|\~x_i-\~p_j|_{\HH}\ge |x_i-p_j|_X.\]
 
@@ -93,7 +93,7 @@ Note that the inequality \ref{eq:tree-comparison} is equivalent to
 \[\measuredangle(\xi_i,\xi_j)\ge \alpha_{i,j}.\]
 
 \begin{thm}{Corollary}\label{cor:|x-x|}
-For any geodesic dipolar tree  in a nonnegatively curved Alexandrov space the following conditions hold:
+For any geodesic bipolar tree  in a nonnegatively curved Alexandrov space the following conditions hold:
 \begin{enumerate}[(a)]
 \item For any pair $i$ and $j$, we have
 \[\alpha_{i,j}\le \pi.\]
@@ -102,10 +102,10 @@ For any geodesic dipolar tree  in a nonnegatively curved Alexandrov space the fo
 \end{enumerate}
 In other words, if $X$ is a nonnegatively curved Alexandrov space then
 \begin{enumerate}[(a)]
-\item\label{cor:|x-x|:a} For any broken geodesic line $[p_1/x_1(p_2/x_2)]$ in  $X$ there is a pivotal tree $[\~p_1,\~x_1(\~p_2,\~x_2)]$ such that 
+\item\label{cor:|x-x|:a} For any broken geodesic line $[p_1/x_1(p_2/x_2)]$ in  $X$ there is a pivotal tree $[\~p_1/\~x_1(\~p_2/\~x_2)]$ such that 
 \[|\~x_1-\~x_2|_{\HH}\ge |x_1-x_2|_X.\]
 
-\item\label{cor:|x-x|:b} For any geodesic tree $[p_1/x_1x_2(p_2/x_3)]$ in $X$ there is a pivotal tree $[\~p_1/\~x_1\~x_2(\~p_2/\~x_3)]$ such that 
+\item\label{cor:|x-x|:b} For any $[p_1/x_1x_2(p_2/x_3)]$ in $X$, there is a pivotal tree $[\~p_1/\~x_1\~x_2(\~p_2/\~x_3)]$ such that 
 \begin{align*}
 |\~x_i-\~x_j|_{\HH}&\ge |x_i-x_j|_X.
 \end{align*}
@@ -160,8 +160,7 @@ Consider the pivotal tree $[\~p_1/\~x_1\~x_2(\~p_2/\~x_3)]$ which lies in a 3-di
 &
 \measuredangle(\~\xi_2,\~\xi_3)&=\alpha_{2,3}.
 \end{align*}
-By \ref{sum>pi}, the convex hull $\~K$ of $\{\~x_1,\~x_2,\~x_3\}$.
-Note that $\~K$ intersects the line $(\~p_1,\~p_2)$.
+By \ref{sum>pi}, the convex hull $\~K$ of $\{\~x_1,\~x_2,\~x_3\}$ intersects the line $(\~p_1,\~p_2)$.
 It remains to apply the rigidity lemma.
 \qeds
 
@@ -172,15 +171,8 @@ However, 1(1)-tree comparison follows directly from the triangle inequality.
 
 \section{2(2)-tree and 3(1)-tree comparisons}\label{6-dipole}
 
-
-\begin{thm}{Theorem}\label{2(2)+3(1)}
-Let $X$ be an nonnegatively curved Alexandrov space.
-Then for any geodesic 2(2)-tree (or 3(1)-tree) there is a pivotal tree satisfying the corresponding tree comparison.
-
-
-In particular, any nonnegatively curved Alexandrov space satisfies the 2(2)-tree comparison as well as 3(1)-tree comparison.
-
-\end{thm}
+The following theorem generalizes Theorem \ref{thm:3(1)+2(2)}.
+It says in particular, that the comparisons for the following two trees holds in nonnegatively Alexandrov spaces.
 
 \hide
 \begin{center}
@@ -222,14 +214,24 @@ In particular, any nonnegatively curved Alexandrov space satisfies the 2(2)-tree
 \end{center}
 \unhide
 
-The proofs in the two cases are identical.
+
+\begin{thm}{Theorem}\label{2(2)+3(1)}
+Let $X$ be an nonnegatively curved Alexandrov space.
+Then for any geodesic 2(2)-tree (or 3(1)-tree) there is a pivotal tree satisfying the corresponding tree comparison.
+
+
+In particular, any nonnegatively curved Alexandrov space satisfies the 2(2)-tree comparison as well as 3(1)-tree comparison.
+
+\end{thm}
+
+The proofs in the two cases are nearly identical; they differ only by the choice made in the first line.
 
 \parit{Proof.} 
 Fix a geodesic tree $[p_1/x_1x_2(p_2/x_3x_4)]$ or $[p_1/x_1x_2x_3(p_2/x_4)]$.
+Define the values $\{\alpha_{i,j}\}$ for each pair $i,j$ as in the previous section.
 
 Recall that $p_1$ and $p_2$ are the poles of the tree and each of remaining vertexes $x_1,x_2, x_3,x_4$ are connected to one of the poles.
 
-Define the values $\{\alpha_{i,j}\}$ for each pair $i,j$ as in the previous section.
 
 Fix a smooth monotonic function $\phi\:\RR\to\RR$ such that $\phi(x)=0$ if $x\ge 0$ and $\phi(x)>0$ if $x<0$.
 Consider a configuration of 4 points $\~\xi_1,\~\xi_2,\~\xi_3,\~\xi_4$ in $\SS^3$ which minimize the \emph{energy}
@@ -313,5 +315,5 @@ The latter contradicts Corollary \ref{cor:|x-x|}\textit{\ref{cor:|x-x|:b}}.
 
 For the 4-edge graph (that is, for 4-cycle)
 by the same observation we have 4 points lie on the equator; 
-moving the even pair to the north pole will decrease the energy, a contradiction.
+moving the even pair to the north pole and odd pair to the south pole will decrease the energy, a contradiction.
 \qeds
