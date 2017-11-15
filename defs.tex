@@ -101,7 +101,7 @@ The simplest bipolar trees  are 3(1) and 2(2) shown on the diagram.
    (4) edge node[above]{}(5)
    (5) edge node[above]{}(6);
 \end{tikzpicture}
-\hskip10mm
+\hskip30mm
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
 
@@ -191,3 +191,142 @@ For example, since $\SS^n=\SO(n)/\SO(n-1)$, any round sphere has this property.
 Suppose $G$ is a compact Lie group with bi-invariant metric, so the action $G\times G\acts G$ defined by $(h_1,h_2)\cdot g=h_1\cdot g\cdot  h_2^{-1}$ is isometric. 
 Then for any closed subgroup $H<G\times G$, the bi-quotient space $G/\!\!/H$ satisfies all tree comparisons.
 \end{thm}
+
+\parbf{Digression.}
+Analogously to the tree comparison one can define graph comparison for any graph stating that there is model configuration such that adjacent points is at most as big and nonadjacent is at least as big.
+Note that nonnegative and nonpositive curvature can be defined using the comparison for following two graphs on 4 vertexes:
+
+\hide
+\begin{center}
+\begin{tikzpicture}[scale=1,
+  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
+
+  \node[main node] (1) at (0,0) {};
+  \node[main node] (2) at (0,1){};
+  \node[main node] (3) at (1,1){};
+  \node[main node] (4) at (1,0) {};
+
+  \path[every node/.style={font=\sffamily\small}]
+   (1) edge node[above]{}(2)
+   (2) edge node[above]{}(3)
+   (2) edge node[above]{}(4);
+\end{tikzpicture}
+\hskip30mm
+\begin{tikzpicture}[scale=1,
+  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
+
+  \node[main node] (1) at (0,0) {};
+  \node[main node] (2) at (0,1){};
+  \node[main node] (3) at (1,1){};
+  \node[main node] (4) at (1,0) {};
+
+  \path[every node/.style={font=\sffamily\small}]
+   (1) edge node[above]{}(2)
+   (1) edge node[above]{}(4)
+   (2) edge node[above]{}(3)
+   (3) edge node[above]{}(4);
+\end{tikzpicture}
+\end{center}
+\unhide
+
+Note that by Reshetnyak majorization theorem,
+the nonpositive curvature could be also defined using the comparison for cycle; for example the 6-cycle, the first graph the following diagram.
+
+\hide
+\begin{center}
+\begin{tikzpicture}[scale=1,
+  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
+
+  \node[main node] (4) at (3/2,5/6){};
+   \node[main node] (1) at (1/2,-5/6){};
+  \node[main node] (2) at (3/2,-5/6){};
+  \node[main node] (0) at (0,0){};
+  \node[main node] (5) at (1/2,5/6){};
+  \node[main node] (3) at (2,0){};
+
+
+  \path[every node/.style={font=\sffamily\small}]
+    (0) edge node[above]{}(1)
+   (1) edge node[above]{}(2)
+    (2) edge node[above]{}(3)
+   (3) edge node[above]{}(4)
+   (4) edge node[above]{}(5)
+   (5) edge node[above]{}(0);
+\end{tikzpicture}
+\hskip30mm
+\begin{tikzpicture}[scale=1,
+  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
+
+  \node[main node] (4) at (3/2,5/6){};
+   \node[main node] (1) at (1/2,-5/6){};
+  \node[main node] (2) at (3/2,-5/6){};
+  \node[main node] (0) at (0,0){};
+  \node[main node] (5) at (1/2,5/6){};
+  \node[main node] (3) at (2,0){};
+
+
+  \path[every node/.style={font=\sffamily\small}]
+    (0) edge node[above]{}(1)
+   (1) edge node[above]{}(2)
+    (2) edge node[above]{}(3)
+   (3) edge node[above]{}(4)
+   (4) edge node[above]{}(5)
+   (5) edge node[above]{}(0)
+    (0) edge node[above]{}(2)
+   (1) edge node[above]{}(3)
+    (2) edge node[above]{}(4)
+   (3) edge node[above]{}(5)
+   (4) edge node[above]{}(0)
+   (5) edge node[above]{}(1);
+\end{tikzpicture}
+\end{center}
+\unhide
+
+The comparison for the second graph evidently implies that the space is nonnegatively curved,
+but this comparison might be stronger --- it might be interesting to understand.
+The tree comparison considered in this paper was motivated by factor spaces of Hilbert space and unfortunately we do not have analogous examples of nonnegatively curved spaces.
+
+It is also possible to use graph with $(\mp)$-colored edges and define comparison by model configuration such that the distances between vertexes adjacent by a $(-)$-edge does not get larger and by $(+)$-edge does not get smaller.
+For example, the $(2n+2)$-comparison described in \cite{AKP} can be considered as a $(\pm)$-colored graph comparison for the following graph, where $(-)$-edges are marked by solid lines and $(+)$-edges by dashed lines.
+
+\hide
+\begin{center}
+\begin{tikzpicture}[scale=1,
+  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
+
+  \node[main node] (0) at (0.5,0){};
+   \node[main node] (1) at (1,1){};
+  \node[main node] (2) at (1,-1){};
+  \node[main node] (3) at (2,1){};
+  \node[main node] (4) at (2,-1){};
+  \node[main node] (5) at (3,1){};
+\node[main node] (6) at (3,-1){};
+ \node[main node] (7) at (4,1){};
+\node[main node] (8) at (4,-1){};
+\node[main node] (100) at (4.5,0){};
+
+  \path[every node/.style={font=\sffamily\small}]
+    (0) edge[dashed] node[above]{}(100)
+   (1) edge[dashed] node[above]{}(2)
+    (3) edge[dashed] node[above]{}(4)
+   (5) edge[dashed] node[above]{}(6)
+   (7) edge[dashed] node[above]{}(8)
+   (0) edge node[above]{}(1)
+   (0) edge node[above]{}(2)
+    (1) edge node[above]{}(3)
+   (2) edge node[above]{}(4)
+   (1) edge node[above]{}(4)
+   (2) edge node[above]{}(3)
+   (5) edge node[above]{}(3)
+   (6) edge node[above]{}(4)
+   (5) edge node[above]{}(4)
+   (6) edge node[above]{}(3)
+   (5) edge node[above]{}(7)
+   (6) edge node[above]{}(8)
+   (5) edge node[above]{}(8)
+   (6) edge node[above]{}(7)
+   (7) edge node[above]{}(100)
+   (8) edge node[above]{}(100);
+\end{tikzpicture}
+\end{center}
+\unhide
