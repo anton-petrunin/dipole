@@ -201,15 +201,15 @@ Note that nonnegative and nonpositive curvature can be defined using the compari
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
 
-  \node[main node] (1) at (0,0) {};
-  \node[main node] (2) at (0,1){};
-  \node[main node] (3) at (1,1){};
-  \node[main node] (4) at (1,0) {};
+  \node[main node] (0) at (0,0) {};
+  \node[main node] (1) at (-3/5,1/3){};
+  \node[main node] (2) at (3/5,1/3){};
+  \node[main node] (3) at (0,-2/3) {};
 
   \path[every node/.style={font=\sffamily\small}]
-   (1) edge node[above]{}(2)
-   (2) edge node[above]{}(3)
-   (2) edge node[above]{}(4);
+   (0) edge node[above]{}(1)
+   (0) edge node[above]{}(2)
+   (0) edge node[above]{}(3);
 \end{tikzpicture}
 \hskip30mm
 \begin{tikzpicture}[scale=1,
@@ -287,7 +287,7 @@ but this comparison might be stronger --- it might be interesting to understand.
 The tree comparison considered in this paper was motivated by factor spaces of Hilbert space and unfortunately we do not have analogous examples of nonnegatively curved spaces.
 
 It is also possible to use graph with $(\mp)$-colored edges and define comparison by model configuration such that the distances between vertexes adjacent by a $(-)$-edge does not get larger and by $(+)$-edge does not get smaller.
-For example, the $(2n+2)$-comparison described in \cite{AKP} can be considered as a $(\pm)$-colored graph comparison for the following graph, where $(-)$-edges are marked by solid lines and $(+)$-edges by dashed lines.
+For example, the $(2n+2)$-comparison (which holds in $\CAT[0]$ length spaces, see \cite{AKP}) can be considered as a $(\pm)$-colored graph comparison for the following graph, where $(-)$-edges are marked by solid lines and $(+)$-edges by dashed lines.
 
 \hide
 \begin{center}
