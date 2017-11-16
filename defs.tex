@@ -11,10 +11,10 @@ We say that $(a_1,\dots a_n)$  satisfies the \emph{$T$-tree comparison} if there
 for any $i$ and $j$ and the equality holds if $a_i$ and $a_j$ are adjacent in $T$.
 
 We say that a metric space $X$ satisfies the \emph{$T$-tree comparison} if 
-every $n$-points arrays in $X$ satisfies the $T$-tree comparison.
+every $n$-points array in $X$ satisfies the $T$-tree comparison.
 
-Instead of the Hilbert space $\HH$ we use infinite dimensional sphere or infinite dimensional hyperbolic space.
-In this case we will arrive to spherical and hyperbolic tree comparisons.
+Instead of the Hilbert space $\HH$ we may use infinite dimensional sphere or infinite dimensional hyperbolic space.
+In this case we will define spherical and hyperbolic tree comparisons.
 
 \hide
 \begin{wrapfigure}{r}{27 mm}
@@ -45,8 +45,8 @@ Taking another root for the same tree, we get different encodings, for eaxample 
 
 If we do not need the labeling of vertexes,
 it is sufficient to write the number of leafs in the brackets;
-this way we can write 2(2) instead of $p/xy(q/vw)$ since the root ($p$) has 2 leafs ($x$ and $y$) and yet another child ($q$) has 2 leafs ($v$ and $w$).  
-The same tree can be written as (1(2)) meaning that the root $x$ has no leafs, 
+this way we can write 2(2) instead of $p/xy(q/vw)$ since the root ($p$) has 2 leafs ($x$ and $y$) and yet another child ($q$) which has 2 leafs ($v$ and $w$).  
+The same tree can be encoded as (1(2)) meaning that the root $x$ has no leafs, 
 $p$ has 1 leaf $y$ and one child $q$ with 2 leafs $v$ and $w$.
 Every vertex which is not the root and not a leaf corresponds to a pair of brackets in this notation.
 
@@ -74,34 +74,16 @@ A vertex of a tree of degree at least two will be called \emph{pole}.
 \end{wrapfigure}
 \unhide
 
-Recall that \emph{Alexandrov space} is defined as complete length space with curvature bounded below in the sense of Alexandrov;
+Recall that \emph{Alexandrov space} with nonnegative curvature is defined as complete length space with curvature bounded below in the sense of Alexandrov;
 the latter is equivalent to the 3-tree comparison; that is, the comparison for the tripod-tree on the diagram. 
 
 Using the introduced notation, a theorem in \cite{AKP} can be restated the following way: \emph{If length-metric space satisfies $3$-tree comparison, then it also satisfies $n$-tree comparison for every positive integer~$n$; in other words it satisfies all monopolar tree comparisons.}
 
 \parbf{Bipolar trees.}
-The simplest bipolar trees  are 3(1) and 2(2) shown on the diagram.
+Consider the bipolar trees 3(1) and 2(2) shown on the diagram.
 
 \hide
 \begin{center}
-\begin{tikzpicture}[scale=1,
-  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
-
-  \node[main node] (1) at (0,0) {};
-  \node[main node] (2) at (1/2,5/6){};
-  \node[main node] (3) at (0,10/6){};
-  \node[main node] (4) at (2,0) {};
-  \node[main node] (5) at (3/2,5/6) {};
-  \node[main node] (6) at (2,10/6) {};
-
-  \path[every node/.style={font=\sffamily\small}]
-   (1) edge node[above]{}(2)
-   (2) edge node[above]{}(3)
-   (2) edge node[above]{}(5)
-   (4) edge node[above]{}(5)
-   (5) edge node[above]{}(6);
-\end{tikzpicture}
-\hskip30mm
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
 
@@ -119,9 +101,27 @@ The simplest bipolar trees  are 3(1) and 2(2) shown on the diagram.
    (4) edge node[above]{}(3)
    (5) edge node[above]{}(6);
 \end{tikzpicture}
+\hskip30mm
+\begin{tikzpicture}[scale=1,
+  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
+
+  \node[main node] (1) at (0,0) {};
+  \node[main node] (2) at (1/2,5/6){};
+  \node[main node] (3) at (0,10/6){};
+  \node[main node] (4) at (2,0) {};
+  \node[main node] (5) at (3/2,5/6) {};
+  \node[main node] (6) at (2,10/6) {};
+
+  \path[every node/.style={font=\sffamily\small}]
+   (1) edge node[above]{}(2)
+   (2) edge node[above]{}(3)
+   (2) edge node[above]{}(5)
+   (4) edge node[above]{}(5)
+   (5) edge node[above]{}(6);
+\end{tikzpicture}
 \end{center}
 \unhide
-The following theorem staates that these two comparisons also follow form  Alexandrov's comparison.
+The following theorem states that the corresponding comparisons also follow form  Alexandrov's comparison.
 
 \begin{thm}{Theorem}\label{thm:3(1)+2(2)}
 Any Alexandrov space with nonnegative curvature satisfies  3(1)-tree and 2(2)-tree comparisons.
@@ -151,11 +151,10 @@ Any Alexandrov space with nonnegative curvature satisfies  3(1)-tree and 2(2)-tr
 \end{wrapfigure}
 \unhide
 
-The next bipolar tree comparison is for the tree 4(1).
-It turns out to be related to the  so called \emph{continuity of transport property}, briefly CTP.
+The 4(1)-tree comparison turns out to be related to the  so called \emph{continuity of transport property}, briefly CTP.
 A compact Riemannian manifold $M$ is CTP 
-if for any two regular measures with density functions bounded away from zero and infinity,
-the optimal transport can be described by a continuous map.
+if for any two regular measures with density functions bounded away from zero and infinity the generalized solution of Monge--Amp\`{e}re equation provided by optimal transport 
+is a genuine solution.
 
 
 
@@ -168,7 +167,7 @@ We define it in the next section.
 If a Riemannian manifold satisfies 4(1)-tree comparison then it is cost-convex; moreover it satisfies all bipolar tree comparisons.
 \end{thm}
 
-It is straightforward to check that the spherical 4(1)-tree comparison implies the strict cost-convexity, which in turns implies CTP.
+It is straightforward to check that the spherical 4(1)-tree comparison implies the strict cost-convexity, which in turns implies CTP; see ???.
 
 \parbf{All tree comparisons.}
 Finally we consider spaces satisfying \emph{all tree comparisons}.
@@ -192,7 +191,33 @@ Suppose $G$ is a compact Lie group with bi-invariant metric, so the action $G\ti
 Then for any closed subgroup $H<G\times G$, the bi-quotient space $G/\!\!/H$ satisfies all tree comparisons.
 \end{thm}
 
+\begin{wrapfigure}{r}{15 mm}
+\begin{tikzpicture}[scale=1,
+  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
+
+  \node[main node] (0) at (0,0) {};
+  \node[main node] (1) at (-3/5,1/3){};
+  \node[main node] (2) at (3/5,1/3){};
+  \node[main node] (3) at (0,-2/3) {};
+  \node[main node] (4) at (3/5,-1/3){};
+  \node[main node] (5) at (-3/5,-1/3){};
+  \node[main node] (6) at (0,+2/3) {};
+
+  \path[every node/.style={font=\sffamily\small}]
+   (0) edge node[above]{}(1)
+   (0) edge node[above]{}(2)
+   (0) edge node[above]{}(3)
+   (0) edge node[above]{}(4)
+   (0) edge node[above]{}(5)
+   (0) edge node[above]{}(6);
+\end{tikzpicture}
+\end{wrapfigure}
+
 \parbf{Digression.}
+Even for a simple monopolar tree as one the diagram it is not easy to describe the corresponding tree comparison using a system of inequalities.
+In \cite{LS}, an inequality is written which is good for all practical purposes but weaker; more details are given in the final remarks.
+
+
 Analogously to the tree comparison one can define graph comparison for any graph stating that there is model configuration such that adjacent points is at most as big and nonadjacent is at least as big.
 Note that nonnegative and nonpositive curvature can be defined using the comparison for following two graphs on 4 vertexes:
 
@@ -229,7 +254,7 @@ Note that nonnegative and nonpositive curvature can be defined using the compari
 \end{center}
 \unhide
 
-Note that by Reshetnyak majorization theorem,
+By Reshetnyak majorization theorem,
 the nonpositive curvature could be also defined using the comparison for cycle; for example the 6-cycle, the first graph the following diagram.
 
 \hide
@@ -282,12 +307,12 @@ the nonpositive curvature could be also defined using the comparison for cycle; 
 \end{center}
 \unhide
 
-The comparison for the second graph evidently implies that the space is nonnegatively curved,
+The comparison for the second graph implies that the space is nonnegatively curved,
 but this comparison might be stronger --- it might be interesting to understand.
 The tree comparison considered in this paper was motivated by factor spaces of Hilbert space and unfortunately we do not have analogous examples of nonnegatively curved spaces.
 
 It is also possible to use graph with $(\mp)$-colored edges and define comparison by model configuration such that the distances between vertexes adjacent by a $(-)$-edge does not get larger and by $(+)$-edge does not get smaller.
-For example, the $(2n+2)$-comparison (which holds in $\CAT[0]$ length spaces, see \cite{AKP}) can be considered as a $(\pm)$-colored graph comparison for the following graph, where $(-)$-edges are marked by solid lines and $(+)$-edges by dashed lines.
+For example, the $(2{\cdot}n+2)$-comparison (which holds in $\CAT[0]$ length spaces, see \cite{AKP}) can be considered as a comparison for the following colored graph, where $(-)$-edges are marked by solid lines and $(+)$-edges by dashed lines.
 
 \hide
 \begin{center}

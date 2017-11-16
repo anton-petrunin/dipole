@@ -1,4 +1,4 @@
-\section{On cost-convex manifolds}
+\section{Cost-convex manifolds}
 
 In this section we review necessary material from ???.
 
@@ -6,8 +6,10 @@ In this section we review necessary material from ???.
 Let $M$ be a Riemannian manifold.
 Consider the \emph{cost function} $\cost\:M\times M\to \RR$ defined by \[\cost(x,y)=\tfrac12\cdot|x-y|_M^2.\]
 
-A function $f\:M\to (-\infty,\infty]$ is called \emph{cost-convex} if there is a nonempty subset of pairs $\mathcal{I}\subset M\times \RR$ such that
-\[f(x)=\sup\set{r-\cost(p,x)}{(p,r)\in\mathcal{I}}.\]
+A function $f\:M\to (-\infty,\infty]$ is called \emph{cost-convex} if 
+for any $p\in M$ such that $f(p)<\infty$ there is $q\in M$ such that 
+\[f(x)+\cost(q,x)\ge f(p)+\cost(q,p)\]
+for any $x\in M$.
 
 If $M$ has nonnegative curvature then any cost-convex function $f$ is $(-1)$-convex;
 that is, $f''\ge-1$, which means that the inequality 
@@ -41,7 +43,7 @@ and for $q=\exp_pv$ the inequality
 holds for any $x\in M$.
 \end{thm}
 
-It is easy to see that any cost-convex maniflold is nonnegatively curved.
+Note that any cost-convex maniflold is nonnegatively curved.
 According to ???, if $M$ is CTP then it is cost-convex.
 The converse is unknown, likely it holds,
 but there is a slightly stronger version of this condition which implies CTP.
@@ -51,7 +53,7 @@ Let us formulate other two conditions on Riemannian manifolds which are together
 These two conditions will be used in the proof.
 
 Let $M$ be a Riemannian manifold.
-The \emph{tangent injectivity locus} at the point $p\in M$ (briefly $\TIL_p$) is defined as the maximal open subset in the tangent space $\T_p$ such that for any $v\in\TIL_p$ the geodesic path $\gamma(t)=\exp_p(v\cdot t)$, $t\in [0,1]$ is a minimizing.
+The \emph{tangent injectivity locus} at the point $p\in M$ (briefly $\TIL_p$) is defined as the maximal open subset in the tangent space $\T_p$ such that for any $v\in\TIL_p$ the geodesic path $\gamma(t)=\exp_p(v\cdot t)$, $t\in [0,1]$ is minimizing.
 If the tangent injectivity locus at any point $p\in M$ is convex we say that $M$ satisfies \emph{convexity of  tangent injectivity locus} or briefly $M$ is CTIL.
 
 Note that $\overline{\TIL}_p$ defiend above is closure of $\TIL_p$ in $\T_p$.
@@ -80,6 +82,13 @@ Then $M$ is MTW if and only if for a median $[p,q]$ of any hinge $[p\,^x_y]$ one
 \]
 holds for any $z\in M$.
 \end{thm}
+
+The following statement proved in ???
+
+\begin{thm}{Proposition}
+A Riemannian manifold is cost-convex if and only if it is CTIL and MTW. 
+\end{thm}
+
 
 \section{On Kirszbraun's rigidity}
 In the proof we will use the rigidity case of the generalized Kirszbraun theorem proved by Urs Lang and Viktor Schroeder in \cite{LS}, see also \cite{AKP}.
