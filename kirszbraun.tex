@@ -83,7 +83,7 @@ Then $M$ is MTW if and only if for a median $[p,q]$ of any hinge $[p\,^x_y]$ one
 holds for any $z\in M$.
 \end{thm}
 
-The following statement proved in ???
+The following statement was proved by Gr\'egoire Loeper in \cite{loeper}, see also \cite[Proposition 2.5]{MTW+CTIL}.
 
 \begin{thm}{Proposition}
 A Riemannian manifold is cost-convex if and only if it is CTIL and MTW. 
@@ -119,35 +119,23 @@ It follows that the equality
 \[|\~q-\~x_i|= |p-x_i|.\]
 holds for each $i$.
 
-???
+The remaining part will reduced to the case when $A$ is a Euclidean space;
+which is left as an exercise.
 
-Consider the tangent vectors $v_i\in\T_p$ such that $\exp_pv_i=x_i$ for each $i$.
-Note that these vectors are uniquely defined,
-all  the vectors lie in an isometric copy of a Euclidean space
-and 
-\[|v_i-v_j|_{\T_p}=|x_i-x_j|_A.\]
-In particular, the convex hull of $\{v_1,\dots,v_n\}$ in $\T_p$ is isometric to $\~K$,
-so we can keep notation  $\~K$ for this convex hull.
+According to Plaut's theorem (see \cite{AKP}) there is a dense G-delta set $S\subset A$ of points $s$ such that minimizing geodesics $[s,x_i]$ are uniquely defined and their directions at $s$ lie in a Euclidean subspace $E_s$ of the tangent cone $\T_sA$.
 
-Consider the gradient exponent $\gexp_p\:\T_p\to A$, see \cite{AKP-book}.
-It is a short map, $\gexp_p0=p$ and $\gexp_p v_i=x_i$ for each $i$.
-It remains to show that the restriction $\gexp_p|_{\~K}$ is distance-preserving.
+Fix $s\in S$ and set $v_i=\log_sx_i$.
+Note that the gradient exponent 
+\[\gexp_s\:E_s\to A\]
+is a short map and $\gexp_s\:v_i\mapsto x_i$ for each $i$.
+Note that $|v_i|_{E_s}=|s-x_i|_A$ for any $i$ therefore by triangle inequality
+\[|v_i|_{E_s}\ge |p-x_i|_A-|p-s|_A.\]
 
-Extend the sequence $v_1,\dots v_n$ to an infinite sequence of vectors $v_i\in\~K$ which is dense in $\~K$.
-Set $x_i=\gexp_pv_i$ for each $i$.
+Passing to the limit map as $s\to p$ we get (1) a collection of points in a Euclidean space $v_1,\dots,v_n\in E$ such that $|v_i|_E=|x_i-p|_A$
+and (2) a short map $g\:E\to A$ such that $g\:v_i\to x_i$ and $g(0)=p$.
 
-Note that it is sufficient to show that the map $v_i\mapsto x_i$ is distance preserving.
-
-From above,
-\[|v_i-v_j|_{\T_p}=|x_i-x_j|_A\]
-if $i,j\le n$; it provides a base for induction.
-Assume 
-\[|v_i-v_j|_{\T_p}=|x_i-x_j|_A\]
-for all pairs $i,j\le k-1$.
-Since the gradient exponent is short,
-\[|v_i-v_k|_{\T_p}\ge|x_i-x_k|_A\]
-for each $i\le k$.
-From the first part of theorem we have 
-\[|v_i-v_k|_{\T_p}=|x_i-x_k|_A.\]
-It proves the induction step and hence the second statement follows.
+The composition $f\circ g\:E\to \HH$ is short
+and by classical Kirszbraun rigidity it has to be distance preserving on the convex hull $\~K'$ of $v_i$.
+Hence $\~K'$ is isometric to $\~K$ and the restriction $g|_{\~K'}$ is distance preserving. 
+Hence the result.
 \qeds
