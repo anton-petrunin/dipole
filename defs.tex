@@ -128,17 +128,17 @@ Any Alexandrov space with nonnegative curvature satisfies  3(1)-tree and 2(2)-tr
 \end{thm}
 
 \hide
-\begin{wrapfigure}{r}{29 mm}
+\begin{wrapfigure}{r}{31 mm}
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
 
-  \node[main node] (0) at (3/2,11/6){};
-   \node[main node] (1) at (1/2,1/6){};
-  \node[main node] (2) at (3/2,.1){};
-  \node[main node] (3) at (1,1){};
-  \node[main node] (4) at (1/2,11/6){};
-  \node[main node] (5) at (3,1){};
-  \node[main node] (6) at (2,1){};
+  \node[main node] (0) at (.3,.9){};
+   \node[main node] (1) at (-.8,-.6){};
+  \node[main node] (2) at (.3,-.9){};
+  \node[main node] (3) at (0,0){};
+  \node[main node] (4) at (-.8,.6){};
+  \node[main node] (5) at (2,0){};
+  \node[main node] (6) at (1,0){};
 
   \path[every node/.style={font=\sffamily\small}]
      (0) edge node[above]{}(3)
@@ -167,7 +167,7 @@ We define it in the next section.
 If a Riemannian manifold satisfies 4(1)-tree comparison then it is cost-convex; moreover it satisfies all bipolar tree comparisons.
 \end{thm}
 
-It is straightforward to check that the spherical 4(1)-tree comparison implies the strict cost-convexity, which in turns implies TCP; see ???.
+It is straightforward to check that the spherical 4(1)-tree comparison implies the strict cost-convexity, which in turns implies TCP; see \cite{FRV-Nec+Suf}.
 
 \parbf{All tree comparisons.}
 Finally we consider spaces satisfying \emph{all tree comparisons}.
@@ -183,20 +183,66 @@ A separable metric space $X$ satisfies all tree comparison if and only if
 $X$ is isometric to a target space of submetry defined of a subset  of the Hilbert space.
 \end{thm}
 
-The following proposition provides a source of examples of spaces satisfying all tree comparisons.
+The following proposition provides is closely related to the result of Young-Heon Kim and Robert McCann; see  \cite{kim-mccann}.
+It provides a source of examples of spaces satisfying all tree comparisons.
 For example, since $\SS^n=\SO(n)/\SO(n-1)$, any round sphere has this property.
+
 
 \begin{thm}{Proposition}\label{prop:group}
 Suppose $G$ is a compact Lie group with bi-invariant metric, so the action $G\times G\acts G$ defined by $(h_1,h_2)\cdot g=h_1\cdot g\cdot  h_2^{-1}$ is isometric. 
 Then for any closed subgroup $H<G\times G$, the bi-quotient space $G/\!\!/H$ satisfies all tree comparisons.
 \end{thm}
 
-\parbf{Digression.}
-Even for monopolar trees, it is not easy to describe the corresponding tree comparison using a system of inequalities.
-In \cite{LS}, an inequality is written which is good for all practical purposes but weaker; more details are given in the final remarks.
+\section{Digressions}
+
+\parbf{On matrix inequality.}
+The comparison for monopolar trees has an algebraic corollary which was first used Urs Lang and Viktor Schroeder in \cite{LS} and latter rediscovered by Karl-Theodor Sturm in \cite{sturm}. 
+Namely, given a point array $p,x_1,\dots,x_n$ in a metric space $X$ consider the matrix $M$ with the components 
+\[m_{i,j}=\tfrac12\cdot(|x_i-p|^2+|x_j-p|^2-|x_i-x_j|^2).\]
+If $p/x_1,\dots,x_n$-tree comparison holds then 
+\[\bm{s}\cdot M\cdot \bm{s}^\top\ge 0\]
+for any vector $\bm{s}=(s_1,\dots,s_n)$ with nonnegative components.
+
+However, this condition is not sufficient for $p/x_1,\dots,x_n$-tree comparison with $n\ge 5$.
+In general, is not easy to describe the corresponding tree comparison using a system of inequalities.
+
+\hide
+\begin{wrapfigure}{r}{21 mm}
+\begin{tikzpicture}[scale=1,
+  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
+
+    \node[main node] (0) at (0,0){};
+     \node[main node] (1) at (.6,-.8) {};
+     \node[main node] (2) at (.9,.3){};
+     \node[main node] (3) at (0,1) {};
+  \node[main node] (4) at (-.9,.3) {};
+  \node[main node] (5) at (-.6,-.8) {};
+
+  \path[every node/.style={font=\sffamily\small}]
+  (1) edge node[above]{}(2)
+  (2) edge node[above]{}(3)
+  (3) edge node[above]{}(4)
+  (4) edge node[above]{}(5)
+  (5) edge node[above]{}(1)
+  (3) edge[dashed] node[above]{}(1)
+   (3) edge[dashed] node[above]{}(5);
+\end{tikzpicture}
+\end{wrapfigure}
+
+An example can be constructed by perturbing the configuration on the plane as on the diagram ---
+if the diameter of diagram is 1, 
+then increasing the distances between the pairs of points connected by dashed lines by $\eps=10^{-9}$ and decreasing  the distances between the pairs of points connected by sold lines by $\delta=10^{-6}$ does the job.
+The obtained metric 6-point metric space satisfies the matrix inequality with center at each point, but does not satisfy the tree comparison with pole at the central point.
 
 
+\parbf{On graph comparison.}
 Analogously to the tree comparison one can define graph comparison for any graph stating that there is model configuration such that adjacent points is at most as big and nonadjacent is at least as big.
+
+\begin{thm}{Exercise}
+Show that if a graph is a tree then the graph comparison defined above is equivalent to the tree comparison defined at the beginning of the paper.
+\end{thm}
+
+
 Note that nonnegative and nonpositive curvature can be defined using the comparison for following two graphs on 4 vertexes:
 
 \hide
@@ -287,8 +333,10 @@ the nonpositive curvature could be also defined using the comparison for cycle; 
 
 The comparison for the second graph implies that the space is nonnegatively curved,
 but this comparison might be stronger --- it might be interesting to understand.
+
 The tree comparison considered in this paper was motivated by factor spaces of Hilbert space and unfortunately we do not have analogous examples of nonnegatively curved spaces.
 
+\parbf{On colored graph comparison.}
 It is also possible to use graph with $(\mp)$-colored edges and define comparison by model configuration such that the distances between vertexes adjacent by a $(-)$-edge does not get larger and by $(+)$-edge does not get smaller.
 For example, the $(2{\cdot}n+2)$-comparison (which holds in $\CAT[0]$ length spaces, see \cite{AKP}) can be considered as a comparison for the following colored graph, where $(-)$-edges are marked by solid lines and $(+)$-edges by dashed lines.
 

@@ -1,17 +1,16 @@
 \section{Pull-back convexity}\label{convexity}
 
-\begin{thm}{Proposition}\label{prop:convexity}
-If a Riemannian manifold $M$ satisfies $4(1)$-tree comparison then
-\begin{enumerate}[(a)]
-\item\label{prop:convexity:a} The set $\TIL_p$ is convex in the tangent space $\T_p$.
-\item\label{prop:convexity:b} The restriction  
-\[f_{q,p}=\tfrac12\cdot\dist_q^2\circ\exp_p|_{\TIL_p}\] 
-is $1$-concave.
-\end{enumerate}
+In this section reformulate 4(1)-tree comparison using convexity of certain function on tangent space and use it to prove the second part of Theorem \ref{T=>CTIL:CTIL}.
 
-Converse also holds.
-Moreover the conditions (\ref{prop:convexity:a}) and (\ref{prop:convexity:b}) implies that $M$ satisfies all bipolar trees comparisons; that is the $m(n)$-tree comparison for any $m$ and $n$.
+\begin{thm}{Proposition}\label{prop:convexity}
+If a Riemannian manifold $M$ satisfies $4(1)$-tree comparison then it is CTIL and the for any $p,q\in M$ the function $f\: \TIL_p\to \RR$ defined by
+\[f(v)=\tfrac12\cdot(\dist_q^2\circ\exp_p(v)-|v|^2)\] 
+is concave.
+
+Converse also holds; moreover, if the conclusion holds then $M$ satisfies all bipolar trees comparisons; that is the $m(n)$-tree comparison for any $m$ and $n$.
 \end{thm}
+
+
 
 Recall that for a continuous function $f$ defined on metric space we write 
 $f''\le \lambda$ if for any unit-speed geodesic $\gamma$ the function
@@ -19,7 +18,6 @@ $f''\le \lambda$ if for any unit-speed geodesic $\gamma$ the function
 is a concave real-to-real function.
 
 \parit{Proof.}
-It is sufficient to prove in the case $n=4$.
 Assume $M$ satisfies 4(1)-tree comparison.
 
 Since 4(1)-tree comparison implies 3-tree comparison,
@@ -39,8 +37,8 @@ x&=\exp_p u,
 x'&=\exp_p(-\eps\cdot  u),
 &y'&=\exp_p(-\eps\cdot  v)
 \end{align*}
-Let us apply $p/xyx'y'(z/q)$ comparison and pass to the limit as $\eps\to 0$.
-We obtain points $\~p, \~x, \~y, \~z, \~q\in\HH$, satisfying corresponding comparisons and
+Apply the $p/xyx'y'(z/q)$ comparison and pass to the limit as $\eps\to 0$.
+We obtain a configuration of points $\~p, \~x, \~y, \~z, \~q\in\HH$, satisfying corresponding comparisons and
 such that
 \begin{align*}
 \measuredangle[\~p\,^{\~x}_{\~y}]&= \measuredangle[p\,^{x}_{y}],
@@ -129,8 +127,18 @@ Since $\T_p\oplus\T_p$ admits an isometric embedding into the Hilbert space,
 we get the needed configuration.
 \qeds
 
-The proof above is generalizable to complete length spaces therefore we get the following corollary.
+The Plaut's theorem makes possible to extend the proof above to complete length spaces;
+that is, we get the following corollary from the proof.
 
 \begin{thm}{Corollary}\label{cor:4(1)=>n(1)}
 If a complete length space $X$ satisfies $4(1)$-tree comparison then it satisfies any bipolar tree comparisons.
+\end{thm}
+
+For MTW manifolds we have somewhat weaker statement.
+
+\begin{thm}{Proposition}\label{prop:convexity}
+A CTIL Riemannian manifold $M$ is MTW if and only if 
+for any $p,q\in M$ the function $f\: \TIL_p\to \RR$ defined by
+\[f(v)=\tfrac12\cdot(\dist_q^2\circ\exp_p(v)-|v|^2)\] 
+has convex suplevel sets.
 \end{thm}
