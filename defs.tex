@@ -183,15 +183,17 @@ A separable metric space $X$ satisfies all tree comparison if and only if
 $X$ is isometric to a target space of submetry defined of a subset  of the Hilbert space.
 \end{thm}
 
-The following proposition provides is closely related to the result of Young-Heon Kim and Robert McCann; see  \cite{kim-mccann}.
-It provides a source of examples of spaces satisfying all tree comparisons.
+The following proposition provides a source of examples of spaces satisfying all tree comparisons.
 For example, since $\SS^n=\SO(n)/\SO(n-1)$, any round sphere has this property.
 
 
 \begin{thm}{Proposition}\label{prop:group}
 Suppose $G$ is a compact Lie group with bi-invariant metric, so the action $G\times G\acts G$ defined by $(h_1,h_2)\cdot g=h_1\cdot g\cdot  h_2^{-1}$ is isometric. 
-Then for any closed subgroup $H<G\times G$, the bi-quotient space $G/\!\!/H$ satisfies all tree comparisons.
+Then for any closed subgroup $H<G\times G$, the bi-quotient space $G/\!\!/H$ satisfies all tree comparisons
 \end{thm}
+
+From proposition above it follows that the bi-quotient space $G/\!\!/H$ is cost-convex and  equivalently CTIL and MTW, see Section~\ref{sec:cost-convex}.
+This makes it closely related to the result of Young-Heon Kim and Robert McCann; see  \cite{kim-mccann}.
 
 \section{Digressions}
 
@@ -202,9 +204,6 @@ Namely, given a point array $p,x_1,\dots,x_n$ in a metric space $X$ consider the
 If $p/x_1,\dots,x_n$-tree comparison holds then 
 \[\bm{s}\cdot M\cdot \bm{s}^\top\ge 0\]
 for any vector $\bm{s}=(s_1,\dots,s_n)$ with nonnegative components.
-
-However, this condition is not sufficient for $p/x_1,\dots,x_n$-tree comparison with $n\ge 5$.
-In general, is not easy to describe the corresponding tree comparison using a system of inequalities.
 
 \hide
 \begin{wrapfigure}{r}{21 mm}
@@ -228,6 +227,9 @@ In general, is not easy to describe the corresponding tree comparison using a sy
    (3) edge[dashed] node[above]{}(5);
 \end{tikzpicture}
 \end{wrapfigure}
+
+However, this condition is not sufficient for $p/x_1,\dots,x_n$-tree comparison with $n\ge 5$.
+In general, is not easy to describe the corresponding tree comparison using a system of inequalities.
 
 An example can be constructed by perturbing the configuration on the plane as on the diagram ---
 if the diameter of diagram is 1, 
