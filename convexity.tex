@@ -129,11 +129,26 @@ that is, we get the following corollary from the proof.
 If a complete length space $X$ satisfies $4(1)$-tree comparison then it satisfies any bipolar tree comparisons.
 \end{thm}
 
-Note that from the definition of cost-convex manifolds and Proposition~\ref{prop:CTIL} we have somewhat weaker statement.
+For the cost-convex manifolds we have somewhat weaker statement.
 
 \begin{thm}{Proposition}\label{prop:convexity}
 A Riemannian manifold $M$ is cost-convex if and only if it is CTIL and
 for any $p,q\in M$ the function $h\: \TIL_p\to \RR$ defined by
-\[h(v)=\tfrac12\cdot\dist_q^2\circ\exp_p(v)-\tfrac12\cdot|v|^2\] 
-has convex super level sets.
+\[h(v)=\tfrac12\cdot|v|^2-\tfrac12\cdot\dist_q^2\circ\exp_p(v)\] 
+has convex sub level sets.
 \end{thm}
+
+\parit{Proof; ``only if'' part.}
+If $M$ is cost-convex, then Proposition~\ref{prop:CTIL} it is CTIL.
+
+Fix $p\in M$ and $u,v\in \TIL_p$
+and set $x=\exp_pu$ and $y=\exp_pv$.
+
+Consider the cost-convex function 
+\[f(s)=\min\{\cost(x,p)-\cost(x,s),\cost(y,p)-\cost(y,s)\}.\]
+
+Note that the subgradient of $\ushort\nabla_pf$ is the line segment $[u,v]$.
+From the definition of costconvex manifold (\ref{def:cost-convex}) it follows that if $u$ and $v$ lie in sub level set of $h$ then so is the segment $[u,v]$.
+
+\parit{``If'' part.} Follows from the propositions~\ref{prop:CTIL} and \ref{prop:CTIL}.
+\qeds
