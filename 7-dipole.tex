@@ -3,11 +3,14 @@
 
 
 In this section we will prove the first part of Theorem \ref{T=>CTIL:CTIL}.
-Note that according to ???, it is sufficient to show that if a Riemannian manifold $M$ satisfies 4(1)-tree comparison then it is CTIL and MTW.
+Note that according to Proposition~\ref{prop:cost-convex=CTIL+MTW}, it is sufficient to show that if a Riemannian manifold $M$ satisfies 4(1)-tree comparison then it is CTIL and MTW.
 These two conditions will be proved separately.
 
+\begin{thm}{Proposition}\label{prop:CTIL}
+Any cost-convex Riemannian manifold is CTIL.
+\end{thm}
 
-\parit{Proof of CTIL.}
+\parit{Proof.}
 Assume the contrary; that is, there is $p\in M$ and $u,v\zz\in \TIL_p$ such that $w=\tfrac12\cdot(u+v)\notin \TIL_p$.
 
 Let $\tau$ be the maximal value such that the geodesic $\gamma(t)=\exp_p(w\cdot t)$ is a length-minimizing on $[0,\tau]$.
@@ -149,10 +152,12 @@ imply
 a contradiction.
 
 
+\begin{thm}{Proposition}\label{prop:CTIL}
+Any cost-convex CTIL Riemannian manifold is MTW.
+\end{thm}
 
 
-
-\parit{Proof of MTW.}
+\parit{Proof.}
 Fix a hinge $[p\,^x_y]$ in $M$; from above $M$ is CTIL.
 Therefore $[p\,^x_y]$ has a median; denote it by $[p,q]$.
 For $\delta>0$, define $x'=x'(\delta)$ and $y'=y'(\delta)$ as above.

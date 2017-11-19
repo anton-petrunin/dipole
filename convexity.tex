@@ -2,46 +2,42 @@
 
 In this section reformulate 4(1)-tree comparison using convexity of certain function on tangent space and use it to prove the second part of Theorem \ref{T=>CTIL:CTIL}.
 
-\begin{thm}{Proposition}\label{prop:convexity}
-If a Riemannian manifold $M$ satisfies $4(1)$-tree comparison then it is CTIL and the for any $p,q\in M$ the function $f\: \TIL_p\to \RR$ defined by
-\[f(v)=\tfrac12\cdot\dist_q^2\circ\exp_p(v)-\tfrac12\cdot|v|^2\] 
-is concave.
-
-Converse also holds; moreover, if $f$ is convex for any $p,q\in M$ then $M$ satisfies all bipolar trees comparisons; that is the $m(n)$-tree comparison for any $m$ and $n$.
-\end{thm}
-
-
-
 Recall that for a continuous function $f$ defined on metric space we write 
 $f''\le \lambda$ if for any unit-speed geodesic $\gamma$ the function
 \[t\mapsto f\circ\gamma(t)-\lambda\cdot \tfrac{t^2}{2}\]
 is a concave real-to-real function.
 
+\begin{thm}{Proposition}\label{prop:convexity}
+If a Riemannian manifold $M$ satisfies $4(1)$-tree comparison then it is CTIL and for any $p,q\in M$, we have $f''\le 1$, where $f$ is the function $f\: \TIL_p\to \RR$ defined by
+\[f(v)=\tfrac12\cdot\dist_q^2\circ\exp_p(v).\] 
+
+The converse also holds; moreover, if $f''\le 1$ for any $p,q$ in a CTIL Riemannian manifold $M$, then $M$ satisfies all bipolar tree comparisons; that is, the $m(n)$-tree comparison holds for any $m$ and $n$.
+\end{thm}
+
 \parit{Proof.}
-Assume $M$ satisfies 4(1)-tree comparison.
-Since 4(1)-tree comparison implies 3-tree comparison,
-$M$ has nonnegative sectional curvature.
+Note that 4(1)-tree comparison implies 3-tree comparison.
+Hence $M$ has nonnegative sectional curvature.
 
 Fix $u,v\in \TIL_p$ and $w\in [u,v]$.
-Assume that $g\:[u,v]\:\RR$ is the function which is uniquely defined by conditions:
+It is sufficient to show that there is a function $g\:\T_p\to \RR$ such that
 \[g''=1,\quad
-g(u)=f(u)\quad
+g(w)=f(w),\quad
+g(u)\ge f(u)\quad
 \text{and}\quad
-g(w)=f(w).\]
-It is sufficient to show that $g(v)\ge f(v)$.
+g(v)\ge f(v).\]
 
 Fix small $\eps>0$ and set
 \begin{align*}
-x&=\exp_p u, 
-&y&=\exp_p v, 
-&z&=\exp_pw,
+x=\exp_p u&,
+&y=\exp_p v&, 
+&z=\exp_pw&,
 \\
 x'&=\exp_p(-\eps\cdot  u),
 &y'&=\exp_p(-\eps\cdot  v)
 \end{align*}
 Apply the $p/xyx'y'(z/q)$ comparison and pass to the limit as $\eps\to 0$.
 We obtain a configuration of points $\~p, \~x, \~y, \~z, \~q\in\HH$, satisfying corresponding comparisons and
-such that
+in addition
 \begin{align*}
 \measuredangle[\~p\,^{\~x}_{\~y}]&= \measuredangle[p\,^{x}_{y}],
 &\measuredangle[\~p\,^{\~x}_{\~z}]&= \measuredangle[p\,^{x}_{z}],
@@ -58,22 +54,19 @@ from above and Toponogov comparison, we have
 &|\~q-\~x|_\HH&\ge|q-x|_M,
 &|\~q-\~y|_\HH&\ge|q-y|_M.
 \end{align*}
+In particular, there is a distance-preserving map $\T_p\to \HH$ 
+such that $u\mapsto \~x$, $v\mapsto \~y$, $w\mapsto \~z$ and $0\mapsto \~p$.
+Further, we identify $\T_p$ and a subset of $\HH$ using this map.
 
-Let $q^*\in \HH$ be the point
-such that 
+Consider the function $g:=\tfrac12\cdot\dist^2_{\~q}$.
+Note that $g''=1$ and
 \begin{align*}
-|q^*-\~z|&=|q-z|, 
-&|q^*-\~x|&=|q-x|
+g(w)&=\tfrac12\cdot|\~q-\~z|^2=\tfrac12|q-z|^2=f(w),
+\\
+g(u)&=\tfrac12\cdot|\~q-\~x|^2\ge \tfrac12|q-x|^2=f(u),
+\\
+g(v)&=\tfrac12\cdot|\~q-\~y|^2\ge\tfrac12\cdot|q-y|^2\ge f(u).
 \end{align*}
-
-Assume
-$\varphi\:[u,v]_{\T_p}\to[\~x,\~y]_{\HH}$ is an isometry such that
-$\varphi(u)=\~x$, $\varphi(v)=\~y$ and
-$\varphi(w)=\~z$.
-Then $g:=\dist^2_{q^*}\circ\varphi$, indeed, we have, that $g''=1$ and
-$$g(u)=|q^*-\~x|^2=|q-x|^2=f(u),\quad
-g(w)=|q^*-\~z|^2=|q-z|^2=f(w)$$
-$$g(v)=|q^*-\~y|^2=|q-y|^2\ge f(u).$$
 Hence the statement.
 
 \parit{Converse.}
@@ -82,7 +75,7 @@ set $\~q=\log_pq\in\T_p$.
 Note that 
 \[f\le \~f,\eqlbl{eq:f=<f}\] 
 where 
-\[\~f(v)=\tfrac12\cdot |v-\~q|_{\T_p}^2-\tfrac12\cdot |v|_{\T_p}^2.\]
+\[\~f(v)=\tfrac12\cdot |v-\~q|_{\T_p}^2.\]
 Further note that the inequality \ref{eq:f=<f} is equivalent to the Toponogov comparison for all hinges $[p\,{}^x_q]$ in $M$.
 It follows that $M$ has nonnegative sectional curvature. 
 
@@ -93,9 +86,9 @@ Set
 \[\~p=0=\log_pp,\quad \~q=\log_pq,\quad\text{and}\quad \~x_i=\log_px_i\]
 for each $i$. 
 
-Consider the linear map $\psi\:\T_q\to \T_p$ such that for any smooth function $h$
+Consider the linear map $\psi_1\:\T_q\to \T_p$ such that for any smooth function $h$
 \[\psi_1\:\nabla_{q}h\mapsto \nabla_{\~q}(h\circ\exp_p).\]
-Since sectional curvature of $M$ is nonnegative, the restriction $\exp_p|_{\TIL_p}$ is short and therefore $\psi_1$ is short.
+Since sectional curvature of $M$ is nonnegative, the restriction $\exp_p|_{\TIL_p}$ is short and therefore so is $\psi_1$.
 
 In particular there is a linear map $\psi_2\:\T_q\to\T_p$ such that, the map $\iota\:\T_q\zz\to \T_p\oplus\T_p$ defined by
 \[\iota\:v\mapsto \psi_1(v)\oplus \psi_2(v)\]
@@ -104,17 +97,17 @@ is distance preserving.
 Further set 
 \[h_i=\tfrac12\cdot\dist_{y_i}^2
 \quad
-f_i=h_i\circ\exp_p|_{\TIL_p}
+g_i=h_i\circ\exp_p|_{\TIL_p}
 \quad
-\~y_i=\~q-\zeta(\nabla_q h_i).
+\~y_i=\~q-\iota(\nabla_q h_i).
 \]
 
 
 By construction
 \[|\~y_i-\~q|_{\T_p\oplus\T_p}=|y_i-q|_M.\]
 
-At the point $\~q$ the restriction functions $\~f_i=\tfrac12\cdot\dist^2_{\~w}|_{\T_p}$ and the function $f_i$ have the same value and gradient.
-Since $f_i''\le 1$ and $\~f_i''=1$, we get $\~f_i\ge f_i$. 
+At the point $\~q$ the restriction functions $\~g_i=\tfrac12\cdot\dist^2_{\~y_i}|_{\T_p\oplus 0}$ and the function $g_i$ have the same value and gradient.
+Since $g_i''\le 1$ and $\~g_i''=1$, we get $\~g_i\ge g_i$. 
 The latter implies
 \[
 |\~y_i-\~p|_{\T_p\oplus\T_p}\ge|y_i-p|_M
@@ -128,18 +121,19 @@ Since $\T_p\oplus\T_p$ admits an isometric embedding into the Hilbert space,
 we get the needed configuration.
 \qeds
 
-The Plaut's theorem makes possible to extend the proof above to complete length spaces;
+Note that we almost did not use smoothness of manifold $M$.
+In fact the Plaut's theorem makes possible to extend the proof above to complete length spaces;
 that is, we get the following corollary from the proof.
 
 \begin{thm}{Corollary}\label{cor:4(1)=>n(1)}
 If a complete length space $X$ satisfies $4(1)$-tree comparison then it satisfies any bipolar tree comparisons.
 \end{thm}
 
-For MTW manifolds we have somewhat weaker statement.
+Note that from the definition of cost-convex manifolds and Proposition~\ref{prop:CTIL} we have somewhat weaker statement.
 
 \begin{thm}{Proposition}\label{prop:convexity}
-A CTIL Riemannian manifold $M$ is MTW if and only if 
-for any $p,q\in M$ the function $f\: \TIL_p\to \RR$ defined by
-\[f(v)=\tfrac12\cdot(\dist_q^2\circ\exp_p(v)-|v|^2)\] 
-has convex suplevel sets.
+A Riemannian manifold $M$ is cost-convex if and only if it is CTIL and
+for any $p,q\in M$ the function $h\: \TIL_p\to \RR$ defined by
+\[h(v)=\tfrac12\cdot\dist_q^2\circ\exp_p(v)-\tfrac12\cdot|v|^2\] 
+has convex super level sets.
 \end{thm}
