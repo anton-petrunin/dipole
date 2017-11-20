@@ -1,4 +1,4 @@
-\section{Cost-convex manifolds}\label{sec:cost-convex}
+\section{Cost-convexity}\label{sec:cost-convex}
 
 In this section we review necessary material we learned from \cite{MTW+CTIL}; see also the references there in.
 
@@ -11,12 +11,12 @@ for any $p\in M$ such that $f(p)<\infty$ there is $q\in M$ such that
 \[f(x)+\cost(q,x)\ge f(p)+\cost(q,p)\]
 for any $x\in M$.
 
-If $M$ has nonnegative curvature then any cost-convex function $f$ is $(-1)$-convex;
+If $M$ has nonnegative sectional curvature, then any cost-convex function $f$ is $(-1)$-convex;
 that is, $f''\ge-1$, which means that the inequality 
 \[(f\circ\gamma)''\ge -1
 \eqlbl{eq:f''=<-1}\]
 holds in the barrier sense for any unit speed geodesic $\gamma$.
-On the other hand, the inequality \ref{eq:f''=<-1} does not imply that $f$ is cost-convex.
+On the other hand, $f''\ge -1$ does not imply that $f$ is cost-convex.
 
 
 \parbf{Subgradient.}
@@ -39,14 +39,14 @@ For $p,q$ and $v$ as above, we write $q\zz=\exp_pv$.
 A Riemannian manifold will be called \emph{cost-convex} if 
 for any point $p$ and any cost-convex function $f$ which is finite at $p$ we have $\ushort\nabla_pf\subset\overline{\TIL}_p$
 and for $q=\exp_pv$ the inequality 
-\[\cost(q,p)-\cost(q,x)\ge f(x)-f(p)\]
+\[f(x)+\cost(q,x)\ge f(p)+\cost(q,p)\]
 holds for any $x\in M$.
 \end{thm}
 
-Note that any cost-convex manifold is nonnegatively curved.
+Note that any cost-convex manifold has nonnegative sectional curvature.
 According to \cite{FRV-Nec+Suf} and Proposition~\ref{prop:cost-convex=CTIL+MTW}, if $M$ is TCP then it is cost-convex.
-The converse is unknown, likely it holds,
-but there is a slightly stronger version of this condition which implies TCP.
+The converse is unknown, likely it holds;
+there is a slightly stronger version of cost-convexity which implies TCP, see \cite{FRV-Nec+Suf}.
 
 \parbf{CTIL and MTW.}
 Let us formulate other two conditions on Riemannian manifolds which are together equivalent to the cost-convexity.
@@ -56,7 +56,7 @@ Let $M$ be a Riemannian manifold.
 The \emph{tangent injectivity locus} at the point $p\in M$ (briefly $\TIL_p$) is defined as the maximal open subset in the tangent space $\T_p$ such that for any $v\in\TIL_p$ the geodesic path $\gamma(t)=\exp_p(v\cdot t)$, $t\in [0,1]$ is minimizing.
 If the tangent injectivity locus at any point $p\in M$ is convex we say that $M$ satisfies \emph{convexity of  tangent injectivity locus} or briefly $M$ is CTIL.
 
-Note that $\overline{\TIL}_p$ defiend above is closure of $\TIL_p$ in $\T_p$.
+Note that the set $\overline{\TIL}_p$ defiend above is closure of $\TIL_p$ in $\T_p$.
 Therefore, $M$ is CTIL if and only if the set $\overline{\TIL}_p$ is convex for any point $p\in M$.
 
 The second condition is called MTW for Ma--Trudinger--Wang.
