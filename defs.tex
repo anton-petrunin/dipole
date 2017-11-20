@@ -169,6 +169,12 @@ If a Riemannian manifold satisfies 4(1)-tree comparison then it is cost-convex; 
 
 It is straightforward to check that the spherical 4(1)-tree comparison implies the strict cost-convexity, which in turns implies TCP; see \cite{FRV-Nec+Suf}.
 
+The following question remains open.
+
+\begin{thm}{Question}
+Is it true that Rieamnnian manifold is cost-convex if and only if it satisfies 4(1)-tree comparison. 
+\end{thm}
+
 \parbf{All tree comparisons.}
 Finally we consider spaces satisfying \emph{all tree comparisons}.
 
@@ -206,7 +212,7 @@ If $p/x_1,\dots,x_n$-tree comparison holds then
 for any vector $\bm{s}=(s_1,\dots,s_n)$ with nonnegative components.
 
 \hide
-\begin{wrapfigure}{r}{21 mm}
+\begin{wrapfigure}[7]{r}{22 mm}
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
 
@@ -229,7 +235,7 @@ for any vector $\bm{s}=(s_1,\dots,s_n)$ with nonnegative components.
 \end{wrapfigure}
 
 However, this condition is not sufficient for $p/x_1,\dots,x_n$-tree comparison with $n\ge 5$.
-In general, is not easy to describe the corresponding tree comparison using a system of inequalities.
+(In general, is not easy to describe tree comparisons using a system of inequalities.)
 
 An example can be constructed by perturbing the configuration on the plane as on the diagram ---
 if the diameter of diagram is 1, 
@@ -238,7 +244,7 @@ The obtained metric 6-point metric space satisfies the matrix inequality with ce
 
 
 \parbf{On graph comparison.}
-Analogously to the tree comparison one can define graph comparison for any graph stating that there is model configuration such that adjacent points is at most as big and nonadjacent is at least as big.
+Analogously to the tree comparison one can define graph comparison for any graph by stating that there is model configuration such that the distance between pairs of adjacent points is at most as big and nonadjacent is at least as big.
 
 \begin{thm}{Exercise}
 Show that if a graph is a tree then the graph comparison defined above is equivalent to the tree comparison defined at the beginning of the paper.
@@ -333,10 +339,12 @@ the nonpositive curvature could be also defined using the comparison for cycle; 
 \end{center}
 \unhide
 
-The comparison for the second graph implies that the space is nonnegatively curved,
-but this comparison might be stronger --- it might be interesting to understand.
+The comparison for the second graph implies that the space is nonnegatively curved.
+The latter follows since in this graph, a 4-cycle appears as an induced subgraph.
+On the other hand, this comparison might be stronger and it might be interesting to understand.
 
-The tree comparison considered in this paper was motivated by factor spaces of Hilbert space and unfortunately we do not have analogous examples of nonnegatively curved spaces.
+(The tree comparison holds for factors spaces of Hilbert space --- this was the main motivation to consider this type of comparison. 
+Unfortunately we do not have analogous examples of nonnegatively curved spaces which would guide us to the right definition.)
 
 \parbf{On colored graph comparison.}
 It is also possible to use graph with $(\mp)$-colored edges and define comparison by model configuration such that the distances between vertexes adjacent by a $(-)$-edge does not get larger and by $(+)$-edge does not get smaller.
