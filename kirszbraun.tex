@@ -89,7 +89,7 @@ The following statement was proved by Gr\'egoire Loeper in \cite{loeper}, see al
 A complete Riemannian manifold is cost-convex if and only if it is CTIL and MTW. 
 \end{thm}
 
-\section{On Kirszbraun's rigidity}
+\section{Kirszbraun's rigidity}
 In the proof we will use the rigidity case of the generalized Kirszbraun theorem proved by Urs Lang and Viktor Schroeder in \cite{LS}, see also \cite{AKP}.
 
 \begin{thm}{Kirszbraun rigidity theorem}\label{thm:kirszbraun-rigid}
@@ -118,19 +118,20 @@ It follows that the equality
 \[|\~q-\~x_i|= |p-x_i|.\]
 holds for each $i$.
 
-The remaining part will reduced to the case when $A$ is a Euclidean space;
+The remaining part will be reduced to the case when $A$ is a Euclidean space;
 which is left as an exercise.
 
 According to Plaut's theorem (see \cite{AKP}) there is a dense G-delta set $S\subset A$ of points $s$ such that minimizing geodesics $[s,x_i]$ are uniquely defined and their directions at $s$ lie in a Euclidean subspace $E_s$ of the tangent cone $\T_sA$.
 
 Fix $s\in S$ and set $v_i=\log_sx_i$.
-Note that the gradient exponent 
+Recall that the gradient exponent 
 \[\gexp_s\:E_s\to A\]
-is a short map and $\gexp_s\:v_i\mapsto x_i$ for each $i$.
-Note that $|v_i|_{E_s}=|s-x_i|_A$ for any $i$ therefore by triangle inequality
+is a short map and $\gexp_s\:v_i\mapsto x_i$ for each $i$ (see \cite{AKP}).
+Note that $|v_i|_{E_s}=|s-x_i|_A$ for any $i$.
+Therefore by triangle inequality
 \[|v_i|_{E_s}\ge |p-x_i|_A-|p-s|_A.\]
 
-Passing to the limit map as $s\to p$ we get (1) a collection of points in a Euclidean space $v_1,\dots,v_n\in E$ such that $|v_i|_E=|x_i-p|_A$
+Passing to the limit of the point array $v_i$ and $\gexp_s$ as $s\to p$ we get (1) a collection of points in a Euclidean space $v_1,\dots,v_n\in E$ such that $|v_i|_E=|x_i-p|_A$
 and (2) a short map $g\:E\to A$ such that $g\:v_i\to x_i$ and $g(0)=p$.
 
 The composition $f\circ g\:E\to \HH$ is short
