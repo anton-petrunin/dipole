@@ -30,7 +30,7 @@ Fix a geodesic tree $T=[p_1/x_1\dots x_k(p_2/x_{k+1}\dots x_n)]$;
 that is, $T$ has two poles $p_1$, $p_2$ and each of the remaining vertexes are adjacent either to $p_1$ or $p_2$ --- the vertexes $x_1,\dots, x_k$ are connected to $p_1$ and $x_{k+1},\dots, x_n$ to $p_2$.
 
 Assume $X$ is a nonnegatively curved Alexandrov space;
-in particular the angle is defined for any geodesic hinge. 
+in particular the angle measure $\measuredangle[p\,^x_z]$ is defined for any geodesic hinge $[p\,^x_y]=([p,x],[p,y])$. 
 
 A geodesic tree  $\~T=[\~p_1/\~x_1\dots \~x_k(\~p_2/\~x_{k+1}\dots \~x_n)]$ in the Hilbert space $\HH$ will be called \emph{pivotal tree} for $T$
 if 
@@ -38,7 +38,7 @@ if
 \item $|\~p_1-\~p_2|_\HH= |p_1-p_2|_X$,
 \item $|\~p_i-\~x_j|_\HH= |p_i-p_j|_X$ for any edge $[p_i,x_j]$ in $T$ and
 \item $\measuredangle[\~p_j\,^{\~x_k}_{\~p_i}]_{\HH}=\measuredangle[\~p_j\,^{\~x_k}_{\~p_i}]_X$
-for any hinge  $[p_j\,^{x_k}_{\~p_i}]=([p_j,x_k],[p_j,p_i])$ in $T$.
+for any hinge  $[p_j\,^{x_k}_{\~p_i}]$ in $T$.
 \end{enumerate}
 
 
@@ -48,7 +48,7 @@ Suppose  $\~T\zz=[\~p_1/\~x_1\dots \~x_k(\~p_2/\~x_{k+1}\dots \~x_n)]$ is a pivo
 Assume that
 \[|\~x_i-\~x_j|_\HH\le |x_i-x_j|_X 
 \eqlbl{eq:pivotal-comparison}\]
-for any pair $(i,j)$ and the convex hull $\~K$ of $\{\~x_1,\dots\~x_n\}$ intersects the line thru $\~p_1$ and $\~p_2$.
+for any pair $(i,j)$ and the convex hull $\~K$ of $\{\~x_1,\dots\~x_n\}$ intersects the line $(\~p_1,\~p_2)$.
 Then the equality holds in \ref{eq:pivotal-comparison} for each pair $(i,j)$.
 \end{thm}
 
@@ -70,13 +70,12 @@ for any $i$.
 It remains to apply Kirszbraun rigidity theorem (\ref{thm:kirszbraun-rigid}).
 \qeds
 
-Recall that $X$ is a nonnegatively curved Alexandrov space.
+As above, we assume that $X$ is a nonnegatively curved Alexandrov space and $[\~p_1/\~x_1\dots \~x_k(\~p_2/\~x_{k+1}\dots \~x_n)]$ is a pivotal tree in $\HH$ for the geodesic tree $[p_1/x_1\dots x_k(p_2/x_{k+1}\dots x_n)]$ in $X$.
 
-Assume $[\~p_1/\~x_1\dots \~x_k(\~p_2/\~x_{k+1}\dots \~x_n)]$ is a pivotal tree in $\HH$ for the geodesic tree $[p_1/x_1\dots x_k(p_2/x_{k+1}\dots x_n)]$ in $X$.
 Note that by angle comparison, for any $i$ and $j$ we have
 \[|\~x_i-\~p_j|_{\HH}\ge |x_i-p_j|_X.\]
 
-It follows that the configuration $\~p_1$, $\~p_2$, $\~x_1,\dots\~x_n\in \HH$ satisfies the tree comparison (see Section~\ref{sec:intro}) if 
+It follows that the configuration $\~p_1$, $\~p_2$, $\~x_1,\dots,\~x_n\in \HH$ satisfies the tree comparison (see Section~\ref{sec:intro}) if 
 \[|\~x_i-\~x_j|_{\HH}\ge |x_i-x_j|_X
 \eqlbl{eq:tree-comparison}\]
 for all pairs $(i,j)$.
@@ -164,7 +163,7 @@ By \ref{sum>pi}, the convex hull $\~K$ of $\{\~x_1,\~x_2,\~x_3\}$ intersects the
 It remains to apply the rigidity lemma.
 \qeds
 
-Note that \textit{(\ref{cor:|x-x|:a})} and \textit{(\ref{cor:|x-x|:b})} implies that nonnegatively curved Alexandrov space satisfies 1(1)-tree and 2(1)-tree comparisons. 
+Note that \textit{(\ref{cor:|x-x|:a})} and \textit{(\ref{cor:|x-x|:b})} imply that nonnegatively curved Alexandrov space satisfies 1(1)-tree and 2(1)-tree comparisons. 
 However, 1(1)-tree comparison follows directly from the triangle inequality.
 
 
