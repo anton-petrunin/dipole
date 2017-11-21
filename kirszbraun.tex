@@ -32,7 +32,7 @@ A tangent vector $v\in \T_pM$ is a \emph{subgradient} of $f$ at $p$, briefly $v\
 for any $w\in \T_p$.
 Note that the set $\ushort\nabla_pf$ is a convex subset of $\T_p$.
 
-The subset of tangent vectors $v\in\T_p$ such that there is a minimizing geodesic $[p,q]$ in the direction of $v$ with length $|v|$ will be denoted as $\overline{\TIL}_p$. 
+The subset of tangent vectors $v\in\T_p$ such that there is a minimizing geodesic $[p\,q]$ in the direction of $v$ with length $|v|$ will be denoted as $\overline{\TIL}_p$. 
 For $p,q$ and $v$ as above, we write $q\zz=\exp_pv$.
 
 \begin{thm}{Definition}\label{def:cost-convex}
@@ -64,13 +64,13 @@ We will use its reformulation close to the one given by Cédric Villani \cite[2.
 
 Assume $u,v\in \T_p$ and $w=\tfrac12\cdot(u+v)$
 and $x=\exp_p u$, $y=\exp_pv$ and $q=\exp_pw$.
-If the three geodesic paths $[p,x]$, $[p,y]$ and $[p,q]$ described by the paths 
-$t\mapsto\exp_p(t\cdot u)$,  $t\mapsto\exp_p(t\cdot v)$, $t\mapsto\exp_p(t\cdot w)$ for $t\in[0,1]$ are minimizing, then $[p,q]$ is called \emph{median} of the hinge $[p\,^x_y]$.
+If the three geodesic paths $[p\,x]$, $[p\,y]$ and $[p\,q]$ described by the paths 
+$t\mapsto\exp_p(t\cdot u)$,  $t\mapsto\exp_p(t\cdot v)$, $t\mapsto\exp_p(t\cdot w)$ for $t\in[0,1]$ are minimizing, then $[p\,q]$ is called \emph{median} of the hinge $[p\,^x_y]$.
 Note that in a CTIL Riemannian manifold, any hinge has a median.
 
 \begin{thm}{MTW condition}\label{MTW}
 Assume $M$ be a CTIL Riemannian manifold. 
-Then $M$ is MTW if and only if for a median $[p,q]$ of any hinge $[p\,^x_y]$ one of the following inequalities
+Then $M$ is MTW if and only if for a median $[p\,q]$ of any hinge $[p\,^x_y]$ one of the following inequalities
 \[
 \left[
 \begin{aligned}
@@ -121,7 +121,7 @@ holds for each $i$.
 The remaining part will be reduced to the case when $A$ is a Euclidean space;
 which is left as an exercise.
 
-According to Plaut's theorem (see \cite{AKP}) there is a dense G-delta set $S\subset A$ of points $s$ such that minimizing geodesics $[s,x_i]$ are uniquely defined and their directions at $s$ lie in a Euclidean subspace $E_s$ of the tangent cone $\T_sA$.
+According to Plaut's theorem (see \cite{AKP}) there is a dense G-delta set $S\subset A$ of points $s$ such that minimizing geodesics $[s\,x_i]$ are uniquely defined and their directions at $s$ lie in a Euclidean subspace $E_s$ of the tangent cone $\T_sA$.
 
 Fix $s\in S$ and set $v_i=\log_sx_i$.
 Recall that the gradient exponent 

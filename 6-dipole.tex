@@ -1,7 +1,7 @@
 \section{Pivotal trees.}
 
 Let $X$ be a metric space.
-A point array $(a_1,\dots,a_n)$ in $X$ together with a choice of a graph with $n$ vertexes labeled by  $(a_1,\dots,a_n)$ and a choice of geodesic $[a_i,a_j]$ for every adjacent pair $(a_i,a_j)$ is called \emph{geodesic graph}.
+A point array $(a_1,\dots,a_n)$ in $X$ together with a choice of a graph with $n$ vertexes labeled by  $(a_1,\dots,a_n)$ and a choice of geodesic $[a_i\,a_j]$ for every adjacent pair $(a_i,a_j)$ is called \emph{geodesic graph}.
 
 \hide
 \begin{wrapfigure}{r}{27 mm}
@@ -24,19 +24,19 @@ A point array $(a_1,\dots,a_n)$ in $X$ together with a choice of a graph with $n
 \end{wrapfigure}
 \unhide
 
-For geodesic trees we will use the same notation as for labeled combinatoric tree in square brackets; for example $[p,xy(q,vw)]$ will denote the geodesic tree with with combinatorics as on the diagram. 
+For geodesic trees we will use the same notation as for labeled combinatoric tree in square brackets; for example $[p/xy(q/vw)]$ will denote the geodesic tree with with combinatorics as on the diagram. 
 
 Fix a geodesic tree $T=[p_1/x_1\dots x_k(p_2/x_{k+1}\dots x_n)]$;
 that is, $T$ has two poles $p_1$, $p_2$ and each of the remaining vertexes are adjacent either to $p_1$ or $p_2$ --- the vertexes $x_1,\dots, x_k$ are connected to $p_1$ and $x_{k+1},\dots, x_n$ to $p_2$.
 
 Assume $X$ is a nonnegatively curved Alexandrov space;
-in particular the angle measure $\measuredangle[p\,^x_z]$ is defined for any geodesic hinge $[p\,^x_y]=([p,x],[p,y])$. 
+in particular the angle measure $\measuredangle[p\,^x_z]$ is defined for any geodesic hinge $[p\,^x_y]=([p\,x],[p\,y])$. 
 
 A geodesic tree  $\~T=[\~p_1/\~x_1\dots \~x_k(\~p_2/\~x_{k+1}\dots \~x_n)]$ in the Hilbert space $\HH$ will be called \emph{pivotal tree} for $T$
 if 
 \begin{enumerate}[(i)]
 \item $|\~p_1-\~p_2|_\HH= |p_1-p_2|_X$,
-\item $|\~p_i-\~x_j|_\HH= |p_i-p_j|_X$ for any edge $[p_i,x_j]$ in $T$ and
+\item $|\~p_i-\~x_j|_\HH= |p_i-p_j|_X$ for any edge $[p_i\,x_j]$ in $T$ and
 \item $\measuredangle[\~p_j\,^{\~x_k}_{\~p_i}]_{\HH}=\measuredangle[\~p_j\,^{\~x_k}_{\~p_i}]_X$
 for any hinge  $[p_j\,^{x_k}_{\~p_i}]$ in $T$.
 \end{enumerate}
@@ -57,7 +57,7 @@ Let $\~z$ be a point on the line $(\~p_1,\~p_2)$.
 Assume that $\~z$ lies on the half-line from $\~p_1$ to $\~p_2$;
 otherwise swap the labels of $\~p_1$ and $\~p_2$.
 
-Denote by $\zeta$ the direction of geodesic $[p_1,p_2]$ at $p_1$. 
+Denote by $\zeta$ the direction of geodesic $[p_1\,p_2]$ at $p_1$. 
 Set 
 \[z=\gexp_{p_1}(|\~z-\~p_1|\cdot \zeta),\]
 where $\gexp_{p_1}$ denotes the gradient exponent at $p_1$; see \cite{AKP-book}. 
