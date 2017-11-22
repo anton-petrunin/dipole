@@ -1,8 +1,8 @@
 \section{Pull-back convexity}\label{convexity}
 
-In this section reformulate 4(1)-tree comparison using convexity of certain function on tangent space and use it to prove the second part of Theorem \ref{T=>CTIL:CTIL}.
+In this section we reformulate 4(1)-tree comparison using convexity of certain function on tangent space and use it to prove the second part of Theorem \ref{T=>CTIL:CTIL}.
 
-Recall that for a continuous function $f$ defined on metric space we write 
+Recall that for a function $f$ defined on metric space we write 
 $f''\le \lambda$ if for any unit-speed geodesic $\gamma$ the function
 \[t\mapsto f\circ\gamma(t)-\lambda\cdot \tfrac{t^2}{2}\]
 is a concave real-to-real function.
@@ -28,12 +28,12 @@ g(v)\ge f(v).\]
 
 Fix small $\eps>0$ and set
 \begin{align*}
-x=\exp_p u&,
-&y=\exp_p v&, 
-&z=\exp_pw&,
+x&=\exp_p u,
+&y&=\exp_p v, 
+&z&=\exp_pw,
 \\
 x'&=\exp_p(-\eps\cdot  u),
-&y'&=\exp_p(-\eps\cdot  v)
+&y'&=\exp_p(-\eps\cdot  v).
 \end{align*}
 Apply the $p/xyx'y'(z/q)$ comparison and pass to the limit as $\eps\to 0$.
 We obtain a configuration of points $\~p, \~x, \~y, \~z, \~q\in\HH$, satisfying corresponding comparisons and
@@ -58,14 +58,20 @@ In particular, there is a distance-preserving map $\T_p\to \HH$
 such that $u\mapsto \~x$, $v\mapsto \~y$, $w\mapsto \~z$ and $0\mapsto \~p$.
 Further, we identify $\T_p$ and a subset of $\HH$ using this map.
 
-Consider the function $g:=\tfrac12\cdot\dist^2_{\~q}$.
+Consider the function $g(s):=\tfrac12\cdot|s-\~q|_{\T_p}^2$.
 Note that $g''=1$ and
 \begin{align*}
-g(w)&=\tfrac12\cdot|\~q-\~z|^2=\tfrac12|q-z|^2=f(w),
+g(w)&=\tfrac12\cdot|\~q-\~z|_{\T_p}^2
+=\tfrac12\cdot|q-z|_M^2
+=f(w),
 \\
-g(u)&=\tfrac12\cdot|\~q-\~x|^2\ge \tfrac12|q-x|^2=f(u),
+g(u)&=\tfrac12\cdot|\~q-\~x|_{\T_p}^2
+\ge \tfrac12\cdot|q-x|_M^2
+=f(u),
 \\
-g(v)&=\tfrac12\cdot|\~q-\~y|^2\ge\tfrac12\cdot|q-y|^2\ge f(u).
+g(v)&=\tfrac12\cdot|\~q-\~y|_{\T_p}^2
+\ge\tfrac12\cdot|q-y|_M^2
+= f(u).
 \end{align*}
 Hence the statement.
 
@@ -81,7 +87,7 @@ It follows that $M$ has nonnegative sectional curvature.
 
 \medskip
 
-Now fix a bipolar geodesic tree $[p/x_1\dots x_n(q/y_1\dots y_m)]$ in $M$.
+Fix a bipolar geodesic tree $[p/x_1\dots x_n(q/y_1\dots y_m)]$ in $M$.
 Set 
 \[\~p=0=\log_pp,\quad \~q=\log_pq,\quad\text{and}\quad \~x_i=\log_px_i\]
 for each $i$. 
@@ -95,9 +101,9 @@ In particular there is a linear map $\psi_2\:\T_q\to\T_p$ such that, the map $\i
 is distance preserving.
 
 Further set 
-\[h_i=\tfrac12\cdot\dist_{y_i}^2
+\[h_i=\tfrac12\cdot\dist_{y_i}^2,
 \quad
-g_i=h_i\circ\exp_p|_{\TIL_p}
+g_i=h_i\circ\exp_p|_{\TIL_p},
 \quad
 \~y_i=\~q-\iota(\nabla_q h_i).
 \]
@@ -117,7 +123,7 @@ The latter implies
 |\~y_i-\~x_j|_{\T_p\oplus\T_p}\ge|y_i-x_j|_M.\]
 for any $i$ and $j$.
 
-Since $\T_p\oplus\T_p$ admits an isometric embedding into the Hilbert space,
+Since there is an isometric embedding $\T_p\oplus\T_p\hookrightarrow \HH$,
 we get the needed configuration.
 \qeds
 
@@ -131,7 +137,7 @@ If a complete length space $X$ satisfies $4(1)$-tree comparison, then it satisfi
 
 For the cost-convex manifolds we have somewhat weaker statement.
 
-\begin{thm}{Proposition}\label{prop:convexity}
+\begin{thm}{Proposition}\label{prop:convexity-MTW}
 A complete Riemannian manifold $M$ is cost-convex if and only if it is CTIL and
 for any $p,q\in M$ the function $h\: \TIL_p\to \RR$ defined by
 \[h(v)=\tfrac12\cdot|v|^2-\tfrac12\cdot\dist_q^2\circ\exp_p(v)\] 
@@ -148,7 +154,7 @@ Consider the cost-convex function
 \[f(s)=\min\{\cost(x,p)-\cost(x,s),\cost(y,p)-\cost(y,s)\}.\]
 
 Note that the subgradient of $\ushort\nabla_pf$ is the line segment $[u\,v]$.
-From the definition of costconvex manifold (\ref{def:cost-convex}) it follows that if $u$ and $v$ lie in sub level set of $h$, then so is the segment $[u\,v]$.
+From the definition of cost-convex manifold (\ref{def:cost-convex}) it follows that if $u$ and $v$ lie in sub level set of $h$, then so is the segment $[u\,v]$.
 
 \parit{``If'' part.} Follows from the propositions~\ref{prop:CTIL} and \ref{prop:CTIL}.
 \qeds
