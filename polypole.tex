@@ -6,7 +6,7 @@ The ``if'' part is left as an exercise;
 let us prove the ``only if'' part.
 
 Fix a point array $a_1,\dots, a_n$ in $X$.
-Consider the complete graph $K_n$ with $\{1,\dots,n\}$ as the set of vertexes.
+Consider the complete graph $K_n$ with the vertexes labeled by $a_1,\dots, a_n$.
 
 
 Let $\hat K_n\to K_n$ be the universal covering of the complete graph $K_n$.
@@ -17,11 +17,11 @@ Applying the tree comparison for finite subtrees in $\hat  K_n$ and passing to a
 
 \begin{enumerate}[$({*})$]
 \item There is a map $f\:\hat V\to\HH$ such that 
-\[|f(\hat v)-f(\hat w)|_\HH\ge |a_v-a_w|_X\]
+\[|f(\hat v)-f(\hat w)|_\HH\ge |v-w|_X\]
 for any two vertexes $\hat v,\hat w\in \hat  V$ and the equality holds if $(\hat v,\hat w)$ is an edge in $\hat  K_n$.
 \end{enumerate}
 
-This finish the proof if $X$ is finite.
+It finishes the proof if $X$ is finite.
 
 Since $X$ is separable, it contains a countable everywhere dense set $\{a_1,a_2,\dots\}$. 
 Applying the statement above for $X_n=\{a_1,\dots a_n\}$, we get 
@@ -33,12 +33,8 @@ and it admits submetry on $Y\to X$.
 Hence the statement follows.
 \qeds
 
-\begin{thm}{Proposition}
-Suppose $G$ be a compct Lie group with bi-invariant metric, so the action $G\times G\acts G$ defined by $(h_1,h_2)\cdot g=h_1\cdot g\cdot  h_2^{-1}$ is isometric. 
-Then for any closed subgroup $H<G\times G$, the bi-quotient space $G/\!\!/H$ satisfies multipolar comparison.
-\end{thm}
 
-We present a proof suggested by Alexander Lytchak, it is simplified vesrion of the construction of Chuu-Lian Terng and Gudlaugur Thorbergsson given in \cite[Section 4]{terng-thorbergsson}.
+The following proof was suggested by Alexander Lytchak, it is simplified version of the construction of Chuu-Lian Terng and Gudlaugur Thorbergsson given in \cite[Section 4]{terng-thorbergsson}.
 
 
 \parit{Proof of Proposition~\ref{prop:group}.}
