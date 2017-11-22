@@ -11,7 +11,8 @@ Any complete cost-convex Riemannian manifold is CTIL.
 \end{thm}
 
 \parit{Proof.}
-Assume the contrary; that is, there is $p\in M$ and $u,v\zz\in \TIL_p$ such that $w=\tfrac12\cdot(u+v)\notin \TIL_p$.
+Let $M$ be a cost-convex Riemannian manifold.
+Assume there is $p\in M$ and $u,v\zz\in \TIL_p$ such that $w=\tfrac12\cdot(u+v)\notin \TIL_p$.
 
 Let $\tau$ be the maximal value such that the geodesic $\gamma(t)=\exp_p(w\cdot t)$ is a length-minimizing on $[0,\tau]$.
 Set $w'=\tau\cdot w$.
@@ -20,7 +21,9 @@ Note that $\tau<1$ and $w'\in\partial \TIL_p$.
 
 Set $q=\exp_p w'$.
 By general position argument, we can assume that there are at least two minimizing geodesics connecting $p$ to $q$; see \cite{karcher}.
-That is, there is $w''\in \partial \TIL_p$ such that $w''\ne w'$ and $\exp_pw'=\exp_pw''$.
+That is, there is $w''\in \partial \TIL_p$ such that 
+$w''\ne w'$
+and $\exp_pw'=\exp_pw''$.
 
 \begin{center}
 \begin{lpic}[t(-0 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/7-config(1)}
@@ -36,7 +39,7 @@ That is, there is $w''\in \partial \TIL_p$ such that $w''\ne w'$ and $\exp_pw'=\
 \end{center}
 
 Fix small positive real numbers $\delta,\eps$ and $\zeta$.
-Consider the points
+Consider the following points
 \begin{align*}
 q'=q'(\eps)&=\exp_p(1-\eps)\cdot w',
 &
@@ -51,10 +54,9 @@ y&=\exp_p v,
 y'=y'(\delta)&=\exp_p (-\delta\cdot v).
 \end{align*}
 
-We will  show that for some choice of $\delta,\eps$ and $\zeta$ the $p/xx'yy'(q'/z)$-tree comparison does not hold.
+We will  show that for some choice of $\delta,\eps$ and $\zeta$ the tree comparison for $p/xx'yy'(q'/z)$ does not hold.
 
-Assume contrary, that is, given any small positive numbers $\delta,\eps$ and $\zeta$, there is a point array $\~p$, $\~x$, $\~x'(\delta)$, $\~y$, $\~y'(\delta)$, $\~q'(\eps)$, $\~z(\zeta)\in\HH$ as in the definition of $T$-tree comparison;
-that is, the distances between the points in this array are at least as big as the distances of corresponding points in $M$ and the equality holds for the pair adjacent in $p/xx'yy'(q'/z)$.
+Assume contrary, that is, given any small positive numbers $\delta,\eps$ and $\zeta$, there is a point array $\~p$, $\~x$, $\~x'(\delta)$, $\~y$, $\~y'(\delta)$, $\~q'(\eps)$, $\~z(\zeta)\in\HH$ as in the definition of $T$-tree comparison.
 
 
 \hide
@@ -131,7 +133,7 @@ $\~p, \~x,\~y,\~q'=\~q'(\eps),\~z=\~z(\zeta)$ such that
 &
 \measuredangle[\~p\,^{\~x}_{\~q'}]&= \measuredangle[p\,^{x}_{q'}].
 \end{align*}
-In other words, the map sending 4 points $0,u,v,w'\in\T_p$ to $\~p,\~x,\~y,\~q\in\HH$ correspondingly is distance preserving.
+In other words, the map sending the points $0,u,v,w'\in\T_p$ to $\~p,\~x,\~y,\~q\in\HH$ correspondingly is distance preserving.
 
 Note that $q'\to q$ as $\eps\to0$. 
 Therefore, in the limit,
@@ -158,8 +160,11 @@ Any cost-convex CTIL Riemannian manifold is MTW.
 
 
 \parit{Proof.}
-Fix a hinge $[p\,^x_y]$ in $M$; from above $M$ is CTIL.
-Therefore $[p\,^x_y]$ has a median; denote it by $[p\,q]$.
+Let $M$ be a cost-convex CTIL Riemannian manifold.
+
+Fix a hinge $[p\,^x_y]$ in $M$.
+Since $M$ is CTIL, the hinge $[p\,^x_y]$ has a median; denote it by $[p\,q]$.
+
 For $\delta>0$, define $x'=x'(\delta)$ and $y'=y'(\delta)$ as above.
 
 \hide
@@ -189,7 +194,7 @@ For $\delta>0$, define $x'=x'(\delta)$ and $y'=y'(\delta)$ as above.
 Without loss of generality we can assume that $x,y\zz\in\exp_p(\TIL_p)$.
 If $\delta$ is small, the latter implies that $p$ lies on unique minimizing geodesics $[x\,x']$ and $[y\,y']$.
 
-Consider the limit case of $p/xx'yy'(q/z)$-comparison  as $\delta\to 0$.
+Consider the limit case of the comparison configuration for $p/xx'yy'(q/z)$ as $\delta\to 0$.
 It gives a configuration of 5 points $\~p$, $\~q$, $\~x$, $\~y$ and $\~z$ such that
 \begin{align*}
 \measuredangle[\~p\,^{\~x}_{\~y}]&=\measuredangle[p\,^x_y],

@@ -51,7 +51,7 @@ $p$ has 1 leaf $y$ and one child $q$ with 2 leafs $v$ and $w$.
 Every vertex which is not the root and not a leaf corresponds to a pair of brackets in this notation.
 
 Using the described notation, we could say that a metric space \emph{satisfies the 2(2)-tree comparison},  meaning that it satisfies the tree comparison on the diagram.
-We could also say \emph{``applying the $p/xy(q/vw)$-tree comparison...''} meaning that we apply the comparison for these 6 points labeled as on the diagram.
+We could also say \emph{``applying the tree comparison for $p/xy(q/vw)$ ...''} meaning that we apply the comparison for these 6 points labeled as on the diagram.
 
 \parbf{Monopolar trees.}
 A vertex of a tree of degree at least two will be called \emph{pole}.
@@ -211,12 +211,12 @@ This makes it closely related to the result of Young-Heon Kim and Robert McCann 
 The comparison for monopolar trees has an algebraic corollary which was used Urs Lang and Viktor Schroeder in \cite{LS}, see also \cite{sturm}. 
 Namely, given a point array $p,x_1,\dots,x_n$ in a metric space $X$ consider the matrix $M$ with the components 
 \[m_{i,j}=\tfrac12\cdot(|x_i-p|^2+|x_j-p|^2-|x_i-x_j|^2).\]
-If $p/x_1,\dots,x_n$-tree comparison holds, then 
+If the tree comparison for $p/x_1,\dots,x_n$ holds, then 
 \[\bm{s}\cdot M\cdot \bm{s}^\top\ge 0\]
 for any vector $\bm{s}=(s_1,\dots,s_n)$ with nonnegative components.
 
 \hide
-\begin{wrapfigure}[7]{r}{22 mm}
+\begin{wrapfigure}[6]{r}{22 mm}
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
 
@@ -233,12 +233,15 @@ for any vector $\bm{s}=(s_1,\dots,s_n)$ with nonnegative components.
   (3) edge node[above]{}(4)
   (4) edge node[above]{}(5)
   (5) edge node[above]{}(1)
-  (3) edge[dashed] node[above]{}(1)
-   (3) edge[dashed] node[above]{}(5);
+  (1) edge[dashed] node[above]{}(3)
+  (2) edge[dashed] node[above]{}(4)
+  (3) edge[dashed] node[above]{}(5)
+  (4) edge[dashed] node[above]{}(1)
+  (5) edge[dashed] node[above]{}(2);
 \end{tikzpicture}
 \end{wrapfigure}
 
-However, this condition is not sufficient for $p/x_1,\dots,x_n$ tree comparison with $n\ge 5$.
+However, this condition is not sufficient for the tree comparison for $p/x_1x_2x_3x_4x_5$.
 (In general, is not easy to describe tree comparisons using a system of inequalities.)
 
 An example can be constructed by perturbing the configuration on the plane as on the diagram ---
