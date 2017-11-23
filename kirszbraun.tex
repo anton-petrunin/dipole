@@ -56,8 +56,13 @@ Let $M$ be a complete Riemannian manifold.
 The \emph{tangent injectivity locus} at the point $p\in M$ (briefly $\TIL_p$) is defined as the maximal open subset in the tangent space $\T_p$ such that for any $v\in\TIL_p$ the geodesic path $\gamma(t)=\exp_p(v\cdot t)$, $t\in [0,1]$ is minimizing.
 If the tangent injectivity locus at any point $p\in M$ is convex we say that $M$ satisfies \emph{convexity of  tangent injectivity locus} or briefly $M$ is CTIL.
 
-Note that the set $\overline{\TIL}_p$ defiend above is closure of $\TIL_p$ in $\T_p$.
+Note that the set $\overline{\TIL}_p$ defined above is closure of $\TIL_p$ in $\T_p$.
 Therefore, $M$ is CTIL if and only if the set $\overline{\TIL}_p$ is convex for any point $p\in M$.
+
+If $M$ is cost-convex, then it is CTIL.
+Indeed, fix a point $p\in M$ and consider the cost-convex function 
+\[f(x)=\sup \set{\cost(q,p)-\cost(q,x)}{q\in M}\]
+It remains to note that $\ushort\nabla_pf=\overline{\TIL}_p$.
 
 The second condition is called MTW for Ma--Trudinger--Wang.
 We will use its reformulation close to the one given by Cédric Villani \cite[2.6]{MTW+CTIL}; it can be proved the same way.

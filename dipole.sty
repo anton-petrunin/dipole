@@ -119,7 +119,7 @@
 \newcounter{eqtn}
 \renewcommand{\@eqnnum}{\theeqtn}
 \renewcommand{\theeqtn}{\numform{eqtn}}
-\newcommand{\eqlbl}[1]{\refstepcounter{eqtn}\eqno\text{\numform{eqtn}\label{#1}}}
+\newcommand{\eqlbl}[1]{\refstepcounter{eqtn}\leqno\text{\numform{eqtn}\label{#1}}}
 
 \let\oldcdot\cdot
 \def\cdot{{\hskip0.5pt\oldcdot\hskip0.5pt}}
