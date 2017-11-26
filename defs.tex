@@ -16,7 +16,6 @@ every $n$-points array in $X$ satisfies the $T$-tree comparison.
 Instead of the Hilbert space $\HH$ we may use infinite dimensional sphere or infinite dimensional hyperbolic space.
 In this case we will it defines \emph{spherical} and \emph{hyperbolic} tree comparisons.
 
-\hide
 \begin{wrapfigure}{r}{27 mm}
 \vskip-8mm
 \begin{tikzpicture}[scale=1,
@@ -36,7 +35,6 @@ In this case we will it defines \emph{spherical} and \emph{hyperbolic} tree comp
    (5) edge node[above]{}(6);
 \end{tikzpicture}
 \end{wrapfigure}
-\unhide
 
 \parbf{Encoding of trees.}
 To encode the labeled tree on the diagram, we will use notation $p/xy(q/vw)$.
@@ -57,7 +55,6 @@ We could also say \emph{``applying the tree comparison for $p/xy(q/vw)$ ...''} m
 \parbf{Monopolar trees.}
 A vertex of a tree of degree at least two will be called \emph{pole}.
 
-\hide
 \begin{wrapfigure}{r}{20 mm}
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
@@ -73,7 +70,6 @@ A vertex of a tree of degree at least two will be called \emph{pole}.
    (1) edge node[above]{}(4);
 \end{tikzpicture}
 \end{wrapfigure}
-\unhide
 
 Recall that \emph{Alexandrov space} with nonnegative curvature is defined as complete length space with curvature bounded below in the sense of Alexandrov;
 the latter is equivalent to the 3-tree comparison; that is, the comparison for the tripod-tree on the diagram. 
@@ -83,7 +79,6 @@ Using the introduced notation, a theorem in \cite{AKP} can be restated the follo
 \parbf{Bipolar trees.}
 Consider the bipolar trees 3(1) and 2(2) shown on the diagram.
 
-\hide
 \begin{center}
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
@@ -121,7 +116,7 @@ Consider the bipolar trees 3(1) and 2(2) shown on the diagram.
    (5) edge node[above]{}(6);
 \end{tikzpicture}
 \end{center}
-\unhide
+
 The following theorem is proved in Section~\ref{6-dipole};
 it states that the corresponding comparisons also follow form  Alexandrov's comparison.
 
@@ -129,7 +124,7 @@ it states that the corresponding comparisons also follow form  Alexandrov's comp
 Any Alexandrov space with nonnegative curvature satisfies  3(1)-tree and 2(2)-tree comparisons.
 \end{thm}
 
-\hide
+
 \begin{wrapfigure}{r}{31 mm}
 \vskip-2mm
 \begin{tikzpicture}[scale=1,
@@ -152,7 +147,6 @@ Any Alexandrov space with nonnegative curvature satisfies  3(1)-tree and 2(2)-tr
    (5) edge node[above]{}(6);
 \end{tikzpicture}
 \end{wrapfigure}
-\unhide
 
 The 4(1)-tree comparison turns out to be related to the  so called \emph{transport continuity property}, briefly TCP.
 A compact Riemannian manifold $M$ is TCP 
@@ -223,7 +217,6 @@ If the tree comparison for $p/x_1,\dots,x_n$ holds, then
 \[\bm{s}\cdot M\cdot \bm{s}^\top\ge 0\]
 for any vector $\bm{s}=(s_1,\dots,s_n)$ with nonnegative components.
 
-\hide
 \begin{wrapfigure}{r}{22 mm}
 \vskip-20mm
 \begin{tikzpicture}[scale=1,
@@ -269,7 +262,6 @@ Show that if a graph is a tree, then the graph comparison defined above is equiv
 
 Note that nonnegative and nonpositive curvature can be defined using the comparison for following two graphs on 4 vertexes:
 
-\hide
 \begin{center}
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
@@ -300,7 +292,6 @@ Note that nonnegative and nonpositive curvature can be defined using the compari
    (3) edge node[above]{}(4);
 \end{tikzpicture}
 \end{center}
-\unhide
 
 Note that if a graph $G$ has induced subgraphs which isomorphic to these two graphs, then the corresponding graph comparison implies that the curvature vanish in the sense of Alexandrov.
 In particular, and complete length spaces satisfying $G$-graph comparison is isometric to a convex set in a Hilbert space. 
@@ -308,7 +299,6 @@ In particular, and complete length spaces satisfying $G$-graph comparison is iso
 By Reshetnyak majorization theorem,
 the nonpositive curvature could be also defined using the comparison for cycle; for example the 6-cycle, the first graph the following diagram.
 
-\hide
 \begin{center}
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
@@ -356,7 +346,6 @@ the nonpositive curvature could be also defined using the comparison for cycle; 
    (5) edge node[above]{}(1);
 \end{tikzpicture}
 \end{center}
-\unhide
 
 The comparison for the octahedron graph (the second graph on the diagram) implies that the space is nonnegatively curved.
 The latter follows since in this graph, a 4-cycle appears as an induced subgraph.
@@ -369,7 +358,6 @@ Unfortunately we do not have analogous examples of nonnegatively curved spaces w
 It is also possible to use graph with $(\mp)$-colored edges and define comparison by model configuration such that the distances between vertexes adjacent by a $(-)$-edge does not get larger and by $(+)$-edge does not get smaller.
 For example, the $(2{\cdot}n+2)$-comparison (which holds in $\CAT[0]$ length spaces, see \cite{AKP}) can be considered as a comparison for the following colored graph, where $(-)$-edges are marked by solid lines and $(+)$-edges by dashed lines.
 
-\hide
 \begin{center}
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
@@ -409,4 +397,3 @@ For example, the $(2{\cdot}n+2)$-comparison (which holds in $\CAT[0]$ length spa
    (8) edge node[above]{}(100);
 \end{tikzpicture}
 \end{center}
-\unhide
