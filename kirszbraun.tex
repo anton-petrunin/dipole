@@ -12,7 +12,7 @@ for any $p\in M$ such that $f(p)<\infty$ there is $q\in M$ such that
 for any $x\in M$.
 
 If $M$ has nonnegative sectional curvature, then any cost-convex function $f$ is $(-1)$-convex;
-that is, $f''\ge-1$, which means that the inequality 
+that is, $f''\ge-1$ or, more precisely, the inequality 
 \[(f\circ\gamma)''\ge -1
 \eqlbl{eq:f''=<-1}\]
 holds in the barrier sense for any unit speed geodesic $\gamma$.
@@ -37,13 +37,16 @@ For $p,q$ and $v$ as above, we write $q\zz=\exp_pv$.
 
 \begin{thm}{Definition}\label{def:cost-convex}
 A complete Riemannian manifold will be called \emph{cost-convex} if 
-for any point $p$ and any cost-convex function $f$ which is finite at $p$ we have $\ushort\nabla_pf\subset\overline{\TIL}_p$
+for any point $p$ and any cost-convex function $f$ that is finite at $p$ we have $\ushort\nabla_pf\subset\overline{\TIL}_p$
 and for $q=\exp_pv$ the inequality 
 \[f(x)+\cost(q,x)\ge f(p)+\cost(q,p)\]
 holds for any $x\in M$.
 \end{thm}
 
-Note that any cost-convex manifold has nonnegative sectional curvature.
+Any cost-convex manifold has nonnegative sectional curvature.
+To check the latter statement it is sufficient to apply the definition to the cost-convex functions of the type $f(x)=-\min\{\cost(a,x),\cost{b,x}\}$ and take $q$ to be the midpoint of geodesic $[ab]$.
+
+the at the midpoint of geodesic  
 
 Recall that $M$ satisfies the transport continuity property (or briefly $M$ is 
 TCP) if, whenever $\mu$ and $\nu$ are absolutely continuous probability measures with respect
@@ -129,7 +132,7 @@ It follows that the equality
 holds for each $i$.
 
 The remaining part will be reduced to the case when $A$ is a Euclidean space;
-which is left as an exercise.
+the proof is left as an exercise.
 
 According to Plaut's theorem (see \cite{AKP}) there is a dense G-delta set $S\subset A$ of points $s$ such that minimizing geodesics $[s\,x_i]$ are uniquely defined and their directions at $s$ lie in a Euclidean subspace $E_s$ of the tangent cone $\T_sA$.
 

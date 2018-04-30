@@ -47,7 +47,7 @@ it is sufficient to write the number of leafs in the brackets;
 this way we can write 2(2) instead of $p/xy(q/vw)$ since the root ($p$) has 2 leafs ($x$ and $y$) and yet another child ($q$) which has 2 leafs ($v$ and $w$).  
 The same tree can be encoded as (1(2)) meaning that the root $x$ has no leafs, 
 $p$ has 1 leaf $y$ and one child $q$ with 2 leafs $v$ and $w$.
-Every vertex which is not the root and not a leaf corresponds to a pair of brackets in this notation.
+Every vertex that is not the root and not a leaf corresponds to a pair of brackets in this notation.
 
 Using the described notation, we could say that a metric space \emph{satisfies the 2(2)-tree comparison},  meaning that it satisfies the tree comparison on the diagram.
 We could also say \emph{``applying the tree comparison for $p/xy(q/vw)$ ...''} meaning that we apply the comparison for these 6 points labeled as on the diagram.
@@ -71,7 +71,7 @@ A vertex of a tree of degree at least two will be called \emph{pole}.
 \end{tikzpicture}
 \end{wrapfigure}
 
-Recall that \emph{Alexandrov space} with nonnegative curvature is defined as complete length space with curvature bounded below in the sense of Alexandrov;
+Recall that \emph{Alexandrov space} with nonnegative curvature is defined as complete length space with \emph{nonnegative curvature in the sense of Alexandrov};
 the latter is equivalent to the 3-tree comparison; that is, the comparison for the tripod-tree on the diagram. 
 
 Using the introduced notation, a theorem in \cite{AKP} can be restated the following way: \emph{If a complete length-metric space satisfies $3$-tree comparison, then it also satisfies $n$-tree comparison for every positive integer~$n$; in other words it satisfies all monopolar tree comparisons.}
@@ -152,14 +152,12 @@ The 4(1)-tree comparison turns out to be related to the  so called \emph{transpo
 A compact Riemannian manifold $M$ is TCP 
 if for any two regular measures with density functions bounded away from zero and infinity the generalized solution of Monge--Amp\`{e}re equation provided by optimal transport 
 is a genuine solution.
-
-
-
 A necessary condition for TCP was given by Xi-Nan Ma, Neil Trudinger and Xu-Jia Wang in \cite{MTW}.
 A key step in the understanding this condition was made by Grégoire Loeper in~\cite{loeper}.
 The manifolds satisfying this condition will be called \emph{cost-convex};
-using terminology of \cite{MTW+CTIL}, cost-convexity is CTIL+MTW.
-Cost-convexity is defined and discussed in Section~\ref{sec:cost-convex}.
+these manifolds will be defined and discussed in Section~\ref{sec:cost-convex}.
+(Using the terminology of \cite{MTW+CTIL}, cost-convexity=CTIL+MTW.)
+
 
 \begin{thm}{Theorem}\label{T=>CTIL:CTIL}
 If a complete Riemannian manifold satisfies 4(1)-tree comparison, then it is cost-convex; moreover it satisfies all bipolar tree comparisons.
@@ -167,10 +165,10 @@ If a complete Riemannian manifold satisfies 4(1)-tree comparison, then it is cos
 
 The two parts of the theorem are proved in sections \ref{7-dipole} and \ref{convexity}.
 The proof of the second part works for all complete length spaces (see Corollary \ref{cor:4(1)=>n(1)}).
-In this poof, we describe 4(1)-tree comparison using convexity of certain function on the tangent space (see Proposition~\ref{prop:convexity});
+In this proof, we describe 4(1)-tree comparison using convexity of certain function on the tangent space (see Proposition~\ref{prop:convexity});
 we also give an analogous characterization of cost-convex manifolds (see Proposition~\ref{prop:convexity-MTW}).
 
-It is straightforward to check that the spherical 4(1)-tree comparison implies the strict cost-convexity, which in turns implies TCP; see \cite{FRV-Nec+Suf}.
+The proof shows that the spherical 4(1)-tree comparison implies the strict cost-convexity, which in turns implies TCP; see \cite{FRV-Nec+Suf}.
 
 The following question remains open.
 
@@ -187,7 +185,7 @@ Finally we consider spaces satisfying \emph{all tree comparisons}.
 Recall that a map $f\:W\to X$ between metric spaces is called \emph{submetry} if for any $w\in W$ and $r\ge 0$, we have 
 \[f[B(w,r)_W]=B(f(w),r)_X,\]
 where $B(w,r)_W$ denotes the ball with center $w$ and radius $r$ in the space $W$.
-In other words submetry is a map which is 1-Lipschitz and 1-co-Lipschitz at the same time.
+In other words submetry is a map that is 1-Lipschitz and 1-co-Lipschitz at the same time.
 Note that by the definition, any submetry is onto.
 
 \begin{thm}{Theorem}\label{thm:hilbert-quotient}
@@ -244,7 +242,7 @@ for any vector $\bm{s}=(s_1,\dots,s_n)$ with nonnegative components.
 \end{wrapfigure}
 
 However, this condition is not sufficient for the tree comparison for $p/x_1x_2x_3x_4x_5$.
-(In general, is not easy to describe tree comparisons using a system of inequalities.)
+(In general, it is not easy to describe tree comparisons using a system of inequalities.)
 
 An example can be constructed by perturbing the configuration on the plane as on the diagram ---
 if the diameter of diagram is 1, 
@@ -293,11 +291,12 @@ Note that nonnegative and nonpositive curvature can be defined using the compari
 \end{tikzpicture}
 \end{center}
 
-Note that if a graph $G$ has induced subgraphs which isomorphic to these two graphs, then the corresponding graph comparison implies that the curvature vanish in the sense of Alexandrov.
-In particular, and complete length spaces satisfying $G$-graph comparison is isometric to a convex set in a Hilbert space. 
+Note that if a graph $G$ has two induced subgraphs that isomorphic to each of these two graphs, then the corresponding graph comparison implies that the curvature vanish in the sense of Alexandrov.
+In particular, any complete length spaces satisfying $G$-graph comparison is isometric to a convex set in a Hilbert space. 
 
 By Reshetnyak majorization theorem,
-the nonpositive curvature could be also defined using the comparison for cycle; for example the 6-cycle, the first graph the following diagram.
+the nonpositive curvature could be also defined using the comparison for cycle;
+for example the 6-cycle --- the first graph the following diagram.
 
 \begin{center}
 \begin{tikzpicture}[scale=1,
@@ -347,12 +346,13 @@ the nonpositive curvature could be also defined using the comparison for cycle; 
 \end{tikzpicture}
 \end{center}
 
-The comparison for the octahedron graph (the second graph on the diagram) implies that the space is nonnegatively curved.
+The comparison for the octahedron graph (the second graph on the diagram) implies that the space is nonpositively curved.
 The latter follows since in this graph, a 4-cycle appears as an induced subgraph.
 On the other hand, this comparison might be stronger and it might be interesting to understand.
 
-(The tree comparison holds for quotients of Hilbert space --- this was the main motivation to consider this type of comparison. 
-Unfortunately we do not have analogous examples of nonnegatively curved spaces which would guide us to the right definition.)
+The motivating examples to consider the tree comparison were quotients of Hilbert spac (see Theorem~\ref{thm:hilbert-quotient}).
+Unfortunately we do not have such guiding examples in nonpositive curvature spaces --- we can only fumble around for something without light. 
+
 
 \parbf{On colored graph comparison.}
 It is also possible to use graph with $(\mp)$-colored edges and define comparison by model configuration such that the distances between vertexes adjacent by a $(-)$-edge does not get larger and by $(+)$-edge does not get smaller.
