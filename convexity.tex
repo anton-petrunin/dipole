@@ -1,17 +1,157 @@
 \section{Pull-back convexity}\label{convexity}
 
-In this section we reformulate 4(1)-tree comparison using convexity of certain function on tangent space and use it to prove the second part of Theorem \ref{T=>CTIL:CTIL}.
+The part \ref{thm:convexity:convexity} of Theorem~\ref{thm:convexity} follows from the three propositions in this section.
 
-Recall that for a function $f$ defined on metric space we write 
-$f''\le \lambda$ if for any unit-speed geodesic $\gamma$ the function
-\[t\mapsto f\circ\gamma(t)-\lambda\cdot \tfrac{t^2}{2}\]
-is a concave real-to-real function.
+\begin{thm}{Proposition}\label{prop:CTIL}
+If a complete Riemannian manifold satisfies 4(1)-tree comparison the it is CTIL.
+\end{thm}
 
-\begin{thm}{Proposition}\label{prop:convexity}
-If a complete Riemannian manifold $M$ satisfies $4(1)$-tree comparison, then it is CTIL and for any $p,q\in M$, we have $f''\le 1$, where $f$ is the function $f\: \TIL_p\to \RR$ defined by
-\[f(v)=\tfrac12\cdot\dist_q^2\circ\exp_p(v).\] 
+\parit{Proof.}
+Assume that a Riemannian manifold $M$ satisfies 4(1)-tree comparison.
+Assume there is $p\in M$ and $u,v\zz\in \TIL_p$ such that $w=\tfrac12\cdot(u+v)\notin \TIL_p$.
+It is sufficient to show that $\gamma(t)=\exp_p(w\cdot t)$ is a length-minimizing on $[0,1]$.
 
-The converse also holds; moreover, if $f''\le 1$ for any $p,q$ in a CTIL Riemannian manifold $M$, then $M$ satisfies all bipolar tree comparisons; that is, the $m(n)$-tree comparison holds for any $m$ and $n$.
+Assume the contrary, that is, $\tau<1$ is the maximal value such that the geodesic $\gamma(t)=\exp_p(w\cdot t)$ is a length-minimizing on $[0,\tau]$.
+Set $w'=\tau\cdot w$.
+Note that $w'\in\partial \TIL_p$.
+
+
+Set $q=\exp_p w'$.
+By general position argument, we can assume that there are at least two minimizing geodesics connecting $p$ to $q$; see \cite{karcher}.
+That is, there is $w''\in \partial \TIL_p$ such that 
+$w''\ne w'$
+and $\exp_pw'=\exp_pw''$.
+
+\begin{center}
+\begin{lpic}[t(-0 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/7-config(1)}
+\lbl[r]{1.5,32;$x$}
+\lbl[l]{59.5,31;$y$}
+\lbl[t]{18.5,2;$y'$}
+\lbl[t]{32.5,2;$x'$}
+\lbl[t]{26,4.5;$p$}
+\lbl[r]{23,14;$z$}
+\lbl[b]{28,31;$q$}
+\lbl[l]{30,23;$q'$}
+\end{lpic}
+\end{center}
+
+Fix small small positive real numbers $\delta,\eps$ and $\zeta$.
+Consider the following points
+\begin{align*}
+q'=q'(\eps)&=\exp_p(1-\eps)\cdot w',
+&
+z=z(\zeta)&=\exp_p(\zeta\cdot w''),
+\\
+x&=\exp_p u,
+&
+x'=x'(\delta)&=\exp_p (-\delta\cdot u),
+\\
+y&=\exp_p v,
+&
+y'=y'(\delta)&=\exp_p (-\delta\cdot v).
+\end{align*}
+
+We will  show that for some choice of $\delta,\eps$ and $\zeta$ the tree comparison for $p/xx'yy'(q'/z)$ does not hold.
+
+Assume the contrary, that is, given any positive numbers $\delta,\eps$ and $\zeta$, there is a point array $\~p$, $\~x$, $\~x'(\delta)$, $\~y$, $\~y'(\delta)$, $\~q'(\eps)$, $\~z(\zeta)\in\HH$ as in the definition of $T$-tree comparison.
+
+\begin{wrapfigure}{r}{35 mm}
+\begin{tikzpicture}[scale=1,
+  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=8mm}]
+
+  \node[main node] (0) at (3/2,11/6){$x$};
+   \node[main node] (1) at (1/2,1/6){$x'$};
+  \node[main node] (2) at (3/2,.1){$y$};
+  \node[main node] (3) at (1,1){$p$};
+  \node[main node] (4) at (1/2,11/6){$y'$};
+  \node[main node] (5) at (3,1){$z$};
+  \node[main node] (6) at (2,1){$q'$};
+
+  \path[every node/.style={font=\sffamily\small}]
+     (0) edge node[above]{}(3)
+   (1) edge node[above]{}(3)
+   (2) edge node[above]{}(3)
+   (3) edge node[above]{}(6)
+   (4) edge node[above]{}(3)
+   (5) edge node[above]{}(6);
+\end{tikzpicture}
+\end{wrapfigure}
+
+If $\delta$ is small, we can assume that $p$ lies on a necessary unique minimizing geodesic $[x\,x']_M$.
+Hence 
+\[|x-x'|_M=|x-p|_M+|p-x'|_M.\]
+By comparison
+\begin{align*}
+|\~x-\~x'|_\HH&\ge|x-x'|_M,
+\\
+|\~x-\~p|_\HH&=|x-p|_M,
+\\
+|\~x'-\~p|_\HH&=|x'-p|_M.
+\end{align*}
+By triangle inequality,
+\[|\~x-\~x'|_\HH=|\~x-\~p|_\HH+|\~x'-\~p|_\HH;\]
+that is, $\~p\in [\~x\,\~x']_\HH$.
+The same way we see that $\~p\in [\~y\,\~y']_\HH$.
+
+Fix $\eps$ and $\zeta$.
+Note that as $\delta\to 0$ we have 
+\begin{align*}
+\~x'&\to \~p,
+&
+\~y'&\to \~p.
+\\
+\measuredangle[\~p\,^{\~x'}_{\~y}]&\to \measuredangle[p\,^{x'}_{y}],
+&
+\measuredangle[\~p\,^{\~y'}_{\~x}]&\to \measuredangle[p\,^{y'}_{x}],
+\\
+\measuredangle[\~p\,^{\~x'}_{\~q'}]&\to \measuredangle[p\,^{x'}_{q'}],
+&
+\measuredangle[\~p\,^{\~y'}_{\~q'}]&\to \measuredangle[p\,^{y'}_{q'}],
+\end{align*}
+It follows that 
+\begin{align*}
+\measuredangle[\~p\,^{\~x}_{\~y}]&\to \measuredangle[p\,^x_y],
+&
+\measuredangle[\~p\,^{\~x}_{\~q'}]&\to \measuredangle[p\,^x_{q'}],
+&
+\measuredangle[\~p\,^{\~y}_{\~q'}]&\to \measuredangle[p\,^y_{q'}].
+\end{align*}
+
+
+Therefore, passing to a partial limit as $\delta\to0$, we get a configuration of 5 points 
+$\~p, \~x,\~y,\~q'=\~q'(\eps),\~z=\~z(\zeta)$ such that  
+\begin{align*}
+\measuredangle[\~p\,^{\~x}_{\~y}]&= \measuredangle[p\,^{x}_{y}],
+&
+\measuredangle[\~p\,^{\~y}_{\~q'}]&= \measuredangle[p\,^{y}_{q'}],
+&
+\measuredangle[\~p\,^{\~x}_{\~q'}]&= \measuredangle[p\,^{x}_{q'}].
+\end{align*}
+In other words, the map sending the points $0,u,v,w'\in\T_p$ to $\~p,\~x,\~y,\~q\in\HH$ correspondingly is distance preserving.
+
+Note that $q'\to q$ as $\eps\to0$. 
+Therefore, in the limit,
+we get a configuration $\~p$, $\~x$, $\~y$, $\~q'$, $\~z=\~z(\zeta)$ such that in addition we have
+\begin{align*}
+|\~q'-\~z|&=|q-z|,
+&
+|\~p-\~z|&\ge |p-z|,
+\\
+|\~x-\~z|&\ge |x-p|,
+&
+|\~y-\~z|&\ge |y-z|
+\end{align*}
+
+Since $w''\ne w'$, for small values $\zeta$ the last three inequalities 
+imply 
+\[|\~q'-\~z|>|q-z|,\]
+a contradiction.
+
+\begin{thm}{Proposition}\label{prop:convex}
+If  a complete CTIL Riemannian manifold $M$ satisfies 4(1)-tree comparison,
+then for any $p,q\in M$, we have $f''\le 1$, where $f$ is the function $f\: \TIL_p\to \RR$ defined by
+\[f(v)=\tfrac12\cdot\dist_q^2\circ\exp_p(v).\]
+
 \end{thm}
 
 \parit{Proof.}
@@ -73,15 +213,19 @@ g(v)&=\tfrac12\cdot|\~q-\~y|_{\T_p}^2
 \ge\tfrac12\cdot|q-y|_M^2
 = f(u).
 \end{align*}
-Hence the statement.
+Hence the first statement follows.
 
-\parit{Converse.}
+\begin{thm}{Proposition}\label{prop:m(n)}
+Assume $M$ is a complete CTIL Riemannian manifold such that for any $p,q\in M$, we have $f''\le 1$, where $f$ is the function $f\: \TIL_p\to \RR$ defined by
+\[f(v)=\tfrac12\cdot\dist_q^2\circ\exp_p(v),\]
+Then $M$ satisfies all bipolar tree comparisons.
+\end{thm}
+
+\parit{Proof.}
 Fix points $p$ and $q$ in $M$;
-set $\~q=\log_pq\in\T_p$.
+set $\~q=\log_pq\in\T_p$ and $\~f(v)=\tfrac12\cdot |v-\~q|_{\T_p}^2$.
 Note that 
-\[f\le \~f,\eqlbl{eq:f=<f}\] 
-where 
-\[\~f(v)=\tfrac12\cdot |v-\~q|_{\T_p}^2.\]
+\[f\le \~f.\eqlbl{eq:f=<f}\]
 Further note that the inequality \ref{eq:f=<f} is equivalent to the Toponogov comparison for all hinges $[p\,{}^x_q]$ in $M$.
 It follows that $M$ has nonnegative sectional curvature. 
 
@@ -127,34 +271,223 @@ Since there is an isometric embedding $\T_p\oplus\T_p\hookrightarrow \HH$,
 we get the needed configuration.
 \qeds
 
-Note that we almost did not use smoothness of manifold $M$.
-In fact the Plaut's theorem makes possible to extend the proof above to complete length spaces;
-that is, we get the following corollary from the proof.
 
-\begin{thm}{Corollary}\label{cor:4(1)=>n(1)}
-If a complete length space $X$ satisfies $4(1)$-tree comparison, then it satisfies any bipolar tree comparisons.
+\section{MTW conditions}\label{MTW+}
+
+\parbf{Notations.}
+Let $M$ be a Riemannian manifold, $p\in M$.
+Denote by $\IL_p$ the \emph{inner locus} of $p$; it can be defined as the $\exp_p$-image of $\TIL_p$ or as the complement $M\backslash \CL_p$, where $\CL_p$ denotes the cut locus of $p$.
+Note that $q\in\IL_p$ if and only if $p\in \IL_p$.
+
+Assume $q\in\IL_p$; that is $q=\exp_pW$ for some $W\zz\in \TIL_p M$.
+Given a vector $Y\in T_q$, consider the unique vector $Y_p\in\T_p=\T_w\T_p$ such that 
+\[Y=(d_W\exp_p)Y_p.\]
+Note that $p=\exp_q(-W_q)$.
+
+Let us define a vector field $\tilde Y_p$ in $\IL_p$:
+given $z\in\IL_p$ such that $z=\exp_pX$ for some  $X\in \TIL_p$,  set
+\[\tilde Y_p(z)=(d_X\exp_p) Y_p.\]
+Note that in the vector field $\tilde Y_p$ is constant in the normal coordinates at $p$;
+in particular 
+\[\nabla_X\tilde Y_p=0\] 
+for any $X\in\T_p$.
+
+\begin{thm}{Claim}\label{clm:nabla} Let $M$ be a Riemannian manifold, $p\in M$, $q\in \IL_p$ and $Y\in \T_q$.
+Then 
+\[Y\tilde Y_pf=Y\tilde Y_qf+(\nabla_Y\tilde Y_p)f\]
+for any smooth function $f$.
 \end{thm}
 
-For the cost-convex manifolds we have somewhat weaker statement.
-
-\begin{thm}{Proposition}\label{prop:convexity-MTW}
-A complete Riemannian manifold $M$ is cost-convex if and only if it is CTIL and
-for any $p,q\in M$ the function $h\: \TIL_p\to \RR$ defined by
-\[h(v)=\tfrac12\cdot|v|^2-\tfrac12\cdot\dist_q^2\circ\exp_p(v)\] 
-has convex sub level sets.
-\end{thm}
-
-\parit{Proof; ``only if'' part.}
-If $M$ is cost-convex, then Proposition~\ref{prop:CTIL} it is CTIL.
-
-Fix $p\in M$ and $u,v\in \TIL_p$
-and set $x=\exp_pu$ and $y=\exp_pv$.
-
-Consider the cost-convex function 
-\[f(s)=\min\{\cost(x,p)-\cost(x,s),\cost(y,p)-\cost(y,s)\}.\]
-
-Note that the subgradient of $\ushort\nabla_pf$ is the line segment $[u\,v]$.
-From the definition of cost-convex manifold (\ref{def:cost-convex}) it follows that if $u$ and $v$ lie in sub level set of $h$, then so is the segment $[u\,v]$.
-
-\parit{``If'' part.} Follows from the propositions~\ref{prop:CTIL} and \ref{prop:CTIL}.
+\parit{Proof.}
+Indeed 
+\begin{align*}
+(Y\tilde Y_p-Y\tilde Y_q)f
+&=(\tilde Y_q\tilde Y_p-\tilde Y_p\tilde Y_q)f(q)=
+\\
+&=(\nabla_Y \tilde Y_p-\nabla_Y\tilde Y_q)f
+\end{align*}
+It remains to note that since $\tilde Y_q$ is parallel in the normal coordinates at $q$, we have $\nabla_Y\tilde Y_q=0$.
 \qeds
+
+We will need to differentiate the cost function $\Cost{p}{q}=\tfrac12\cdot|p-q|^2_M$ by both argument.
+In order to avoid confusion, we will write the vector next to the differentiated argument. 
+For example
+\[\dcost{X}{Y}{p}{q}\]
+is the second mixed derivative of the cost function at the pair $(p,q)$, once by the first argument ($p$) along the vector $X \in \T_p$ and once by the second argument ($q$) along the vector field $Y\in \T_q$.
+We may also write a vector field instead of the vectors.
+
+\begin{thm}{Claim}\label{clm:der}
+Let $M$ be a Riemannian manifold and $p,q\in M$ be two points such that $q\in \IL_p$.
+Assume $q=\exp_pW$ for some $W\in\TIL_p$. 
+Then 
+\[\dcost{X}{{}}{p}{q}=-\langle X,W\rangle;\eqlbl{derX}\]
+\[\dcost{X}{Y}{p}{q}=-\langle X,Y_p\rangle =-\langle X_q,Y\rangle\eqlbl{derXY}\]
+and
+\[\dcost{X}{Y\tilde Y_p}{p}{q}=0.\eqlbl{derXYY}\]
+\end{thm}
+
+\parit{Proof.} The first statement is equivalent to the first variation formula.
+
+Taking the derivative of \ref{derX} in the normal coordinates at $p$ we get \ref{derXY}.
+\[\dcost{X}{Y}{p}{q}=-\langle X,Y_p\rangle.\]
+
+Since $q\in \IL_p\iff p\in\IL_q$, we can swap $p$ and $q$ and get that
+\[\dcost{X}{Y}{p}{q}=-\langle X_q,Y\rangle.\]
+
+The value $\langle X,Y_p\rangle$ does not depend on $q$; therefore the derivative along the second argument \ref{derXY} has to vanish;
+hence \ref{derXYY} follows.
+\qeds
+
+\parbf{$\bm{\mathfrak{S}}$-curvature.}
+Let $M$ be a Riemannian manifold, $p\in M$, $q\in \IL_p$ such that $q=\exp_pW$ for some $W\in\T_p$ and $X\in \T_p$, $Y\in T_q$.
+Let us define the $\mathfrak{S}$-curvature by the following formula:
+\[\mathfrak{S}_{p,q}(X,Y)=-\tfrac23\cdot\left(\frac{\partial^4}{\partial s^2\partial t^2}\Cost{\exp_p (s\cdot X)}{\exp_p (W+t\cdot Y_p)}\right).\]
+
+Using the notation for partial derivatives introduced above, we can rewrite the last formula in the following way:
+\[\mathfrak{S}_{p,q}(X,Y)=-\tfrac23\cdot\left(\dcost{X\tilde X_p}{Y\tilde Y_p}{p}{q}\right).\]
+
+Straightforward calculations show that if $p=q$, then
+\[\mathfrak{S}_{p,p}(X,Y)=\langle \Rm_p(X,Y)Y,X\rangle,\]
+where $\Rm_p$ denoted the Riemannian curvature tensor.
+This identity explains the choice of the coefficient $\tfrac23$ in the definition of $\bm{\mathfrak{S}}$-curvature.
+
+\begin{thm}{Claim}
+In any Riemannian manifold, for any two points $p,q$ such that $q\in \IL_p$  we have
+%\[\mathfrak{S}_{p,q}(X,Y)=-\tfrac23\cdot\left(\dcost{X\tilde X_p}{Y\tilde Y_q}{p}{q}-\dcost{\nabla_X\tilde X_p}{\nabla_Y\tilde Y_q}{p}{q}\right)\]
+\[\mathfrak{S}_{p,q}(X,Y)=\mathfrak{S}_{q,p}(Y,X)\]
+for any two vectors $X\in \T_p$, $Y\in\T_q$.
+\end{thm}
+
+\parit{Proof.}
+Applying Claim~\ref{clm:nabla}, we get that
+\begin{align*}
+\dcost{X\tilde X_p}{Y\tilde Y_p}{p}{q}&=\dcost{X\tilde X_p}{Y\tilde Y_q}{p}{q}+\dcost{X\tilde X_p}{\nabla_Y\tilde Y_q}{p}{q}=
+\\
+&=\dcost{X\tilde X_p}{Y\tilde Y_q}{p}{q}+\dcost{X\tilde X_q}{\nabla_Y\tilde Y_q}{p}{q}-\dcost{\nabla_X\tilde X_p}{\nabla_Y\tilde Y_q}{p}{q}
+\end{align*}
+By \ref{derXYY}, 
+\[\dcost{X\tilde X_q}{\nabla_Y\tilde Y_q}{p}{q}=0.\]
+Therefore
+\[\dcost{X\tilde X_p}{Y\tilde Y_p}{p}{q}=\dcost{X\tilde X_p}{Y\tilde Y_q}{p}{q}-\dcost{\nabla_X\tilde X_p}{\nabla_Y\tilde Y_q}{p}{q}.\]
+
+The same way we can show that 
+\[\dcost{X\tilde X_q}{Y\tilde Y_q}{p}{q}=\dcost{X\tilde X_p}{Y\tilde Y_q}{p}{q}-\dcost{\nabla_X\tilde X_p}{\nabla_Y\tilde Y_q}{p}{q},\]
+hence the last statement.
+\qeds
+
+\parbf{MTW conditions.}
+
+\begin{thm}{Definition}
+A Riemannian manifold $M$ is called \emph{MTW} if
+\[\mathfrak{S}_{p,q}(X,Y)\ge 0\eqlbl{S(X,Y)>=0}\]
+if $q\in \IL_p$ and $X\in\T_p$ and $Y\in \T_q$ are such that  $X\perp Y_p$.
+(By \ref{derXY}, $X\perp Y_p$ if and only if $X_q\perp Y$.)
+
+If the inequality \ref{S(X,Y)>=0} holds for arbitrary pair of vectors $X\in\T_p$ and $Y\in \T_q$ (with no orthogonality condition) then $M$ is called \emph{MTW-plus}.
+\end{thm}
+
+
+Assume $X\in \T_p$ and $Y\in T_q$.
+Since $q\in \IL_p\iff p\in \IL_q$, 
+the field $\tilde X_q$ is defined if and only if so is $\tilde Y_p$.
+
+\begin{thm}{Proposition}\label{MTW-plus-convexity}
+Let $M$ be a CTIL Riemannian manifold.
+Then the following conditions are equivalent:
+\begin{enumerate}[(a)]
+ \item\label{MTW-plus-convexity:MTW} $M$ is MTW-plus;
+ \item\label{MTW-plus-convexity:h} For any $p,q\in M$, the function $h\:\TIL_q\to\RR$ defined by
+\[h(X)=\Cost{p}{\exp_qX}-\Cost{q}{\exp_qX}\]
+is concave;
+ \item\label{MTW-plus-convexity:f}  For any $p,q\in M$, the function $f\:\TIL_q\to\RR$ defined by
+\[f(X)=\Cost{p}{\exp_qX}\]
+is 1-concave.
+\end{enumerate}
+\end{thm}
+
+\parit{Proof} Note that $s(X)=\tfrac12\cdot |X|^2=\Cost{p}{\exp_qX}$,
+in particular the function $s$ is $1$-affine (that is $1$-concave and $1$-convex at the same time).
+
+Evidently $f=h+s$, therefore (\textit{\ref{MTW-plus-convexity:h}})$\iff$(\textit{\ref{MTW-plus-convexity:f}}).
+
+
+
+\parit{(\ref{MTW-plus-convexity:MTW}) $\Rightarrow$ (\ref{MTW-plus-convexity:h}).}
+The concavity of $h$ in (\textit{\ref{MTW-plus-convexity:h}}) 
+follows if we can prove that
+\[\tfrac{d^2}{dt^2}h(U+t\cdot V)\le 0\]
+at $t=0$ for any fixed vectors $U\in\TIL_p$ and $V\in \T_p$.
+
+
+Using the introduced notations for partial derivatives we can rewrite it in the following equivalent form:
+\[
+\begin{matrix}{{}}\\{Y\tilde Y_{p_0}}
+\end{matrix}
+\left(\dcost{}{}{p_1}{q}-\dcost{}{}{p_0}{q}\right)\le 0\eqlbl{eq:MTW-plus}\]
+for any $p_0,p_1, q$ and $Y\in \T_q$.
+
+Note that function $h$ is semiconcave, therefore it is sufficient to prove \ref{eq:MTW-plus} for almost all $q$; in particular, we can assume that $p_0,p_1\in \IL_q$.
+
+Let $W, X\in \TIL_q$ be such that $p_0=\exp_qW$, $p_1=\exp_q(W+X)$.
+Set $p_t=\exp_q(W+t\cdot X)$.
+
+Let us use the identity
+$f(1)-f(0)-f'(0)=\int_0^1f''(t)\cdot(1-t)\cdot dt$,
+for the function 
+\[f(t)=\dcost{}{Y\tilde Y_{q}}{p_t}{q};\]
+Note that
+\[f'(0)=\dcost{X}{Y\tilde Y_{q}}{p_0}{q}
+\quad
+\text{and}
+\quad 
+f''(t)
+=\dcost{\tilde X_{q}\tilde X_{q}}{Y\tilde Y_{q}}{p_t}{q},\]
+therefore
+\[\dcost{}{Y\tilde Y_{q}}{p_1}{q}-\dcost{}{Y\tilde Y_{q}}{p_0}{q}-\dcost{X}{Y\tilde Y_{q}}{p_0}{q}=\int_0^1 \dcost{\tilde X_{q}\tilde X_{q}}{Y\tilde Y_{q}}{p_t}{q}\cdot dt.\]
+If $M$ is MTW-plus, the term under the integral is nonpositive; therefore
+\[\begin{matrix}{{}}\\{Y\tilde Y_{q}}
+\end{matrix}
+\left(\dcost{}{}{p_1}{q}-\dcost{}{}{p_0}{q}\right)
+\le
+\dcost{X}{Y\tilde Y_{q}}{p_0}{q}.\]
+Applying Claim~\ref{clm:nabla}, we can rewrite the last inequality the following way:
+\[\begin{matrix}{{}}\\{Y\tilde Y_{p_0}}
+\end{matrix}
+\left(\dcost{}{}{p_1}{q}-\dcost{}{}{p_0}{q}\right)
+\le
+\begin{matrix}{{}}\\{\nabla_Y \tilde Y_{p_0}}
+\end{matrix}
+\left(\dcost{}{}{p_1}{q}
+-
+\dcost{}{}{p_0}{q}\right)
++
+\dcost{X}{Y\tilde Y_{q}}{p_0}{q}.
+\eqlbl{eq:MTW-plus-extra}\]
+
+Applying \ref{derX} from Claim~\ref{clm:der}, we get that
+\begin{align*}
+ \begin{matrix}{{}}\\{\nabla_Y \tilde Y_{p_0}}
+\end{matrix}
+\left(\dcost{}{}{p_1}{q}
+-
+\dcost{}{}{p_0}{q}\right)
+&=
+-\langle\nabla_Y \tilde Y_{p_0},W+X\rangle + \langle\nabla_Y \tilde Y_{p_0},W\rangle
+=
+\\
+&=-\langle\nabla_Y \tilde Y_{p_0},X\rangle.
+\end{align*}
+Further, applying \ref{derXYY} and \ref{derXY} from Claim~\ref{clm:der}, we get that
+\begin{align*}
+\dcost{X}{Y\tilde Y_{q}}{p_0}{q}
+&=
+\dcost{X}{Y\tilde Y_{p_0}}{p_0}{q}-\dcost{X}{\nabla_Y\tilde Y_{p_0}}{p_0}{q}=
+\\
+&=0+\langle\nabla_Y \tilde Y_{p_0},X\rangle.
+\end{align*}
+It follows that the right hand side in \ref{eq:MTW-plus-extra} vanishes;
+hence \ref{eq:MTW-plus} follows.
+
+\parit{(\ref{MTW-plus-convexity:h}) $\Rightarrow$ (\ref{MTW-plus-convexity:MTW}).}
+\qeds
+

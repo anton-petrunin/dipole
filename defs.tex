@@ -13,7 +13,7 @@ for any $i$ and $j$ and the equality holds if $a_i$ and $a_j$ are adjacent in $T
 We say that a metric space $X$ satisfies the \emph{$T$-tree comparison} if 
 every $n$-points array in $X$ satisfies the $T$-tree comparison.
 
-Instead of the Hilbert space $\HH$ we may use infinite dimensional sphere or infinite dimensional hyperbolic space.
+Instead of the Hilbert space $\HH$ we take use infinite dimensional sphere or infinite dimensional hyperbolic space.
 In this case we will it defines \emph{spherical} and \emph{hyperbolic} tree comparisons.
 
 \begin{wrapfigure}{r}{27 mm}
@@ -39,7 +39,7 @@ In this case we will it defines \emph{spherical} and \emph{hyperbolic} tree comp
 \parbf{Encoding of trees.}
 To encode the labeled tree on the diagram, we will use notation $p/xy(q/vw)$.
 It means that we choose $p$ as the root; 
-$p$ has two children leafs to $x$, $y$ and one child $q$ with two children leafs $v$ and $w$.
+$p$ has two children leafs $x$, $y$ and one child $q$ with two children leafs $v$ and $w$.
 Taking another root for the same tree, we get different encodings, for eaxample $q/vw(p/xy)$ or $x/(p/y(q/vw))$.
 
 If we do not need the labeling of vertexes,
@@ -47,15 +47,15 @@ it is sufficient to write the number of leafs in the brackets;
 this way we can write 2(2) instead of $p/xy(q/vw)$ since the root ($p$) has 2 leafs ($x$ and $y$) and yet another child ($q$) which has 2 leafs ($v$ and $w$).  
 The same tree can be encoded as (1(2)) meaning that the root $x$ has no leafs, 
 $p$ has 1 leaf $y$ and one child $q$ with 2 leafs $v$ and $w$.
-Every vertex that is not the root and not a leaf corresponds to a pair of brackets in this notation.
+Note that every vertex that is not the root and not a leaf corresponds to a pair of brackets in this notation.
 
 Using the described notation, we could say that a metric space \emph{satisfies the 2(2)-tree comparison},  meaning that it satisfies the tree comparison on the diagram.
-We could also say \emph{``applying the tree comparison for $p/xy(q/vw)$ ...''} meaning that we apply the comparison for these 6 points labeled as on the diagram.
+We could also say \emph{``applying the tree comparison for $p/xy(q/vw)$ ...''} meaning that we apply the comparison for these 6 points in a metric space labeled as on the diagram.
 
 \parbf{Monopolar trees.}
 A vertex of a tree of degree at least two will be called \emph{pole}.
 
-\begin{wrapfigure}{r}{20 mm}
+\begin{wrapfigure}{r}{21 mm}
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
 
@@ -74,10 +74,11 @@ A vertex of a tree of degree at least two will be called \emph{pole}.
 Recall that \emph{Alexandrov space} with nonnegative curvature is defined as complete length space with \emph{nonnegative curvature in the sense of Alexandrov};
 the latter is equivalent to the 3-tree comparison; that is, the comparison for the tripod-tree on the diagram. 
 
-Using the introduced notation, a theorem in \cite{AKP} can be restated the following way: \emph{If a complete length-metric space satisfies $3$-tree comparison, then it also satisfies $n$-tree comparison for every positive integer~$n$; in other words it satisfies all monopolar tree comparisons.}
+Using the introduced notation, the theorem on ($n$+1)-point comparison in \cite{AKP} can be restated the following way: \emph{If a complete length-metric space satisfies $3$-tree comparison, then it also satisfies $n$-tree comparison for every positive integer~$n$; in other words it satisfies all monopolar tree comparisons.}
 
 \parbf{Bipolar trees.}
-Consider the bipolar trees 3(1) and 2(2) shown on the diagram.
+The following theorem is proved in sections~\ref{sec:pivotal} and \ref{6-dipole};
+it describes the comparisons for the bipolar trees 3(1) and 2(2) shown on the diagram.
 
 \begin{center}
 \begin{tikzpicture}[scale=1,
@@ -117,15 +118,12 @@ Consider the bipolar trees 3(1) and 2(2) shown on the diagram.
 \end{tikzpicture}
 \end{center}
 
-The following theorem is proved in Section~\ref{6-dipole};
-it states that the corresponding comparisons also follow form  Alexandrov's comparison.
-
 \begin{thm}{Theorem}\label{thm:3(1)+2(2)}
-Any Alexandrov space with nonnegative curvature satisfies  3(1)-tree and 2(2)-tree comparisons.
+A complete Riemannian manifold has nonnegative sectional curvature if and only if it satisfies 3(1)-tree or 2(2)-tree comparison.
 \end{thm}
 
 
-\begin{wrapfigure}{r}{31 mm}
+\begin{wrapfigure}{r}{32 mm}
 \vskip-2mm
 \begin{tikzpicture}[scale=1,
   thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
@@ -148,49 +146,69 @@ Any Alexandrov space with nonnegative curvature satisfies  3(1)-tree and 2(2)-tr
 \end{tikzpicture}
 \end{wrapfigure}
 
-The 4(1)-tree comparison turns out to be related to the  so called \emph{transport continuity property}, briefly TCP.
-A compact Riemannian manifold $M$ is TCP 
+The following theorem gives a description of Riemannian manifolds satisfying 4(1)-tree comparison (the 4(1)-tree is shown on the diagram).
+In order to formulate it we need to define CTIL Riemannian manifolds (CTIL stands for \emph{convexity of tangent injectivity locus}).
+
+Let $M$ be a Riemannian manifold and $p\in M$.
+The subset of tangent vectors $v\in\T_p$ such that there is a minimizing geodesic $[p\,q]$ in the direction of $v$ with length $|v|$ will be denoted as $\overline{\TIL}_p$.
+The interior of $\overline{\TIL}_p$ is denoted by $\TIL_p$; it is called \emph{tangent injectivity locus} at $p$.
+If at $\TIL_p$ is convex for any $p\in M$, then $M$ is called CTIL.
+
+For a function $f$ defined on an open convex set of Euclidean space we write 
+$f''\le \lambda$ if for any unit-speed geodesic $\gamma$ the function
+\[t\mapsto f\circ\gamma(t)-\tfrac\lambda2\cdot t^2\]
+is a concave real-to-real function.
+(The same definition can be applied in arbitrary metric space.)
+
+\begin{thm}{Theorem}\label{thm:convexity}
+If a complete Riemannian manifold $M$ satisfies $4(1)$-tree comparison, then it is CTIL and the following two equivalent condition hold:
+\begin{enumerate}[(i)]
+\item\label{thm:convexity:convexity} For any $p,q\in M$, we have $f''\le 1$, where $f$ is the function $f\: \TIL_p\to \RR$ defined by
+\[f(v)=\tfrac12\cdot\dist_q^2\circ\exp_p(v).\] 
+\item\label{thm:convexity:MTW} For any point $p\in M$ and any three tangent vectors 
+$W\in \TIL_p$, $X,Y\in \T_p$, we have
+\[\frac{\partial^4}{\partial^2s\,\partial^2t}\left|\exp_p(s\cdot X)-\exp_p(W+t\cdot Y)\right|_M^2\le 0\eqlbl{eq:MTW}\]
+at $t=s=0$.
+\end{enumerate}
+
+
+The converse also holds; if one of the conditions holds in a CTIL Riemannian manifold $M$, then $M$ satisfies all bipolar tree comparisons; that is, the $m(n)$-tree comparison holds for any $m$ and $n$.
+\end{thm}
+
+The part (\ref{thm:convexity:convexity}) is proved in Section~\ref{convexity} and the equivalence of the conditions (\ref{thm:convexity:convexity}) and (\ref{thm:convexity:MTW}) is proved in Section~\ref{MTW+}.
+
+Note that theorems \ref{thm:3(1)+2(2)} and \ref{thm:convexity} do not provide descriptions of manifolds only for the following two bipolar trees trees: 3(2) and 3(3).
+
+A Riemannian manifold is called MTW if inequality \ref{eq:MTW} holds for $X\perp Y$.
+The condition (\ref{thm:convexity:MTW}) in the theorem is stronger since it does not require orthogonality;
+likely the condition (\ref{thm:convexity:MTW}) is strictly stronger than MTW, but, we do not know examples that are MTW, but not satisfying the condition (\ref{thm:convexity:MTW}).
+
+The MTW condition was introduced by Xi-Nan Ma, Neil Trudinger and Xu-Jia Wang in \cite{MTW} in connection to the so called \emph{transport continuity property}, briefly TCP.
+An important step in the understanding MTW was made by Grégoire Loeper in~\cite{loeper}.
+
+A compact Riemannian manifold $M$ is called TCP 
 if for any two regular measures with density functions bounded away from zero and infinity the generalized solution of Monge--Amp\`{e}re equation provided by optimal transport 
-is a genuine solution.
-A necessary condition for TCP was given by Xi-Nan Ma, Neil Trudinger and Xu-Jia Wang in \cite{MTW}.
-A key step in the understanding this condition was made by Grégoire Loeper in~\cite{loeper}.
-The manifolds satisfying this condition will be called \emph{cost-convex};
-these manifolds will be defined and discussed in Section~\ref{sec:cost-convex}.
-(Using the terminology of \cite{MTW+CTIL}, cost-convexity=CTIL+MTW.)
+is a genuine (continuous) solution.
+MTW turns out to be a necessary condition for TCP.
 
+In \cite{FRV-Nec+Suf}, Alessio Figalli, Ludovic Rifford and C\'edric Villani showed that
+CTIL and a strict version of MTW provides a sufficient condition for TCP.
+From the proof of Theorem \ref{thm:convexity} it is evident that spherical 4(1)-tree comparison implies the strict version of MTW; in particular, we get the following:
 
-\begin{thm}{Theorem}\label{T=>CTIL:CTIL}
-If a complete Riemannian manifold satisfies 4(1)-tree comparison, then it is cost-convex; moreover it satisfies all bipolar tree comparisons.
+\begin{thm}{Corollary}
+Any Riemannian manifold satisfying spherical 4(1)-tree comparison is TCP.
 \end{thm}
-
-The two parts of the theorem are proved in sections \ref{7-dipole} and \ref{convexity}.
-The proof of the second part works for all complete length spaces (see Corollary \ref{cor:4(1)=>n(1)}).
-In this proof, we describe 4(1)-tree comparison using convexity of certain function on the tangent space (see Proposition~\ref{prop:convexity});
-we also give an analogous characterization of cost-convex manifolds (see Proposition~\ref{prop:convexity-MTW}).
-
-The proof shows that the spherical 4(1)-tree comparison implies the strict cost-convexity, which in turns implies TCP; see \cite{FRV-Nec+Suf}.
-
-The following question remains open.
-
-\begin{thm}{Question}
-Is it true that Rieamnnian manifold is cost-convex if and only if it satisfies 4(1)-tree comparison. 
-\end{thm}
-
-From the theorem  above we get that for complete Riemannian manifold satisfying 4(1)-tree comparison also satisfies 3(2)-tree and 3(3)-tree comparisons.
-In both cases, the converse is not known.
 
 \parbf{All tree comparisons.}
-Finally we consider spaces satisfying \emph{all tree comparisons}.
-
 Recall that a map $f\:W\to X$ between metric spaces is called \emph{submetry} if for any $w\in W$ and $r\ge 0$, we have 
 \[f[B(w,r)_W]=B(f(w),r)_X,\]
-where $B(w,r)_W$ denotes the ball with center $w$ and radius $r$ in the space $W$.
+where $B(w,r)_W$ denotes the open ball with center $w$ and radius $r$ in the space $W$.
 In other words submetry is a map that is 1-Lipschitz and 1-co-Lipschitz at the same time.
 Note that by the definition, any submetry is onto.
 
 \begin{thm}{Exercise}
-Let $W\to X$ be a submetry.
-Assume $W$ satisfies all tree comparisons.
+Let $W\to X$ be a submetry and $T$ be a tree.
+Assume $W$ satisfies the $T$-tree comparison.
 Show that the same holds for $X$.
 \end{thm}
 
@@ -202,7 +220,7 @@ The following theorem gives a converse of the latter statement.
 \begin{thm}{Theorem}\label{thm:hilbert-quotient}
 A separable metric space $X$ satisfies all tree comparisons if and only if
 $X$ is isometric to a target space of submetry defined on a subset  of the Hilbert space.
-\end{thm}
+\end{thm} %???can we remove separable???
 
 The following proposition provides a source of examples of spaces satisfying all tree comparisons.
 For example, since $\SS^n=\SO(n)/\SO(n-1)$, any round sphere has this property.
@@ -213,198 +231,8 @@ Suppose $G$ is a compact Lie group with bi-invariant metric, so the action $G\ti
 Then for any closed subgroup $H<G\times G$, the bi-quotient space $G/\!\!/H$ satisfies all tree comparisons
 \end{thm}
 
-From proposition above and Theorem~\ref{T=>CTIL:CTIL}, it follows that the bi-quotient space $G/\!\!/H$ is cost-convex (or equivalently CTIL+MTW), see Section~\ref{sec:cost-convex}.
-This makes it closely related to the result of Young-Heon Kim and Robert McCann in \cite{kim-mccann}.
+The theorem and propsition are proved in Section~\ref{sec:all-tree}.
 
-\section{Digressions}
+From proposition above and Theorem~\ref{thm:convexity}, it follows that the bi-quotient space $G/\!\!/H$ is CTIL and MTW.
+This makes it closely related to the result of Young-Heon Kim and Robert McCann \cite{kim-mccann}.
 
-\parbf{On matrix inequality.}
-The comparison for monopolar trees has an algebraic corollary which was used Urs Lang and Viktor Schroeder in \cite{LS}, see also \cite{sturm}. 
-Namely, given a point array $p,x_1,\dots,x_n$ in a metric space $X$ consider the matrix $M$ with the components 
-\[m_{i,j}=\tfrac12\cdot(|x_i-p|^2+|x_j-p|^2-|x_i-x_j|^2).\]
-If the tree comparison for $p/x_1,\dots,x_n$ holds, then 
-\[\bm{s}\cdot M\cdot \bm{s}^\top\ge 0\]
-for any vector $\bm{s}=(s_1,\dots,s_n)$ with nonnegative components.
-
-\begin{wrapfigure}{r}{22 mm}
-\vskip-20mm
-\begin{tikzpicture}[scale=1,
-  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}, ]
-
-    \node[main node] (0) at (0,0){};
-     \node[main node] (1) at (.6,-.8) {};
-     \node[main node] (2) at (.9,.3){};
-     \node[main node] (3) at (0,1) {};
-  \node[main node] (4) at (-.9,.3) {};
-  \node[main node] (5) at (-.6,-.8) {};
-
-  \path[every node/.style={font=\sffamily\small}]
-  (1) edge node[above]{}(2)
-  (2) edge node[above]{}(3)
-  (3) edge node[above]{}(4)
-  (4) edge node[above]{}(5)
-  (5) edge node[above]{}(1)
-  (1) edge[dashed] node[above]{}(3)
-  (2) edge[dashed] node[above]{}(4)
-  (3) edge[dashed] node[above]{}(5)
-  (4) edge[dashed] node[above]{}(1)
-  (5) edge[dashed] node[above]{}(2);
-\end{tikzpicture}
-\end{wrapfigure}
-
-However, this condition is not sufficient for the tree comparison for $p/x_1x_2x_3x_4x_5$.
-(In general, it is not easy to describe tree comparisons using a system of inequalities.)
-
-An example can be constructed by perturbing the configuration on the plane as on the diagram ---
-if the diameter of diagram is 1, 
-then increasing the distances between the pairs of points connected by dashed lines by $\eps=10^{-9}$ and decreasing  the distances between the pairs of points connected by sold lines by $\delta=10^{-6}$ does the job.
-The obtained metric 6-point metric space satisfies the matrix inequality with center at each point, but does not satisfy the tree comparison with pole at the central point.
-
-
-\parbf{On graph comparison.}
-Analogously to the tree comparison one can define graph comparison for any graph by stating that there is model configuration such that the distance between pairs of adjacent points is at most as big and nonadjacent is at least as big.
-
-\begin{thm}{Exercise}
-Show that if a graph is a tree, then the graph comparison defined above is equivalent to the tree comparison defined at the beginning of the paper.
-\end{thm}
-
-
-Note that nonnegative and nonpositive curvature can be defined using the comparison for following two graphs on 4 vertexes:
-
-\begin{center}
-\begin{tikzpicture}[scale=1,
-  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
-
-  \node[main node] (0) at (0,0) {};
-  \node[main node] (1) at (-3/5,1/3){};
-  \node[main node] (2) at (3/5,1/3){};
-  \node[main node] (3) at (0,-2/3) {};
-
-  \path[every node/.style={font=\sffamily\small}]
-   (0) edge node[above]{}(1)
-   (0) edge node[above]{}(2)
-   (0) edge node[above]{}(3);
-\end{tikzpicture}
-\hskip30mm
-\begin{tikzpicture}[scale=1,
-  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
-
-  \node[main node] (1) at (0,0) {};
-  \node[main node] (2) at (0,1){};
-  \node[main node] (3) at (1,1){};
-  \node[main node] (4) at (1,0) {};
-
-  \path[every node/.style={font=\sffamily\small}]
-   (1) edge node[above]{}(2)
-   (1) edge node[above]{}(4)
-   (2) edge node[above]{}(3)
-   (3) edge node[above]{}(4);
-\end{tikzpicture}
-\end{center}
-
-Note that if a graph $G$ has two induced subgraphs that isomorphic to each of these two graphs, then the corresponding graph comparison implies that the curvature vanish in the sense of Alexandrov.
-In particular, any complete length spaces satisfying $G$-graph comparison is isometric to a convex set in a Hilbert space. 
-
-By Reshetnyak majorization theorem,
-the nonpositive curvature could be also defined using the comparison for cycle;
-for example the 6-cycle --- the first graph the following diagram.
-
-\begin{center}
-\begin{tikzpicture}[scale=1,
-  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
-
-  \node[main node] (4) at (3/2,5/6){};
-   \node[main node] (1) at (1/2,-5/6){};
-  \node[main node] (2) at (3/2,-5/6){};
-  \node[main node] (0) at (0,0){};
-  \node[main node] (5) at (1/2,5/6){};
-  \node[main node] (3) at (2,0){};
-
-
-  \path[every node/.style={font=\sffamily\small}]
-    (0) edge node[above]{}(1)
-   (1) edge node[above]{}(2)
-    (2) edge node[above]{}(3)
-   (3) edge node[above]{}(4)
-   (4) edge node[above]{}(5)
-   (5) edge node[above]{}(0);
-\end{tikzpicture}
-\hskip30mm
-\begin{tikzpicture}[scale=1,
-  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
-
-  \node[main node] (4) at (3/2,5/6){};
-   \node[main node] (1) at (1/2,-5/6){};
-  \node[main node] (2) at (3/2,-5/6){};
-  \node[main node] (0) at (0,0){};
-  \node[main node] (5) at (1/2,5/6){};
-  \node[main node] (3) at (2,0){};
-
-
-  \path[every node/.style={font=\sffamily\small}]
-    (0) edge node[above]{}(1)
-   (1) edge node[above]{}(2)
-    (2) edge node[above]{}(3)
-   (3) edge node[above]{}(4)
-   (4) edge node[above]{}(5)
-   (5) edge node[above]{}(0)
-    (0) edge node[above]{}(2)
-   (1) edge node[above]{}(3)
-    (2) edge node[above]{}(4)
-   (3) edge node[above]{}(5)
-   (4) edge node[above]{}(0)
-   (5) edge node[above]{}(1);
-\end{tikzpicture}
-\end{center}
-
-The comparison for the octahedron graph (the second graph on the diagram) implies that the space is nonpositively curved.
-The latter follows since in this graph, a 4-cycle appears as an induced subgraph.
-On the other hand, this comparison might be stronger and it might be interesting to understand.
-
-The motivating examples to consider the tree comparison were quotients of Hilbert spac (see Theorem~\ref{thm:hilbert-quotient}).
-Unfortunately we do not have such guiding examples in nonpositive curvature spaces --- we can only fumble around for something without light. 
-
-
-\parbf{On colored graph comparison.}
-It is also possible to use graph with $(\mp)$-colored edges and define comparison by model configuration such that the distances between vertexes adjacent by a $(-)$-edge does not get larger and by $(+)$-edge does not get smaller.
-For example, the $(2{\cdot}n+2)$-comparison (which holds in $\CAT[0]$ length spaces, see \cite{AKP}) can be considered as a comparison for the following colored graph, where $(-)$-edges are marked by solid lines and $(+)$-edges by dashed lines.
-
-\begin{center}
-\begin{tikzpicture}[scale=1,
-  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}]
-
-  \node[main node] (0) at (0.5,0){};
-   \node[main node] (1) at (1,1){};
-  \node[main node] (2) at (1,-1){};
-  \node[main node] (3) at (2,1){};
-  \node[main node] (4) at (2,-1){};
-  \node[main node] (5) at (3,1){};
-\node[main node] (6) at (3,-1){};
- \node[main node] (7) at (4,1){};
-\node[main node] (8) at (4,-1){};
-\node[main node] (100) at (4.5,0){};
-
-  \path[every node/.style={font=\sffamily\small}]
-    (0) edge[dashed] node[above]{}(100)
-   (1) edge[dashed] node[above]{}(2)
-    (3) edge[dashed] node[above]{}(4)
-   (5) edge[dashed] node[above]{}(6)
-   (7) edge[dashed] node[above]{}(8)
-   (0) edge node[above]{}(1)
-   (0) edge node[above]{}(2)
-    (1) edge node[above]{}(3)
-   (2) edge node[above]{}(4)
-   (1) edge node[above]{}(4)
-   (2) edge node[above]{}(3)
-   (5) edge node[above]{}(3)
-   (6) edge node[above]{}(4)
-   (5) edge node[above]{}(4)
-   (6) edge node[above]{}(3)
-   (5) edge node[above]{}(7)
-   (6) edge node[above]{}(8)
-   (5) edge node[above]{}(8)
-   (6) edge node[above]{}(7)
-   (7) edge node[above]{}(100)
-   (8) edge node[above]{}(100);
-\end{tikzpicture}
-\end{center}

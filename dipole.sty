@@ -47,6 +47,7 @@
 \def\NN{\mathbb{N}}
 \def\CC{\mathbb{C}}
 \def\RR{\mathbb{R}}
+\def\Rm{\mathrm{Rm}}
 \def\SS{\mathbb{S}}
 \def\SO{\mathrm{SO}}
 \def\SSS{\mathbb{S}}
@@ -55,8 +56,10 @@
 \def\Fill{\mathop{\rm Fill}}
 \def\dist{\mathop{\rm dist}\nolimits}
 \def\Conv{\mathop{\rm Conv}\nolimits}
+\def\CL{\mathop{\rm CL}\nolimits}
 \def\Dom{\mathop{\rm Dom}\nolimits}
 \def\Geod{\mathop{\rm Geod}\nolimits}
+\def\IL{\mathop{\rm IL}\nolimits}
 \def\Im{\mathop{\rm Im}\nolimits}
 \def\TIL{\mathrm{\rm TIL}}
 \def\acts{\curvearrowright}
@@ -64,6 +67,8 @@
 \def\gexp{\text{\rm gexp}}
 \def\vol{\text{\rm vol}}
 \def\cost{\text{\rm cost}}
+\newcommand*{\Cost}[2]{\left[\begin{smallmatrix}#1\\ #2\end{smallmatrix}\right]}
+\newcommand*{\dcost}[4]{\begin{matrix}#1\\ #2\end{matrix}\left[\begin{matrix}#3\\ #4\end{matrix}\right]}
 
 \def\l{\left}
 \def\r{\right}
@@ -116,7 +121,7 @@
 \newcommand*{\@numform}[1]%
 {\ifcase #1\or \ding{202}\or \ding{203}\or \ding{204}\or \ding{205}\or \ding{206}\or \ding{207}\or \ding{208}\or \ding{209}\or \ding{210}\or \ding{211}\else\@ctrerr \fi}
 %EQNUMBER
-\newcounter{eqtn}
+\newcounter{eqtn}[section]
 \renewcommand{\@eqnnum}{\theeqtn}
 \renewcommand{\theeqtn}{\numform{eqtn}}
 \newcommand{\eqlbl}[1]{\refstepcounter{eqtn}\leqno\text{\numform{eqtn}\label{#1}}}

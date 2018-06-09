@@ -1,3 +1,60 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Note that we almost did not use smoothness of manifold $M$.
+In fact the Plaut's theorem makes possible to extend the proof above to complete length spaces;
+that is, we get the following corollary from the proof.
+
+\begin{thm}{Corollary}\label{cor:4(1)=>n(1)}
+If a complete length space $X$ satisfies $4(1)$-tree comparison, then it satisfies any bipolar tree comparisons.
+\end{thm}
+
+For the cost-convex manifolds we have somewhat weaker statement.
+
+\begin{thm}{Proposition}\label{prop:convexity-MTW}
+A complete Riemannian manifold $M$ is cost-convex if and only if it is CTIL and
+for any $p,q\in M$ the function $h\: \TIL_p\to \RR$ defined by
+\[h(v)=\tfrac12\cdot|v|^2-\tfrac12\cdot\dist_q^2\circ\exp_p(v)\] 
+has convex sub level sets.
+\end{thm}
+
+\parit{Proof; ``only if'' part.}
+If $M$ is cost-convex, then Proposition~\ref{prop:CTIL} it is CTIL.
+
+Fix $p\in M$ and $u,v\in \TIL_p$
+and set $x=\exp_pu$ and $y=\exp_pv$.
+
+Consider the cost-convex function 
+\[f(s)=\min\{\cost(x,p)-\cost(x,s),\cost(y,p)-\cost(y,s)\}.\]
+
+Note that the subgradient of $\ushort\nabla_pf$ is the line segment $[u\,v]$.
+From the definition of cost-convex manifold (\ref{def:cost-convex}) it follows that if $u$ and $v$ lie in sub level set of $h$, then so is the segment $[u\,v]$.
+
+\parit{``If'' part.} Follows from the propositions~\ref{prop:CTIL} and \ref{prop:CTIL}.
+\qeds
+
+
+
+
+
+
+
+
+
+
+
 These two conditions appear in the study of continuity of optimal transport between regular measures with positive continuous density functions.
 The continuity implies both MTW and CTIL conditions and slightly stronger version of these two conditions imply the continuity;
 see \cite{FRV-Nec+Suf}, \cite{MTW+CTIL} and the references there in.

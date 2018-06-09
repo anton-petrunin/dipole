@@ -1,114 +1,11 @@
-\section{Cost-convexity}\label{sec:cost-convex}
-
-In this section we review necessary material we learned from \cite{MTW+CTIL}; see also the references there in.
-
-\parbf{Cost-convex functions.}
-Let $M$ be a complete Riemannian manifold.
-Consider the \emph{cost function} $\cost\:M\times M\to \RR$ defined by \[\cost(x,y)=\tfrac12\cdot|x-y|_M^2.\]
-
-A function $f\:M\to (-\infty,\infty]$ is called \emph{cost-convex} if 
-for any $p\in M$ such that $f(p)<\infty$ there is $q\in M$ such that 
-\[f(x)+\cost(q,x)\ge f(p)+\cost(q,p)\]
-for any $x\in M$.
-
-If $M$ has nonnegative sectional curvature, then any cost-convex function $f$ is $(-1)$-convex;
-that is, $f''\ge-1$ or, more precisely, the inequality 
-\[(f\circ\gamma)''\ge -1
-\eqlbl{eq:f''=<-1}\]
-holds in the barrier sense for any unit speed geodesic $\gamma$.
-On the other hand, $f''\ge -1$ does not imply that $f$ is cost-convex.
-
-
-\parbf{Subgradient.}
-Let $f\: M\to (-\infty,\infty]$ be a semiconvex function defined on the complete Riemannian manifold $M$.
-Assume $f(p)$ is finite.
-In this case the differential 
-\[d_pf\:\T_p\zz\to (-\infty,\infty]\] 
-is defined;
-it is a convex positive homogeneous function defined on the tangent space $\T_p$.
-
-A tangent vector $v\in \T_pM$ is a \emph{subgradient} of $f$ at $p$, briefly $v\in\ushort\nabla_pf$ if
-\[\langle v,w\rangle\le d_pf(w)\]
-for any $w\in \T_p$.
-Note that the set $\ushort\nabla_pf$ is a convex subset of $\T_p$.
-
-The subset of tangent vectors $v\in\T_p$ such that there is a minimizing geodesic $[p\,q]$ in the direction of $v$ with length $|v|$ will be denoted as $\overline{\TIL}_p$. 
-For $p,q$ and $v$ as above, we write $q\zz=\exp_pv$.
-
-\begin{thm}{Definition}\label{def:cost-convex}
-A complete Riemannian manifold will be called \emph{cost-convex} if 
-for any point $p$ and any cost-convex function $f$ that is finite at $p$ we have $\ushort\nabla_pf\subset\overline{\TIL}_p$
-and for $q=\exp_pv$ the inequality 
-\[f(x)+\cost(q,x)\ge f(p)+\cost(q,p)\]
-holds for any $x\in M$.
-\end{thm}
-
-Any cost-convex manifold has nonnegative sectional curvature.
-To check the latter statement it is sufficient to apply the definition to the cost-convex functions of the type $f(x)=-\min\{\cost(a,x),\cost{b,x}\}$ and take $q$ to be the midpoint of geodesic $[ab]$.
-
-the at the midpoint of geodesic  
-
-Recall that $M$ satisfies the transport continuity property (or briefly $M$ is 
-TCP) if, whenever $\mu$ and $\nu$ are absolutely continuous probability measures with respect
-to the volume and their density functions bounded away from zero and infinity, then the optimal transport map for measures $\mu$, $\nu$ is continuous, up to modification
-on a set of zero volume.
-According to \cite{FRV-Nec+Suf} and Proposition~\ref{prop:cost-convex=CTIL+MTW}, if $M$ is TCP, then it is cost-convex.
-The converse is unknown, likely it holds;
-there is a slightly stronger version of cost-convexity which implies TCP, see \cite{FRV-Nec+Suf}.
-
-\parbf{CTIL and MTW.}
-Let us formulate other two conditions on Riemannian manifolds which are together equivalent to the cost-convexity.
-These two conditions will be used in the proof.
-
-Let $M$ be a complete Riemannian manifold.
-The \emph{tangent injectivity locus} at the point $p\in M$ (briefly $\TIL_p$) is defined as the maximal open subset in the tangent space $\T_p$ such that for any $v\in\TIL_p$ the geodesic path $\gamma(t)=\exp_p(v\cdot t)$, $t\in [0,1]$ is minimizing.
-If the tangent injectivity locus at any point $p\in M$ is convex we say that $M$ satisfies \emph{convexity of  tangent injectivity locus} or briefly $M$ is CTIL.
-
-Note that the set $\overline{\TIL}_p$ defined above is closure of $\TIL_p$ in $\T_p$.
-Therefore, $M$ is CTIL if and only if the set $\overline{\TIL}_p$ is convex for any point $p\in M$.
-
-If $M$ is cost-convex, then it is CTIL.
-Indeed, fix a point $p\in M$ and consider the cost-convex function 
-\[f(x)=\sup \set{\cost(q,p)-\cost(q,x)}{q\in M}\]
-It remains to note that $\ushort\nabla_pf=\overline{\TIL}_p$.
-
-The second condition is called MTW for Ma--Trudinger--Wang.
-We will use its reformulation close to the one given by Cédric Villani \cite[2.6]{MTW+CTIL}; it can be proved the same way.
-
-Assume $u,v\in \T_p$ and $w=\tfrac12\cdot(u+v)$
-and $x=\exp_p u$, $y=\exp_pv$ and $q=\exp_pw$.
-If the three geodesic paths $[p\,x]$, $[p\,y]$ and $[p\,q]$ described by the paths 
-$t\mapsto\exp_p(t\cdot u)$,  $t\mapsto\exp_p(t\cdot v)$, $t\mapsto\exp_p(t\cdot w)$ for $t\in[0,1]$ are minimizing, then $[p\,q]$ is called \emph{median} of the hinge $[p\,^x_y]$.
-Note that in a CTIL Riemannian manifold, any hinge has a median.
-
-\begin{thm}{MTW condition}\label{MTW}
-Assume $M$ be a CTIL Riemannian manifold. 
-Then $M$ is MTW if and only if for a median $[p\,q]$ of any hinge $[p\,^x_y]$ one of the following inequalities
-\[
-\left[
-\begin{aligned}
-|p-q|^2_M-|z-q|^2_M&\le |p-x|^2_M-|z-x|^2_M,
-\\
-|p-q|^2_M-|z-q|^2_M&\le |p-y|^2_M-|z-y|^2_M.
-\end{aligned}
-\right.
-\]
-holds for any $z\in M$.
-\end{thm}
-
-The following statement was proved by Gr\'egoire Loeper in \cite{loeper}, see also \cite[Proposition 2.5]{MTW+CTIL}.
-
-\begin{thm}{Proposition}\label{prop:cost-convex=CTIL+MTW}
-A complete Riemannian manifold is cost-convex if and only if it is CTIL and MTW. 
-\end{thm}
-
 \section{Kirszbraun's rigidity}
+
 In the proof we will use the rigidity case of the generalized Kirszbraun theorem proved by Urs Lang and Viktor Schroeder in \cite{LS}, see also \cite{AKP}.
 
 \begin{thm}{Kirszbraun rigidity theorem}\label{thm:kirszbraun-rigid}
-Let $A$ be an Alexandrov space with nonnegative curvature.
+Let $M$ be a complete Riemannian manifold with nonnegative curvature sectional curvature.
 
-Assume that for two point arrays $p,x_1,\dots,x_n\in A$ and $\~q, \~x_1,\dots,\~x_n\in \HH$ we have that 
+Assume that for two point arrays $p,x_1,\dots,x_n\in M$ and $\~q, \~x_1,\dots,\~x_n\in \HH$ we have that 
 \[|\~q-\~x_i|\ge |p-x_i|\]
 for any $i$,
 \[|\~x_i-\~x_j|\le |x_i-x_i|\]
@@ -116,38 +13,26 @@ for any pair $(i,j)$
 and $\~q$ lies in the interior of the convex hull $\~K$ of $\~x_1,\dots,\~x_n$.
 
 Then equalities hold in all the inequalities above.
-Moreover there is an distance preserving map $f\:\~K\to A$ such that $f(\~x_i)=x_i$ and $f(\~q)=p$. 
+Moreover there is an distance preserving map $f\:\~K\to M$ such that $f(\~x_i)=x_i$ and $f(\~q)=p$. 
 \end{thm}
 
 \parit{Proof.}
-By the generalized Kirszbraun theorem, there is a short map $f\:A\to \HH$
+By the generalized Kirszbraun theorem, there is a short map $f\:M\to \HH$
 such that $f(x_i)=\~x_i$.
 Set  $\~p=f(p)$.
 By assumptions
 \[|\~q-\~x_i|\ge |\~p-\~x_i|.\]
 
-Since $\~q$ lies in the interior of $K$, $\~q=\~p$.
-It follows that the equality 
+Since $\~q$ lies in the interior of $K$, we have that $\~q=\~p$ and the equality 
 \[|\~q-\~x_i|= |p-x_i|.\]
 holds for each $i$.
 
-The remaining part will be reduced to the case when $A$ is a Euclidean space;
-the proof is left as an exercise.
+Set $v_i=\log_px_i$; that is $t\mapsto \exp_pt$ for $t\in[0,1]$ is a minimizing geodesic from $p$ to $x_i$ or, equivalently, $|v_i|=|p-x_i|$ and $\exp_pv_i=x_i$.
+Recall that the gradient exponent $\gexp_p\:\T_p\to M$
+is a short map and $\gexp_p\:v_i\mapsto x_i$ for each $i$ (see \cite{AKP}).
 
-According to Plaut's theorem (see \cite{AKP}) there is a dense G-delta set $S\subset A$ of points $s$ such that minimizing geodesics $[s\,x_i]$ are uniquely defined and their directions at $s$ lie in a Euclidean subspace $E_s$ of the tangent cone $\T_sA$.
 
-Fix $s\in S$ and set $v_i=\log_sx_i$.
-Recall that the gradient exponent 
-\[\gexp_s\:E_s\to A\]
-is a short map and $\gexp_s\:v_i\mapsto x_i$ for each $i$ (see \cite{AKP}).
-Note that $|v_i|_{E_s}=|s-x_i|_A$ for any $i$.
-Therefore by triangle inequality
-\[|v_i|_{E_s}\ge |p-x_i|_A-|p-s|_A.\]
-
-Passing to the limit of the point array $v_i$ and $\gexp_s$ as $s\to p$ we get (1) a collection of points in a Euclidean space $v_1,\dots,v_n\in E$ such that $|v_i|_E=|x_i-p|_A$
-and (2) a short map $g\:E\to A$ such that $g\:v_i\to x_i$ and $g(0)=p$.
-
-The composition $f\circ g\:E\to \HH$ is short
+The composition $f\circ \gexp_p\:\T_p\to \HH$ is short
 and by classical Kirszbraun rigidity it has to be distance preserving on the convex hull $\~K'$ of $v_i$.
 Hence $\~K'$ is isometric to $\~K$ and the restriction $g|_{\~K'}$ is distance preserving. 
 Hence the result.
