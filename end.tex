@@ -1,48 +1,5 @@
 \section{Remarks}
 
-\parbf{On matrix inequality.}
-The comparison for monopolar trees has an algebraic corollary which was used Urs Lang and Viktor Schroeder in \cite{LS}, a similar inequality was used by Karl-Theodor  Sturm  in \cite{sturm}. 
-
-Namely, given a point array $p,x_1,\dots,x_n$ in a metric space $X$ consider the $n{\times}n$-matrix $M$ with the components 
-\[m_{i,j}=\tfrac12\cdot(|x_i-p|^2+|x_j-p|^2-|x_i-x_j|^2).\]
-If the tree comparison for $p/x_1,\dots,x_n$ holds, then 
-\[\bm{s}\cdot M\cdot \bm{s}^\top\ge 0\eqlbl{eq:sMs}\]
-for any vector $\bm{s}=(s_1,\dots,s_n)$ with nonnegative components.
-
-The converse does not hold; that is, for some point array $p,x_1,\dots,x_n$ in a metric space the inequality \ref{eq:sMs} might hold, while the tree comparison for $p/x_1x_2x_3x_4x_5$ does not.
-(We do not know an explicit way to describe tree comparisons using a system of inequalities.)
-
-\begin{wrapfigure}{r}{22 mm}
-\vskip-0mm
-\begin{tikzpicture}[scale=1,
-  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}, ]
-
-    \node[main node] (0) at (0,0){};
-     \node[main node] (1) at (.6,-.8) {};
-     \node[main node] (2) at (.9,.3){};
-     \node[main node] (3) at (0,1) {};
-  \node[main node] (4) at (-.9,.3) {};
-  \node[main node] (5) at (-.6,-.8) {};
-
-  \path[every node/.style={font=\sffamily\small}]
-  (1) edge node[above]{}(2)
-  (2) edge node[above]{}(3)
-  (3) edge node[above]{}(4)
-  (4) edge node[above]{}(5)
-  (5) edge node[above]{}(1)
-  (1) edge[dashed] node[above]{}(3)
-  (2) edge[dashed] node[above]{}(4)
-  (3) edge[dashed] node[above]{}(5)
-  (4) edge[dashed] node[above]{}(1)
-  (5) edge[dashed] node[above]{}(2);
-\end{tikzpicture}
-\end{wrapfigure}
-
-An example can be constructed by perturbing the configuration on the plane as on the diagram ---
-if the diameter of diagram is 1, 
-then increasing the distances between the pairs of points connected by dashed lines by $\eps=10^{-9}$ and decreasing  the distances between the pairs of points connected by sold lines by $\delta=10^{-6}$ does the job.
-The obtained metric 6-point metric space satisfies the matrix inequality with center at each point, but does not satisfy the tree comparison with the pole at the central point.
-
 
 \parbf{On graph comparison.}
 Analogously to the tree comparison one can define \emph{graph comparison} for any graph by stating that there is a model configuration in $\HH$ such that 
@@ -199,14 +156,13 @@ For example, the $(2{\cdot}n+2)$-comparison (which holds in $\CAT[0]$ length spa
 
 
 \parbf{Finite subsets of Alexandrov spaces.}
-The following problem discussed in \cite[7.1]{AKP} was one of the original motivations to study the tree comparison.
+The following problem discussed in \cite[7.1]{AKP} was one of the original motivations to study the tree comparison:
+\emph{Which finite metric spaces admit isometric embeddings into some Alexandrov spaces with nonnegative curvature.}
 
-\begin{thm}{Problem}
-Which finite metric spaces admit isometric embeddings into some Alexandrov spaces with nonnegative curvature.
-\end{thm}
 
-The problem is still open.
+This problem is still open (as well as its analog for $\CAT(0)$ spaces).
 According to \cite[4.1]{AKP}, the $(n-1)$-tree comparison provides a necessary condition for the problem $n$-point metric spaces.
+An other well known necessary condition, the so called \emph{matrix inequality} turns out to be weaker than $(n-1)$-tree comparison; see the discussion below.
 This condition is sufficient for the 4-point metric spaces.
 It might be still sufficient for 5-point metric spaces,
 but not for 6-point metric spaces.
@@ -260,16 +216,16 @@ We expect that these conditions are sufficient
 
 Here an other candidate for a sufficient condition.
 
-\begin{thm}{Question}
+\begin{thm}{Question}\label{quest:all-tree}
 Assume $F$ is a finite metric space that satisfies all tree comparisons.
 Is it true that $F$ is isometric to a subset of an Alexandrov space with nonnegative curvature?
 \end{thm}
 
 Note that even for finite metric space the all tree comparison has to be checked for an infinite set of trees since one point of the space may be used as a label for several vertexes in the tree.
 
-There is a chance that for 5-point and 6-point metric spaces, this condition is also necessary. 
-Since there are nonnegatively curved Riemannian manifolds that are not cost-convex, 
-Theorem~\ref{T=>CTIL:CTIL} implies that this condition can not be necessary for 7-point metric spaces.
+There is a chance that for 5-point and 6-point metric spaces, the condition in Question~\ref{quest:all-tree} is also necessary. 
+However, since there are nonnegatively curved Riemannian manifolds that do not satisfy 4(1)-tree comparison, 
+Theorem~\ref{thm:convexity} implies that this condition can not be necessary for 7-point metric spaces.
 
 \medskip
 
@@ -281,16 +237,65 @@ Assume $X$ is a metric space satisfying all tree comparisons.
 Is it always possible to construct an isometric group action with closed orbits on the Hilbert space $G\acts \HH$ such that $X$ is isometric to a subset in $\HH/G$?
 \end{thm}
 
-\parbf{On tree comparisons for length spaces.}
+
+\parbf{On matrix inequality.}
+The comparison for monopolar trees has an algebraic corollary which was used Urs Lang and Viktor Schroeder in \cite{LS}, a similar inequality was used by Karl-Theodor  Sturm  in \cite{sturm}. 
+
+Namely, given a point array $p,x_1,\dots,x_n$ in a metric space $X$ consider the $n{\times}n$-matrix $M$ with the components 
+\[m_{i,j}=\tfrac12\cdot(|x_i-p|^2+|x_j-p|^2-|x_i-x_j|^2).\]
+If the tree comparison for $p/x_1,\dots,x_n$ holds, then 
+\[\bm{s}\cdot M\cdot \bm{s}^\top\ge 0\eqlbl{eq:sMs}\]
+for any vector $\bm{s}=(s_1,\dots,s_n)$ with nonnegative components.
+
+The converse does not hold; that is, for some point array $p,x_1,\dots,x_n$ in a metric space the inequality \ref{eq:sMs} might hold, while the tree comparison for $p/x_1x_2x_3x_4x_5$ does not.
+(We do not know an explicit way to describe tree comparisons using a system of inequalities.)
+
+\begin{wrapfigure}{r}{22 mm}
+\vskip-0mm
+\begin{tikzpicture}[scale=1,
+  thick,main node/.style={circle,draw,font=\sffamily\bfseries,minimum size=3mm}, ]
+
+    \node[main node] (0) at (0,0){};
+     \node[main node] (1) at (.6,-.8) {};
+     \node[main node] (2) at (.9,.3){};
+     \node[main node] (3) at (0,1) {};
+  \node[main node] (4) at (-.9,.3) {};
+  \node[main node] (5) at (-.6,-.8) {};
+
+  \path[every node/.style={font=\sffamily\small}]
+  (1) edge node[above]{}(2)
+  (2) edge node[above]{}(3)
+  (3) edge node[above]{}(4)
+  (4) edge node[above]{}(5)
+  (5) edge node[above]{}(1)
+  (1) edge[dashed] node[above]{}(3)
+  (2) edge[dashed] node[above]{}(4)
+  (3) edge[dashed] node[above]{}(5)
+  (4) edge[dashed] node[above]{}(1)
+  (5) edge[dashed] node[above]{}(2);
+\end{tikzpicture}
+\end{wrapfigure}
+
+An example can be constructed by perturbing the configuration on the plane as on the diagram ---
+if the diameter of diagram is 1, 
+then increasing the distances between the pairs of points connected by dashed lines by $\eps=10^{-9}$ and decreasing  the distances between the pairs of points connected by sold lines by $\delta=10^{-6}$ does the job.
+The obtained metric 6-point metric space satisfies the matrix inequality with center at each point, but does not satisfy the tree comparison with the pole at the central point.
+
+Many necessary conditions on finite subsets of nonnegatively curved Alexandrov spaces are known;
+in addition to the comparisons discussed above, 
+let us mention authors results in \cite{lebedeva-petrunin} and \cite{petrunin}
+and the Markov type inequality proved by Shin-ichi Ohta in \cite{ohta};
+see also the survey by Assaf Naor \cite{naor} on the Ribe program.
+
+\parbf{On tree comparisons in length spaces.}
 Note that if a tree $T$ is not a path, then it contains a tripod as subtree.
 Therefore $T$-tree comparison implies Alexandrov comparison, in particular any complete length-metric space satisfying $T$-tree comparison is a nonnegatively curved Alexandrov space.
 
-It is straightforward to generalize Theorem~\ref{thm:3(1)+2(2)} to  Alexandrov spaces; that is \emph{any nonnegatively curved Alexandrov space satisfies 3(1) or 2(2)-tree comparison}.
+It is straightforward to generalize Theorem~\ref{thm:3(1)+2(2)} to  Alexandrov spaces; that is, \emph{a complete length space $L$ satisfies  3(1) or 2(2)-tree comparison if and only if $L$ is a nonnegatively curved Alexandrov space}.
 We expect that Theorem~\ref{thm:convexity} (after appropriate reformulation) can be also generalized to Alexandrov spaces --- the only obstacle we see is the proof of Proposition~\ref{prop:CTIL}.
 Such a generalization would characterize length-metric spaces satisfying most of 4(1)-tree comparison (as well as most of bipolar tree comparisons).
 
 The Alexandrov spaces which satisfy 4(1) seem to have properties which remind the quotients of Riemannian manifolds by isometric group actions. 
 For example we expect that if a finite dimensional Alexandrov space $A$ satisfies 4(1)-tree, then the tangent space at any point $p\in A$ is a product of a Euclidean space $\mathbb{E}^k$ and a cone $K$ over space $\Sigma$ of diameter at most $\tfrac\pi2$ (the space $\Sigma$ might be empty, in this case $K$ is a one-point space).
 In particular it implies that the set of all metric singularities of $A$ is an extremal subset, see \cite{perelman-petrunin}.
-
-For big branchy trees, the properties of spaces with the tree comparison should remind more the quotients of Hilbert space. 
+(For big branchy trees, the properties of spaces with the tree comparison should remind the quotients of Hilbert space even more.)
