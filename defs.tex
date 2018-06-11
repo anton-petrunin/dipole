@@ -180,7 +180,7 @@ The part (\textit{\ref{thm:convexity:convexity}}) is proved in Section~\ref{conv
 Note that theorems \ref{thm:3(1)+2(2)} and \ref{thm:convexity} do not provide descriptions of manifolds only for the following two bipolar trees trees: 3(2) and 3(3).
 
 A Riemannian manifold is called MTW if inequality \ref{eq:MTW} holds for $X\perp Y$.
-The condition (\textit{\ref{thm:convexity:MTW}}) in the theorem is stronger since it does not require orthogonality.\footnote{Likely the condition (\textit{\ref{thm:convexity:MTW}}) is strictly stronger, but it is not known; also it is not known if MTW implies CTIL \cite{MTW+CTIL+}.}
+The condition (\textit{\ref{thm:convexity:MTW}}) in the theorem is stronger since it does not require orthogonality.
 
 The MTW condition was introduced by Xi-Nan Ma, Neil Trudinger and Xu-Jia Wang in \cite{MTW} in connection to the so called \emph{transport continuity property}, briefly TCP.
 An important step in the understanding MTW was made by Grégoire Loeper in~\cite{loeper}.
@@ -192,11 +192,24 @@ MTW turns out to be a necessary condition for TCP.
 
 In \cite{FRV-Nec+Suf}, Alessio Figalli, Ludovic Rifford and C\'edric Villani showed that
 CTIL and a strict version of MTW provides a sufficient condition for TCP.
-From the proof of Theorem \ref{thm:convexity} it is evident that spherical 4(1)-tree comparison implies the strict version of MTW; in particular, we get the following:
+From the proof of Theorem~\ref{thm:convexity} it is evident that spherical 4(1)-tree comparison implies the strict version of MTW; in particular, we get the following:
 
 \begin{thm}{Corollary}
 Any Riemannian manifold satisfying spherical 4(1)-tree comparison is TCP.
 \end{thm}
+
+It is straightforward to modify the proof of Theorem~\ref{thm:convexity} to get the following description of the MTW condition.
+This proposition could be considered as an more intuitive version of Proposition 2.6 in \cite{MTW+CTIL} from which it follows easily.
+
+\begin{thm}{Proposition}\label{prop:convexity}
+A complete CTIL Riemannian manifold $M$ is MTW if and only if 
+for any $p,q\in M$, the function $h\: \TIL_p\to \RR$ defined by
+\[h(v)=\tfrac12\cdot(|v|^2-\dist_q^2\circ\exp_p(v))\] 
+has convex sublevel sets; that is, the set
+\[\set{v\in\TIL_p}{h(v)< C}\]
+is convex for any $C\in\RR$.
+\end{thm}
+
 
 \parbf{All tree comparisons.}
 Recall that a map $f\:W\to X$ between metric spaces is called \emph{submetry} if for any $w\in W$ and $r\ge 0$, we have 
