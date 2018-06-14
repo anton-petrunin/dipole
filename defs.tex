@@ -191,22 +191,26 @@ is a genuine (continuous) solution.
 MTW turns out to be a necessary condition for TCP.
 
 In \cite{FRV-Nec+Suf}, Alessio Figalli, Ludovic Rifford and C\'edric Villani showed that
-CTIL and a strict version of MTW provides a sufficient condition for TCP.
+a strict version of CTIL and MTW provide a sufficient condition for TCP.
 From the proof of Theorem~\ref{thm:convexity} it is evident that spherical 4(1)-tree comparison implies the strict version of MTW; in particular, we get the following:
 
 \begin{thm}{Corollary}
 Any Riemannian manifold satisfying spherical 4(1)-tree comparison is TCP.
 \end{thm}
 
-It is straightforward to modify the proof of Theorem~\ref{thm:convexity} to get the following description of the MTW condition.
-This proposition could be considered as an more intuitive version of Proposition 2.6 in \cite{MTW+CTIL} from which it follows easily.
+Note that $s''=1$ for the function $s\:v\mapsto\tfrac12\cdot(|v|^2$ defined on $\TIL_p$.
+Therefore the condition $f''\le 1$ in (\textit{\ref{thm:convexity:convexity}}) is equivalent to 
+concavity of the function $h=f-s$.
+In the following theorem we give a description of the MTW condition via convexity of suplevel set of $h$.
+Its proof is a straightforward modification the proof of Theorem~\ref{thm:convexity};
+this proposition could be considered as an more intuitive version of Proposition 2.6 in \cite{MTW+CTIL} from which it follows easily by an iteration.
 
 \begin{thm}{Proposition}\label{prop:convexity}
 A complete CTIL Riemannian manifold $M$ is MTW if and only if 
 for any $p,q\in M$, the function $h\: \TIL_p\to \RR$ defined by
-\[h(v)=\tfrac12\cdot(|v|^2-\dist_q^2\circ\exp_p(v))\] 
-has convex sublevel sets; that is, the set
-\[\set{v\in\TIL_p}{h(v)< C}\]
+\[h(v)=\tfrac12\cdot(\dist_q^2\circ\exp_p(v)-|v|^2)\] 
+has convex suplevel sets; that is, the set
+\[\set{v\in\TIL_p}{h(v)> C}\]
 is convex for any $C\in\RR$.
 \end{thm}
 
