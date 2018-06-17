@@ -172,24 +172,27 @@ at $t=s=0$.
 \end{enumerate}
 
 
-The converse also holds; if one of the conditions holds in a CTIL Riemannian manifold $M$, then $M$ satisfies all bipolar tree comparisons; that is, the $m(n)$-tree comparison holds for any $m$ and $n$.
+The converse also holds; 
+moreover, if one of the conditions holds in a CTIL Riemannian manifold $M$ that satisfies one of the conditions (\ref{thm:convexity:convexity}) or (\ref{thm:convexity:MTW}), then $M$ satisfies all bipolar tree comparisons; that is, the $m(n)$-tree comparison holds for any $m$ and $n$.
 \end{thm}
 
 The part (\textit{\ref{thm:convexity:convexity}}) is proved in Section~\ref{convexity} and the equivalence of the conditions (\textit{\ref{thm:convexity:convexity}}) and (\textit{\ref{thm:convexity:MTW}}) is proved in Section~\ref{MTW+}.
 
-Note that theorems \ref{thm:3(1)+2(2)} and \ref{thm:convexity} do not provide descriptions of manifolds only for the following two bipolar trees trees: 3(2) and 3(3).
+Note that theorems \ref{thm:3(1)+2(2)} and \ref{thm:convexity} do not provide descriptions of manifolds only for the following two bipolar trees: 3(2) and 3(3).
 
 A Riemannian manifold is called MTW if inequality \ref{eq:MTW} holds for $X\perp Y$.
 The condition (\textit{\ref{thm:convexity:MTW}}) in the theorem is stronger since it does not require orthogonality.
+(The condition (\textit{\ref{thm:convexity:MTW}}) in Theorem~\ref{thm:convexity} is named MTW$^{\not\perp}$ in \cite{FRV-Nec+Suf}.)
 
-The MTW condition was introduced by Xi-Nan Ma, Neil Trudinger and Xu-Jia Wang in \cite{MTW} in connection to the so called \emph{transport continuity property}, briefly TCP.
-An important step in the understanding MTW was made by Grégoire Loeper in~\cite{loeper}.
+The MTW condition is named for Xi-Nan Ma, Neil Trudinger and Xu-Jia Wang who introduced it in \cite{MTW};
+an important step in the understanding MTW was made by Grégoire Loeper in~\cite{loeper}.
+Below we describe a connection between MTW and the so called \emph{transport continuity property}, briefly TCP.
 
 A compact Riemannian manifold $M$ is called TCP 
 if for any two regular measures with density functions bounded away from zero and infinity the generalized solution of Monge--Amp\`{e}re equation provided by optimal transport 
 is a genuine (continuous) solution.
-MTW turns out to be a necessary condition for TCP.
 
+MTW turns out to be a necessary condition for TCP.
 In \cite{FRV-Nec+Suf}, Alessio Figalli, Ludovic Rifford and C\'edric Villani showed that
 a strict version of CTIL and MTW provide a sufficient condition for TCP.
 From the proof of Theorem~\ref{thm:convexity} it is evident that spherical 4(1)-tree comparison implies the strict version of MTW; in particular, we get the following:
@@ -198,12 +201,13 @@ From the proof of Theorem~\ref{thm:convexity} it is evident that spherical 4(1)-
 Any Riemannian manifold satisfying spherical 4(1)-tree comparison is TCP.
 \end{thm}
 
-Note that $s''=1$ for the function $s\:v\mapsto\tfrac12\cdot(|v|^2$ defined on $\TIL_p$.
+Note that $s''=1$ for the function $s\:v\mapsto\tfrac12\cdot|v|^2$ defined on $\TIL_p$.
 Therefore the condition $f''\le 1$ in (\textit{\ref{thm:convexity:convexity}}) is equivalent to 
-concavity of the function $h=f-s$.
-In the following theorem we give a description of the MTW condition via convexity of suplevel set of $h$.
-Its proof is a straightforward modification the proof of Theorem~\ref{thm:convexity};
-this proposition could be considered as an more intuitive version of Proposition 2.6 in \cite{MTW+CTIL} from which it follows easily by an iteration.
+concavity of the function $h\zz=f-s$.
+The following proposition gives a description of the MTW condition via convexity of suplevel set of $h$.
+Essentially, this proposition is just a reformulation of a synthetic description of MTW given by C\'edric Villani \cite[Proposition 2.6]{MTW+CTIL};
+our formulation follows by recursive application of Villani's description and the other way is straightforward. 
+The proof can be also obtained by a straightforward modification of the proof of Theorem~\ref{thm:convexity}.
 
 \begin{thm}{Proposition}\label{prop:convexity}
 A complete CTIL Riemannian manifold $M$ is MTW if and only if 
@@ -247,7 +251,7 @@ Suppose $G$ is a compact Lie group with bi-invariant metric, so the action $G\ti
 Then for any closed subgroup $H<G\times G$, the bi-quotient space $G/\!\!/H$ satisfies all tree comparisons
 \end{thm}
 
-The theorem and propsition are proved in Section~\ref{sec:all-tree}.
+The theorem and proposition are proved in Section~\ref{sec:all-tree}.
 
 From proposition above and Theorem~\ref{thm:convexity}, it follows that the bi-quotient space $G/\!\!/H$ is CTIL and MTW.
 This makes it closely related to the result of Young-Heon Kim and Robert McCann \cite{kim-mccann}.

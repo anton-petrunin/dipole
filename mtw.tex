@@ -56,9 +56,9 @@ as
  \[\dcost{X\tilde X_p}{Y\tilde Y_p}{p}{q}\le 0.\]}
 \end{itemize}
 
-The left hand side of the last inequality, multiplied by $(-\tfrac32)$ is the so called $\mathfrak{S}$-curvature; it is denoted by $\mathfrak{S}(X,Y)$, see \cite[equation 12.21]{villani};
-if $p=q$ then $\mathfrak{S}(X,Y)$ coincides with the curvature $\langle\Rm(X,Y)Y,X\rangle$, see \cite[12.30]{villani}.
-In particular, if the condition (\textit{\ref{thm:convexity:MTW}}) holds then the manifold has nonnegative sectional curvature. 
+The left hand side of the last inequality, multiplied by $(-\tfrac32)$ is called \emph{MTW-curvature} or \emph{cost-curvature}; it is denoted by $\mathfrak{S}(X,Y)$, see \cite[equation 12.21]{villani};
+if $p=q$, then $\mathfrak{S}(X,Y)$ coincides with the curvature $\langle\Rm(X,Y)Y,X\rangle$, see \cite[12.30]{villani}.
+In particular, if the condition (\textit{\ref{thm:convexity:MTW}}) holds, then the manifold has nonnegative sectional curvature. 
 
 
 Assume $q=\exp_pW$ for some $W\in\TIL_p$. 
@@ -151,18 +151,17 @@ therefore
 \[\dcost{}{Y\tilde Y_{q}}{p_1}{q}-\dcost{}{Y\tilde Y_{q}}{p_0}{q}-\dcost{X}{Y\tilde Y_{q}}{p_0}{q}=\int_0^1 \dcost{\tilde X_{q}\tilde X_{q}}{Y\tilde Y_{q}}{p_t}{q}\cdot dt.\]
 
 By (\textit{\ref{MTW-plus-convexity:MTW}}), the term under the integral is nonpositive; therefore
-\[\begin{matrix}{{}}\\{Y\tilde Y_{q}}
-\end{matrix}
+\[
+\dcost{{}}{Y\tilde Y_{q}}{}{}
 \left(\dcost{}{}{p_1}{q}-\dcost{}{}{p_0}{q}\right)
 \le
 \dcost{X}{Y\tilde Y_{q}}{p_0}{q}.\]
 By \ref{eq:nabla}, we can rewrite the last inequality the following way:
-\[\begin{matrix}{{}}\\{Y\tilde Y_{p_0}}
-\end{matrix}
+\[
+\dcost{{}}{Y\tilde Y_{p_0}}{}{}
 \left(\dcost{}{}{p_1}{q}-\dcost{}{}{p_0}{q}\right)
 \le
-\begin{matrix}{{}}\\{\nabla_Y \tilde Y_{p_0}}
-\end{matrix}
+\dcost{{}}{\nabla_Y \tilde Y_{p_0}}{}{}
 \left(\dcost{}{}{p_1}{q}
 -
 \dcost{}{}{p_0}{q}\right)
@@ -172,8 +171,7 @@ By \ref{eq:nabla}, we can rewrite the last inequality the following way:
 
 Applying \ref{derX}, we get that
 \begin{align*}
- \begin{matrix}{{}}\\{\nabla_Y \tilde Y_{p_0}}
-\end{matrix}
+\dcost{{}}{\nabla_Y \tilde Y_{p_0}}{}{}
 \left(\dcost{}{}{p_1}{q}
 -
 \dcost{}{}{p_0}{q}\right)

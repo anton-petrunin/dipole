@@ -67,7 +67,14 @@
 \def\gexp{\text{\rm gexp}}
 \def\vol{\text{\rm vol}}
 \newcommand*{\cost}[2]{\left[\begin{smallmatrix}#1\\ #2\end{smallmatrix}\right]}
-\newcommand*{\dcost}[4]{\begin{array}{r}#1\\ #2\end{array}\hskip-.5em\left[\begin{matrix}#3\\ #4\end{matrix}\right]}
+%\newcommand*{\dcost}[4]{\begin{array}{r}#1\\ #2\end{array}\hskip-.5em\left[\begin{matrix}#3\\ #4\end{matrix}\right]}
+
+\newcommand*{\dcost}[4]%
+{\ifthenelse{\equal{#1}{}\and\equal{#2}{}}%
+{\left[\begin{matrix}#3\\ #4\end{matrix}\right]}%
+{\ifthenelse{\equal{#3}{}\and\equal{#4}{}}%
+{\begin{array}{r}#1\\ #2\end{array}\hskip-.5em}
+{\begin{array}{r}#1\\ #2\end{array}\hskip-.5em\left[\begin{matrix}#3\\ #4\end{matrix}\right]}}}
 
 \def\l{\left}
 \def\r{\right}
