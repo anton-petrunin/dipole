@@ -13,8 +13,8 @@ for any $i$ and $j$ and the equality holds if $a_i$ and $a_j$ are adjacent in $T
 We say that a metric space $X$ satisfies the \emph{$T$-tree comparison} if 
 every $n$-points array in $X$ satisfies the $T$-tree comparison.
 
-Instead of the Hilbert space $\HH$ we take use infinite dimensional sphere or infinite dimensional hyperbolic space.
-In this case we will it defines \emph{spherical} and \emph{hyperbolic} tree comparisons.
+Instead of the Hilbert space $\HH$, we may use an infinite dimensional sphere or an infinite dimensional hyperbolic space.
+In this case it defines \emph{spherical} and \emph{hyperbolic} tree comparisons.
 
 \begin{wrapfigure}{r}{27 mm}
 \vskip-8mm
@@ -53,7 +53,7 @@ Using the described notation, we could say that a metric space \emph{satisfies t
 We could also say \emph{``applying the tree comparison for $p/xy(q/vw)$ ...''} meaning that we apply the comparison for these 6 points in a metric space labeled as on the diagram.
 
 \parbf{Monopolar trees.}
-A vertex of a tree of degree at least two will be called \emph{pole}.
+A vertex of a tree of degree at least two will be called a \emph{pole}.
 
 \begin{wrapfigure}{r}{21 mm}
 \begin{tikzpicture}[scale=1,
@@ -71,7 +71,7 @@ A vertex of a tree of degree at least two will be called \emph{pole}.
 \end{tikzpicture}
 \end{wrapfigure}
 
-Recall that \emph{Alexandrov space} with nonnegative curvature is defined as complete length space with \emph{nonnegative curvature in the sense of Alexandrov};
+Recall that \emph{Alexandrov space} with nonnegative curvature is defined as a complete length space with \emph{nonnegative curvature in the sense of Alexandrov};
 the latter is equivalent to the 3-tree comparison; that is, the comparison for the tripod-tree on the diagram. 
 
 Using the introduced notation, the theorem on ($n$+1)-point comparison in \cite{AKP} can be restated the following way: \emph{If a complete length-metric space satisfies $3$-tree comparison, then it also satisfies $n$-tree comparison for every positive integer~$n$; in other words it satisfies all monopolar tree comparisons.}
@@ -147,7 +147,7 @@ A complete Riemannian manifold has nonnegative sectional curvature if and only i
 \end{wrapfigure}
 
 The following theorem gives a description of Riemannian manifolds satisfying 4(1)-tree comparison (the 4(1)-tree is shown on the diagram).
-In order to formulate it we need to define CTIL Riemannian manifolds (CTIL stands for \emph{convexity of tangent injectivity locus}).
+Let us first define CTIL Riemannian manifolds (CTIL stands for \emph{convexity of tangent injectivity locus}).
 
 Let $M$ be a Riemannian manifold and $p\in M$.
 The subset of tangent vectors $v\in\T_p$ such that there is a minimizing geodesic $[p\,q]$ in the direction of $v$ with length $|v|$ will be denoted as $\overline{\TIL}_p$.
@@ -160,7 +160,7 @@ $f''\le \lambda$ if for any unit-speed geodesic $\gamma$ the function
 is a concave real-to-real function.
 (The same definition can be applied in arbitrary metric space.)
 
-\begin{thm}{Theorem}\label{thm:convexity}
+\begin{thm}{Main theorem}\label{thm:convexity}
 If a complete Riemannian manifold $M$ satisfies $4(1)$-tree comparison, then it is CTIL and the following two equivalent condition hold:
 \begin{enumerate}[(i)]
 \item\label{thm:convexity:convexity} For any $p,q\in M$, we have $f''\le 1$, where $f$ is the function $f\: \TIL_p\to \RR$ defined by
@@ -201,7 +201,7 @@ From the proof of Theorem~\ref{thm:convexity} it is evident that spherical 4(1)-
 Any Riemannian manifold satisfying spherical 4(1)-tree comparison is TCP.
 \end{thm}
 
-Note that $s''=1$ for the function $s\:v\mapsto\tfrac12\cdot|v|^2$ defined on $\TIL_p$.
+Note that the identity $s''\equiv1$ holds for the function $s\:v\mapsto\tfrac12\cdot|v|^2$ defined on $\TIL_p$.
 Therefore the condition $f''\le 1$ in (\textit{\ref{thm:convexity:convexity}}) is equivalent to 
 concavity of the function $h\zz=f-s$.
 The following proposition gives a description of the MTW condition via convexity of suplevel set of $h$.
@@ -252,6 +252,6 @@ Then for any closed subgroup $H<G\times G$, the bi-quotient space $G/\!\!/H$ sat
 
 The theorem and proposition are proved in Section~\ref{sec:all-tree}.
 
-From proposition above and Theorem~\ref{thm:convexity}, it follows that the bi-quotient space $G/\!\!/H$ is CTIL and MTW.
+The proposition and Theorem~\ref{thm:convexity} imply that every bi-quotient space $G/\!\!/H$ is CTIL and MTW.
 These examples seem to be new; a related source of examples is found by Young-Heon Kim and Robert McCann \cite{kim-mccann}.
 
