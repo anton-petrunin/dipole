@@ -8,7 +8,7 @@ Fix a tree $T$ with $n$ vertexes.
 Let $(a_1,\dots a_n)$ be a point array in a metric space $X$ labeled by the vertexes of $T$.
 We say that $(a_1,\dots a_n)$  satisfies the \emph{$T$-tree comparison} if there is a point array $(\~a_1,\dots, \~a_n)$ in the Hilbert space $\HH$ such that 
 \[|\~a_i-\~a_j|_\HH\ge|a_i-a_j|_X\]
-for any $i$ and $j$ and the equality holds if $a_i$ and $a_j$ are adjacent in $T$.
+for any $i$ and $j$ and equality holds if $a_i$ and $a_j$ are adjacent in $T$.
 
 We say that a metric space $X$ satisfies the \emph{$T$-tree comparison} if 
 every $n$-points array in $X$ satisfies the $T$-tree comparison.
@@ -158,10 +158,9 @@ For a function $f$ defined on an open convex set of Euclidean space we write
 $f''\le \lambda$ if for any unit-speed geodesic $\gamma$ the function
 \[t\mapsto f\circ\gamma(t)-\tfrac\lambda2\cdot t^2\]
 is a concave real-to-real function.
-(The same definition can be applied in arbitrary metric space.)
 
 \begin{thm}{Main theorem}\label{thm:convexity}
-If a complete Riemannian manifold $M$ satisfies $4(1)$-tree comparison, then it is CTIL and the following two equivalent condition hold:
+If a complete Riemannian manifold $M$ satisfies $4(1)$-tree comparison, then it is CTIL and the following two conditions hold:
 \begin{enumerate}[(i)]
 \item\label{thm:convexity:convexity} For any $p,q\in M$, we have $f''\le 1$, where $f$ is the function $f\: \TIL_p\to \RR$ defined by
 \[f(v)=\tfrac12\cdot\dist_q^2\circ\exp_p(v).\] 
@@ -172,17 +171,16 @@ at $t=s=0$.
 \end{enumerate}
 
 
-The converse also holds; 
-moreover, if one of the conditions (\ref{thm:convexity:convexity}) or (\ref{thm:convexity:MTW}) holds in a CTIL Riemannian manifold $M$, then $M$ satisfies all bipolar comparisons; that is, the $m(n)$-tree comparison holds for any $m$ and $n$.
+Moreover, if one of the conditions (\ref{thm:convexity:convexity}) or (\ref{thm:convexity:MTW}) holds in a CTIL Riemannian manifold $M$, then $M$ satisfies all bipolar comparisons; that is, the $m(n)$-tree comparison holds for any $m$ and $n$.
 \end{thm}
 
-The part (\textit{\ref{thm:convexity:convexity}}) is proved in Section~\ref{convexity} and the equivalence of the conditions (\textit{\ref{thm:convexity:convexity}}) and (\textit{\ref{thm:convexity:MTW}}) is proved in Section~\ref{MTW+}.
+The part of theorem related to the condition (\textit{\ref{thm:convexity:convexity}}) is proved in Section~\ref{convexity}.
+The equivalence of the conditions (\textit{\ref{thm:convexity:convexity}}) and (\textit{\ref{thm:convexity:MTW}}) for CTIL manifolds is proved in Section~\ref{MTW+}.
 
 Note that theorems \ref{thm:3(1)+2(2)} and \ref{thm:convexity} do not provide descriptions of manifolds only for the following two bipolar trees: 3(2) and 3(3).
 
-A Riemannian manifold is called MTW if inequality \ref{eq:MTW} holds for $X\perp Y$.
-The condition (\textit{\ref{thm:convexity:MTW}}) in the theorem is stronger since it does not require orthogonality.
-(The condition (\textit{\ref{thm:convexity:MTW}}) in Theorem~\ref{thm:convexity} is named MTW$^{\not\perp}$ in \cite{FRV-Nec+Suf}.)
+A Riemannian manifold $M$ is called MTW if inequality \ref{eq:MTW} holds for any $p\in M$ and all triples of vectors $W\in \TIL_p$, $X,Y\in \T_p$ with an additional assumption $X\perp Y$.
+The condition (\textit{\ref{thm:convexity:MTW}}) in the theorem is stronger since it does not require orthogonality; this condition is named MTW$^{\not\perp}$ in \cite{FRV-Nec+Suf}.
 
 The MTW condition is named for Xi-Nan Ma, Neil Trudinger and Xu-Jia Wang who introduced it in \cite{MTW};
 an important step in the understanding MTW was made by Grégoire Loeper in~\cite{loeper}.
@@ -193,8 +191,11 @@ if for any two regular measures with density functions bounded away from zero an
 is a genuine (continuous) solution.
 
 MTW turns out to be a necessary condition for TCP.
-In \cite{FRV-Nec+Suf}, Alessio Figalli, Ludovic Rifford and C\'edric Villani showed that
-a strict version of CTIL and MTW provide a sufficient condition for TCP.
+In \cite{FRV-Nec+Suf}, 
+Alessio Figalli, 
+Ludovic Rifford 
+and C\'edric Villani showed that
+a strict version of CTIL and MTW provides a sufficient condition for TCP.
 From the proof of Theorem~\ref{thm:convexity} it is evident that spherical 4(1)-tree comparison implies the strict version of MTW; in particular, we get the following:
 
 \begin{thm}{Corollary}
@@ -204,16 +205,16 @@ Any Riemannian manifold satisfying spherical 4(1)-tree comparison is TCP.
 Note that the identity $s''\equiv1$ holds for the function $s\:v\mapsto\tfrac12\cdot|v|^2$ defined on $\TIL_p$.
 Therefore the condition $f''\le 1$ in (\textit{\ref{thm:convexity:convexity}}) is equivalent to 
 concavity of the function $h\zz=f-s$.
-The following proposition gives a description of the MTW condition via convexity of suplevel set of $h$.
-Essentially, this proposition is just a reformulation of a synthetic description of MTW given by C\'edric Villani \cite[Proposition 2.6]{MTW+CTIL};
-our formulation follows by recursive application of Villani's description and the other way is straightforward. 
+The following proposition gives a description of the MTW condition via convexity of superlevel set of $h$.
+Essentially, this proposition is just a reformulation of a synthetic description of MTW given by C\'edric Villani \cite[Proposition 2.6]{MTW+CTIL}.
+(Our formulation can be proved by recursive application of Villani's description and Villani's description follows immideately from our fromulation.) 
 The proof can be also obtained by a straightforward modification of the proof of Theorem~\ref{thm:convexity}.
 
 \begin{thm}{Proposition}\label{prop:convexity}
 A complete CTIL Riemannian manifold $M$ is MTW if and only if 
 for any $p,q\in M$, the function $h\: \TIL_p\to \RR$ defined by
 \[h(v)=\tfrac12\cdot(\dist_q^2\circ\exp_p(v)-|v|^2)\] 
-has convex suplevel sets; that is, the set
+has convex superlevel sets; that is, the set
 \[\set{v\in\TIL_p}{h(v)> C}\]
 is convex for any $C\in\RR$.
 \end{thm}
@@ -232,7 +233,7 @@ Assume $W$ satisfies the $T$-tree comparison.
 Show that the same holds for $X$.
 \end{thm}
 
-Directly from the definition of tree comparison, it follows that Hilbert space satisfies all tree comparisons.
+Directly from the definition of tree comparison, it follows that the Hilbert space satisfies all tree comparisons.
 According to the exercise, the same holds for the target spaces of submetries defined of Hilbert space or its subsets.
 The following theorem gives a converse of the latter statement.
 

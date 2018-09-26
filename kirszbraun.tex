@@ -16,8 +16,10 @@ Then equalities hold in all the inequalities above.
 Moreover there is an distance preserving map $f\:\~K\to M$ such that $f(\~x_i)=x_i$ and $f(\~q)=p$. 
 \end{thm}
 
+We reduce the theorem to the case $M=\RR^m$ which is left as an exercise.
+
 \parit{Proof.}
-By the generalized Kirszbraun theorem, there is a short map $f\:M\to \HH$
+By the generalized Kirszbraun theorem, there is a short map\footnote{Here and further \emph{short map} is a \emph{distance nonexpanding map}.} $f\:M\to \HH$
 such that $f(x_i)=\~x_i$.
 Set  $\~p=f(p)$.
 By assumptions
@@ -27,9 +29,10 @@ Since $\~q$ lies in the interior of $K$, we have that $\~q=\~p$ and the equality
 \[|\~q-\~x_i|= |p-x_i|.\]
 holds for each $i$.
 
-Set $v_i=\log_px_i$; that is $t\mapsto \exp_pt$ for $t\in[0,1]$ is a minimizing geodesic from $p$ to $x_i$ or, equivalently, $|v_i|=|p-x_i|$ and $\exp_pv_i=x_i$.
-Recall that the gradient exponent $\gexp_p\:\T_p\to M$
-is a short map and $\gexp_p\:v_i\mapsto x_i$ for each $i$ (see \cite{AKP}).
+Set $v_i=\log_px_i$; that is $t\mapsto \exp_p(t\cdot v_i)$ for $t\in[0,1]$ is a minimizing geodesic from $p$ to $x_i$ or, equivalently, $|v_i|=|p-x_i|$ and $\exp_pv_i=x_i$.
+Recall that the gradient exponent $\gexp_p\:\T_p\to M$ is defined for any compete Riemannian manifold;
+it is is a short map if $M$ has nonnegative curvature 
+and $\gexp_p\:v_i\mapsto x_i$ for each $i$ (see \cite{AKP}).
 
 
 The composition $f\circ \gexp_p\:\T_p\to \HH$ is short

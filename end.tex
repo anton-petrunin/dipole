@@ -2,12 +2,15 @@
 
 
 \parbf{On graph comparison.}
-Analogously to the tree comparison one can define \emph{graph comparison} for any graph by stating that there is a model configuration in $\HH$ such that 
-\begin{itemize}
-\item the distance between each pair of adjacent points is at most as big 
+One can define \emph{graph comparison} for any graph by stating that there is a model configuration in $\HH$ such that 
+\begin{enumerate}[(i)]
+\item\label{ge} the distance between each pair of adjacent points is at most as big 
 and
 \item the distance between each pair of nonadjacent is at least as big.
-\end{itemize}
+\end{enumerate}
+
+Note that in the definition of tree comparison we used equalities instead of inequalities in (\ref{ge}). 
+However the new definition agrees with the old one for  trees: 
 
 \begin{thm}{Exercise}
 Show that if a graph is a tree, then the graph comparison defined above is equivalent to the tree comparison defined at the beginning of the paper.
@@ -51,7 +54,7 @@ In particular, any complete length spaces satisfying $G$-graph comparison is iso
 
 By Reshetnyak majorization theorem,
 the nonpositive curvature could be also defined using the comparison for cycle;
-for example the 6-cycle --- the first graph the following diagram.
+for example the 6-cycle --- the first graph on the following diagram.
 
 \begin{center}
 \begin{tikzpicture}[scale=1,
@@ -111,7 +114,7 @@ Unfortunately we do not have such guiding examples in nonpositive curvature --- 
 
 
 \parbf{On colored graph comparison.}
-It is also possible to use graph with $(\mp)$-colored edges and define comparison by model configuration such that the distances between vertexes adjacent by a $(-)$-edge does not get larger and by $(+)$-edge does not get smaller and no condition on the remaining pairs.
+It is also possible to use a graph with $(\mp)$-colored edges and define comparison by model configuration such that the distances between vertexes adjacent by a $(-)$-edge do not get larger and by $(+)$-edge do not get smaller and no condition on the remaining pairs.
 
 \begin{center}
 \begin{tikzpicture}[scale=1,
@@ -162,7 +165,7 @@ The following problem discussed in \cite[7.1]{AKP} was one of the original motiv
 
 
 This problem is still open (as well as its analog for $\CAT(0)$ spaces).
-The $(n-1)$-tree comparison provides a necessary condition for the problem $n$-point metric spaces, see \cite[4.1]{AKP}.
+The $(n-1)$-tree comparison provides a necessary condition for $n$-point metric spaces, see \cite[4.1]{AKP}.
 (The so called \emph{matrix inequality} turns out to be weaker; see the discussion below.)
 This condition is sufficient for the 4-point metric spaces.
 It might be still sufficient for 5-point metric spaces,
@@ -301,8 +304,8 @@ A complete length space $L$ satisfies  3(1) or 2(2)-tree comparison if and only 
 We expect that Theorem~\ref{thm:convexity} (after appropriate reformulation) can be also generalized to Alexandrov spaces --- the only obstacle we see is the proof of Proposition~\ref{prop:CTIL}.
 Such a generalization would characterize length-metric spaces satisfying most of 4(1)-tree comparison (as well as most of bipolar comparisons).
 
-The Alexandrov spaces that satisfy 4(1) remind the quotients of Riemannian manifolds by isometric group actions. 
-For example we expect that if a finite dimensional Alexandrov space $A$ satisfies 4(1)-tree, then the tangent space at any point $p\in A$ is a product of a Euclidean space $\mathbb{E}^k$ and a cone $K$ over space $\Sigma$ of diameter at most $\tfrac\pi2$ (the space $\Sigma$ might be empty, in this case $K$ is a one-point space).
+The Alexandrov spaces that satisfy 4(1)-tree comparison remind the quotients of Riemannian manifolds by isometric group actions. 
+For example we expect that if a finite dimensional Alexandrov space without boundary $A$ satisfies 4(1)-tree comparison, then the tangent space at any point $p\in A$ is a product of a Euclidean space $\mathbb{E}^k$ and a cone $K$ over space $\Sigma$ of diameter at most $\tfrac\pi2$ (the space $\Sigma$ might be empty, in this case $K$ is a one-point space).
 In particular it implies that the set of all metric singularities of $A$ is an extremal subset, see \cite{perelman-petrunin}.
 (For big branchy trees, the properties of spaces with the tree comparison should remind the quotients of Hilbert space even more.)
 

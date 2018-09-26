@@ -34,14 +34,14 @@ A geodesic tree  $\~T=[\~p_1/\~x_1\dots \~x_k(\~p_2/\~x_{k+1}\dots \~x_n)]$ in t
 if 
 \begin{enumerate}[(i)]
 \item $|\~p_1-\~p_2|_\HH= |p_1-p_2|_M$,
-\item $|\~p_i-\~x_j|_\HH= |p_i-p_j|_M$ for any edge $[p_i\,x_j]$ in $T$ and
+\item $|\~p_i-\~x_j|_\HH= |p_i-x_j|_M$ for any edge $[p_i\,x_j]$ in $T$ and
 \item $\measuredangle[\~p_j\,^{\~x_k}_{\~p_i}]_{\HH}=\measuredangle[\~p_j\,^{\~x_k}_{\~p_i}]_M$
 for any hinge  $[p_j\,^{x_k}_{\~p_i}]$ in $T$.
 \end{enumerate}
 
 
 \begin{thm}{Rigidity lemma}\label{lem:rigidity}
-Let $M$ be a complete Riemannian manifold with nonnegative sectional curvature and $T=[p_1/x_1\dots x_k(p_2/x_{k+1}\dots x_n)]$ be geodesic tree in $M$.
+Let $M$ be a complete Riemannian manifold with nonnegative sectional curvature and $T=[p_1/x_1\dots x_k(p_2/x_{k+1}\dots x_n)]$ be a geodesic tree in $M$.
 Suppose  $\~T\zz=[\~p_1/\~x_1\dots \~x_k(\~p_2/\~x_{k+1}\dots \~x_n)]$ is a pivotal tree for  $T$.
 Assume that
 \[|\~x_i-\~x_j|_\HH\le |x_i-x_j|_M 
@@ -55,7 +55,7 @@ Let $\~z$ be a point on the line $(\~p_1,\~p_2)$.
 Assume that $\~z$ lies on the half-line from $\~p_1$ to $\~p_2$;
 otherwise swap the labels of $\~p_1$ and $\~p_2$.
 
-Denote by $\zeta$ the direction of geodesic $[p_1\,p_2]$ at $p_1$. 
+Denote by $\zeta$ the direction of the geodesic $[p_1\,p_2]$ at $p_1$. 
 Set 
 \[z=\exp_{p_1}(|\~z-\~p_1|\cdot \zeta).\] 
 By comparison, we have
@@ -77,14 +77,14 @@ It follows that the configuration $\~p_1$, $\~p_2$, $\~x_1,\dots,\~x_n\in \HH$ s
 \eqlbl{eq:tree-comparison}\]
 for all pairs $(i,j)$.
 
-Denote by $\~\xi_i$ the direction of the half-plane containing $\~x_i$ with the boundary line $(\~p_1, \~p_2)$.
-The direction $\~\xi_i$ lies in the unit sphere normal to the line $(\~p_1, \~p_2)$;
-we may assume that the dimension of the sphere is $n-1$.
+Let $\Sigma$ be the set of unit vectors normal to the line $(\~p_1, \~p_2)$.
+Denote by $\~\xi_i\in \Sigma$ the direction in the half-plane containing $\~x_i$ with the boundary line $(\~p_1, \~p_2)$.
 
 Note that up to a motion of $\HH$, a pivotal configuration is completely described by the angles $\measuredangle(\~\xi_i,\~\xi_j)$.
 Moreover, the distance $|\~x_i-\~x_j|_\HH$ is determined by $\measuredangle(\~\xi_i,\~\xi_j)$ and the function $\measuredangle(\~\xi_i,\~\xi_j)\mapsto |\~x_i-\~x_j|_\HH$ is nondecreasing.
 
 Let us denote by $\alpha_{i,j}$ the minimal angle $\measuredangle(\~\xi_i,\~\xi_j)$ in a pivotal configuration such that \ref{eq:tree-comparison} holds.
+According to the corollary below $\alpha_{i,j}$ is well defined. 
 Note that the inequality \ref{eq:tree-comparison} is equivalent to
 \[\measuredangle(\xi_i,\xi_j)\ge \alpha_{i,j}.\]
 
@@ -161,7 +161,7 @@ By \ref{sum>pi}, the convex hull $\~K$ of $\{\~x_1,\~x_2,\~x_3\}$ intersects the
 It remains to apply the rigidity lemma.
 \qeds
 
-Note that (\textit{\ref{cor:|x-x|:a}}) and (\textit{\ref{cor:|x-x|:b}}) imply that nonnegatively curved Alexandrov space satisfies 1(1)-tree and 2(1)-tree comparisons. 
+Note that (\textit{\ref{cor:|x-x|:a}}) and (\textit{\ref{cor:|x-x|:b}}) imply that any nonnegatively curved complete Riemannian manifold satisfies 1(1)-tree and 2(1)-tree comparisons. 
 However, 1(1)-tree comparison follows directly from the triangle inequality.
 
 
@@ -235,15 +235,10 @@ Consider a configuration of 4 points $\~\xi_1,\~\xi_2,\~\xi_3,\~\xi_4$ in $\SS^3
 
 Consider the geodesic graph $\Gamma$ with 4 vertexes $\~\xi_1,\~\xi_2,\~\xi_3,\~\xi_4$ in $\SS^3$, where 
 $\~\xi_i$ is adjacent to $\~\xi_j$ if $\measuredangle(\~\xi_i,\~\xi_j)<\alpha_{i,j}$.
-If the comparison does not hold, then $\Gamma$ is not empty.
-
-Note that a vertex of $\Gamma$ can not lie in an open hemisphere with all its adjacent vertexes. 
-Indeed, if it would be the case, then we could move this vertex increasing the distances to all its adjacent vertexes.
-Along this move the energy decreases --- a contradiction.
+If the comparison does not hold, then $\Gamma$ is not a null graph; that is, $\Gamma$ has some edges.
 
 Note that by Corollary \ref{cor:|x-x|}, degree of any vertex is at least 2.
-Indeed existence of a vertex of degree 1 contradicts \ref{cor:|x-x|}\textit{\ref{cor:|x-x|:a}} and existence of a vertex of degree 0 contradicts \ref{cor:|x-x|}\textit{\ref{cor:|x-x|:b}}.
-
+Indeed existence of a vertex of degree 1 contradicts \ref{cor:|x-x|}\textit{\ref{cor:|x-x|:a}} and existence of a vertex of degree 0 contradicts \ref{cor:|x-x|}\textit{\ref{cor:|x-x|:b}}. 
 Therefore the graph $\Gamma$ is isomorphic to one the following three graphs.
 
 \begin{center}
@@ -296,6 +291,11 @@ Therefore the graph $\Gamma$ is isomorphic to one the following three graphs.
 \end{tikzpicture}
 \end{center}
 
+Note that any vertex of $\Gamma$ can not lie in an open hemisphere with all its adjacent vertexes. 
+Indeed, if it would be the case, then we could move this vertex increasing the distances to all its adjacent vertexes.
+The latter can be done if the sphere has dimension at least 3 and we can assume it.
+Along this move the energy decreases --- a contradiction.
+
 The 6-edge case (that is, the complete graph with 4 vertexes) can not appear by the rigidity lemma (see \ref{lem:rigidity}).
 
 To do the remaining two cases, note that since the energy is minimal, the angle between the edges at every vertex of degree 2 of $\Gamma$ has to be $\pi$. 
@@ -307,5 +307,6 @@ The latter contradicts Corollary \ref{cor:|x-x|}\textit{\ref{cor:|x-x|:b}}.
 
 For the 4-edge graph (that is, for 4-cycle)
 by the same observation we have 4 points lie on the equator; 
-moving the even pair to the north pole and odd pair to the south pole will decrease the energy, a contradiction.
+moving one diagonal pair to the north pole 
+and the other diagonal pair to the south pole will decrease the energy, a contradiction.
 \qeds
