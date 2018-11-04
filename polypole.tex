@@ -2,7 +2,7 @@
 
 
 \parit{Proof of Theorem~\ref{thm:hilbert-quotient}.}
-The ``if'' part is left as an exercise;
+The ``if'' part follows from Exercise~\ref{ex:quotient};
 let us prove the ``only if'' part.
 
 Fix a point array $a_1,\dots, a_n$ in $X$.
@@ -28,10 +28,11 @@ Since $X$ is separable, it has a countable everywhere dense set $\{a_1,a_2,\dots
 Applying the statement above for $X_n=\{a_1,\dots a_n\}$, we get 
 a submetry from $Y_n=f_n(\hat V_n)\subset \HH$ to $X_n$.
 
-It remains to pass to the ulralimit $Y$ of the subspaces $Y_n$.
-Clearly $Y$ admits an isometric embedding into $\HH$ 
-and it admits submetry on $Y\to X$.
-Hence the statement follows.
+Let $Y$ and $W$ be the ultra-limits of subspaces $Y_n$ and spaces $X_n$ respectfully. 
+Clearly $Y$ admits an isometric embedding into a Hilbert space $\HH$ 
+and it admits submetry $\phi\:Y\zz\to W$.
+The space $X$ can be considered as a subspace of $W$.
+Therefore the restriction of $\phi$ to $\phi^{-1}(X)$ is a required submetry.
 \qeds
 
 
@@ -50,8 +51,10 @@ where $\beta_i\in G$ and $(\beta_0,\beta_n)\in H<G\times G$.
 
 Denote by $\rho_n$ the product metric on $G^n$ rescaled with factor $\sqrt{n}$.
 Note that the quotient $(G^n,\rho_n)/(H\times G^{n-1})$ is isometric to $G/\!\!/H=(G,\rho_1)/\!\!/H$.
+Let $\phi_n\:(G^n,\rho_n)\to G/\!\!/H$ be the corresponding quotient map; 
+clearly $\phi_n$ is a submetry. 
 
 As $n\to\infty$ the curvature of $(G^n,\rho_n)$ converges to zero and its injectivity radius goes to infinity.
-Therefore passing to the ultra-limit of $G^n$ as $n\to\infty$ we get the Hilbert space.
-It remains to observe that the limit action has the required property.
+Therefore the ultra-limit of $G^n$ as $n\to\infty$ is a Hilbert space $\HH$ and the submetries $\phi_n$ ultra-converge to a submetry $\phi\:\HH\to G/\!\!/H$.
+It remains to apply Exercise~\ref{ex:quotient}.
 \qeds
