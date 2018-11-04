@@ -17,7 +17,7 @@ Note that $w'\in\partial \TIL_p$.
 
 
 Set $q=\exp_p w'$.
-By general position argument, we can assume that there are at least two minimizing geodesics connecting $p$ to $q$; see \cite{karcher}.
+By general position argument, we can assume that there are at least two minimizing geodesics connecting $p$ to $q$; see \cite[4.8]{karcher}, \cite{bishop} or \cite{wolter}.
 That is, there is $w''\in \partial \TIL_p$ such that 
 $w''\ne w'$
 and $\exp_pw'=\exp_pw''$.
@@ -53,7 +53,7 @@ y'=y'(\delta)&=\exp_p (-\delta\cdot v).
 
 We will  show that for some choice of $\delta,\eps$ and $\zeta$ the tree comparison for $p/xx'yy'(q'/z)$ does not hold.
 
-Assume the contrary, that is, given any positive numbers $\delta,\eps$ and $\zeta$, there is a point array $\~p$, $\~x$, $\~x'(\delta)$, $\~y$, $\~y'(\delta)$, $\~q'(\eps)$, $\~z(\zeta)\in\HH$ as in the definition of $T$-tree comparison.
+Assume the contrary; that is, given any positive numbers $\delta,\eps$ and $\zeta$, there is a point array $\~p$, $\~x$, $\~x'(\delta)$, $\~y$, $\~y'(\delta)$, $\~q'(\eps)$, $\~z(\zeta)\in\HH$ as in the definition of $T$-tree comparison.
 
 \begin{wrapfigure}{r}{35 mm}
 \begin{tikzpicture}[scale=1,
@@ -94,21 +94,36 @@ that is, $\~p\in [\~x\,\~x']_\HH$.
 The same way we see that $\~p\in [\~y\,\~y']_\HH$.
 
 Fix $\eps$ and $\zeta$.
-Note that as $\delta\to 0$ we have 
+Note that as $\delta\to 0$, we have that  
 \begin{align*}
 \~x'&\to \~p,
 &
-\~y'&\to \~p.
-\\
+\~y'&\to \~p;
+\intertext{by first variation formula and tree comparison, we also get that}
 \measuredangle[\~p\,^{\~x'}_{\~y}]&\to \measuredangle[p\,^{x'}_{y}],
 &
-\measuredangle[\~p\,^{\~y'}_{\~x}]&\to \measuredangle[p\,^{y'}_{x}],
+\measuredangle[\~p\,^{\~y'}_{\~x}]&\to \measuredangle[p\,^{y'}_{x}].
 \\
 \measuredangle[\~p\,^{\~x'}_{\~q'}]&\to \measuredangle[p\,^{x'}_{q'}],
 &
-\measuredangle[\~p\,^{\~y'}_{\~q'}]&\to \measuredangle[p\,^{y'}_{q'}],
+\measuredangle[\~p\,^{\~y'}_{\~q'}]&\to \measuredangle[p\,^{y'}_{q'}].
 \end{align*}
-It follows that 
+Indeed, the limits of
+$\measuredangle[\~p\,^{\~x'}_{\~y}]$, 
+$\measuredangle[\~p\,^{\~x'}_{\~y'}]$,
+$\measuredangle[\~p\,^{\~x}_{\~y'}]$
+can not be smaller than 
+$\measuredangle[p\,^{x'}_{y}]$, 
+$\measuredangle[p\,^{x'}_{y'}]$,
+$\measuredangle[p\,^{x}_{y'}]$
+respectfully (the last three angles do not depend on $\delta$).
+On the other hand, the limits of $\measuredangle[\~p\,^{\~x'}_{\~y}]+\measuredangle[\~p\,^{\~x'}_{\~y'}]$ and $\measuredangle[\~p\,^{\~x}_{\~y'}]+\measuredangle[\~p\,^{\~x'}_{\~y'}]$ can not be bigger than $\pi$.
+Since $\measuredangle[p\,^{x'}_{y}]+\measuredangle[p\,^{x'}_{y'}]=\pi$ and $\measuredangle[p\,^{x}_{y'}]+\measuredangle[p\,^{x'}_{y'}]=\pi$ the first two identities follow.
+The last two identities follow the same ways since \[\measuredangle[\~p\,^{\~x'}_{\~q}]+\measuredangle[\~p\,^{\~y'}_{\~q}]+\measuredangle[\~p\,^{\~x'}_{\~y'}]\le 2\cdot \pi\]
+and 
+\[\measuredangle[p\,^{x'}_{q}]+\measuredangle[p\,^{y'}_{q}]+\measuredangle[p\,^{x'}_{y'}]= 2\cdot \pi.\]
+
+Therefore
 \begin{align*}
 \measuredangle[\~p\,^{\~x}_{\~y}]&\to \measuredangle[p\,^x_y],
 &
@@ -127,7 +142,7 @@ $\~p, \~x,\~y,\~q'=\~q'(\eps),\~z=\~z(\zeta)$ such that
 &
 \measuredangle[\~p\,^{\~x}_{\~q'}]&= \measuredangle[p\,^{x}_{q'}].
 \end{align*}
-In other words, the map sending the points $0,u,v,w'\in\T_p$ to $\~p,\~x,\~y,\~q\in\HH$ correspondingly is distance preserving.
+In other words, the map sending the points $0,u,v,w'\in\T_p$ to $\~p,\~x,\~y,\~q'\in\HH$ correspondingly is distance preserving.
 
 Note that $q'\to q$ as $\eps\to0$. 
 Therefore, in the limit,
@@ -137,15 +152,16 @@ we get a configuration $\~p$, $\~x$, $\~y$, $\~q'$, $\~z=\~z(\zeta)$ such that i
 &
 |\~p-\~z|&\ge |p-z|,
 \\
-|\~x-\~z|&\ge |x-p|,
+|\~x-\~z|&\ge |x-z|,
 &
-|\~y-\~z|&\ge |y-z|
+|\~y-\~z|&\ge |y-z|.
 \end{align*}
 
 Since $w''\ne w'$, for small values $\zeta$ the last three inequalities 
 imply 
 \[|\~q'-\~z|>|q-z|,\]
 a contradiction.
+\qeds
 
 \begin{thm}{Proposition}\label{prop:convex}
 If  a complete CTIL Riemannian manifold $M$ satisfies 4(1)-tree comparison,
@@ -175,7 +191,8 @@ x&=\exp_p u,
 x'&=\exp_p(-\eps\cdot  u),
 &y'&=\exp_p(-\eps\cdot  v).
 \end{align*}
-Apply the $p/xyx'y'(z/q)$ comparison and pass to the limit as $\eps\to 0$.
+Let us apply the $p/xyx'y'(z/q)$ comparison and pass to the limit as $\eps\to 0$
+as we did in the proof of Proposition~\ref{prop:CTIL}.
 We obtain a configuration of points $\~p, \~x, \~y, \~z, \~q\in\HH$, satisfying corresponding comparisons and
 in addition
 \begin{align*}
@@ -213,7 +230,8 @@ g(v)&=\tfrac12\cdot|\~q-\~y|_{\T_p}^2
 \ge\tfrac12\cdot|q-y|_M^2
 = f(u).
 \end{align*}
-Hence the first statement follows.
+Hence the statement.
+\qeds
 
 \begin{thm}{Proposition}\label{prop:m(n)}
 Assume $M$ is a complete CTIL Riemannian manifold such that for any $p,q\in M$, we have $f''\le 1$, where $f$ is the function $f\: \TIL_p\to \RR$ defined by
@@ -224,7 +242,7 @@ Then $M$ satisfies all bipolar comparisons.
 \parit{Proof.}
 Fix points $p$ and $q$ in $M$;
 set $\~q=\log_pq\in\T_p$ and $\~f(v)=\tfrac12\cdot |v-\~q|_{\T_p}^2$.
-Note that 
+Note that $d_{\~q}f=d_{\~q}\~f$ and $\~f''\equiv 1$, therefore
 \[f\le \~f.\eqlbl{eq:f=<f}\]
 Further note that the inequality \ref{eq:f=<f} is equivalent to the Toponogov comparison for all hinges $[p\,{}^x_q]$ in $M$.
 It follows that $M$ has nonnegative sectional curvature. 
@@ -236,39 +254,44 @@ Set
 \[\~p=0=\log_pp,\quad \~q=\log_pq,\quad\text{and}\quad \~x_i=\log_px_i\]
 for each $i$. 
 
-Consider the linear map $\psi_1\:\T_q\to \T_p$ such that for any smooth function $h$
+Let $\psi_1\:\T_q\to \T_p$ be the dual of the differential $d_{\~q}\exp_p\:\T_p=\T_{\~q}\T_p\to \T_q$; note that for any smooth function $h$
 \[\psi_1\:\nabla_{q}h\mapsto \nabla_{\~q}(h\circ\exp_p).\]
 Since sectional curvature of $M$ is nonnegative, the restriction $\exp_p|_{\TIL_p}$ is short and therefore so is $\psi_1$.
 
 In particular there is a linear map $\psi_2\:\T_q\to\T_p$ such that, the map $\iota\:\T_q\zz\to \T_p\oplus\T_p$ defined by
-\[\iota\:v\mapsto \psi_1(v)\oplus \psi_2(v)\]
+\[\iota\:v\mapsto (\psi_1(v), \psi_2(v))\]
 is distance preserving.
 
 Further set 
-\[h_i=\tfrac12\cdot\dist_{y_i}^2,
-\quad
-g_i=h_i\circ\exp_p|_{\TIL_p},
-\quad
-\~y_i=\~q-\iota(\nabla_q h_i).
-\]
+\begin{align*}
+h_i&=\tfrac12\cdot\dist_{y_i}^2,
+&
+g_i&=h_i\circ\exp_p|_{\TIL_p},
+\\
+\~y_i&=\~q-\psi_1(\nabla_q h_i),
+&
+\~z_i&=-\psi_2(\nabla_q h_i).
+\end{align*}
+
+
 
 
 By construction
-\[|\~y_i-\~q|_{\T_p\oplus\T_p}=|y_i-q|_M.\]
+\[|(\~y_i,\~z_i)-(\~q,0)|_{\T_p\oplus\T_p}=|y_i-q|_M.\]
 
-At the point $\~q$ the restriction functions $\~g_i=\tfrac12\cdot\dist^2_{\~y_i}|_{\T_p\oplus 0}$ and the function $g_i$ have the same value and gradient.
+At the point $(\~q,0)\in \T_p\oplus\T_p$ the restriction functions $\~g_i=\tfrac12\cdot\dist^2_{\~y_i}|_{\T_p\oplus 0}$ and the function $g_i$ have the same value and gradient.
 Since $g_i''\le 1$ and $\~g_i''=1$, we get $\~g_i\ge g_i$. 
 The latter implies
-\[
-|\~y_i-\~p|_{\T_p\oplus\T_p}\ge|y_i-p|_M
-\quad
-\text{and}
-\quad
-|\~y_i-\~x_j|_{\T_p\oplus\T_p}\ge|y_i-x_j|_M.\]
+\begin{align*}
+|(\~y_i,\~z_i)-(\~p,0)|_{\T_p\oplus\T_p}&\ge|y_i-p|_M
+\\
+|(\~y_i,\~z_i)-(\~x_j,0)|_{\T_p\oplus\T_p}&\ge|y_i-x_j|_M.
+\end{align*}
 for any $i$ and $j$.
-
-Since there is an isometric embedding $\T_p\oplus\T_p\hookrightarrow \HH$,
-we get the needed configuration.
+That is, the configuration 
+\[(\~p,0), (\~x_1,0),\dots,(\~x_n,0), (\~q,0), (\~y_1,\~z_1),\dots,(\~y_m,\~z_m)\]
+satisfies the comparison.
+It remains to apply to it an isometric embedding $\T_p\oplus\T_p\hookrightarrow \HH$.
 \qeds
 
 

@@ -1,7 +1,7 @@
 \section{MTW}\label{MTW+}
 
 
-The Proposition~\ref{MTW-plus-convexity} below provides the equivalence of properties (\textit{\ref{thm:convexity:convexity}}) and (\textit{\ref{thm:convexity:MTW}}) which finished the proof Theorem~\ref{thm:convexity}.
+Proposition~\ref{MTW-plus-convexity} provides equivalence of (\textit{\ref{thm:convexity:convexity}}) and (\textit{\ref{thm:convexity:MTW}}) in the main theorem (\ref{thm:convexity}); which is the final step its proof.
 The equivalence is proved by calculations along the same lines as in \cite[Chapter 12]{villani}.
 
 Let us introduce notations and use them to reformulate the property (\textit{\ref{thm:convexity:MTW}}).
@@ -31,7 +31,7 @@ for $Y\in \T_q$ and any smooth function $f$.
 Indeed applying \ref{eq:zero}, we get that
 \begin{align*}
 (Y\tilde Y_p-Y\tilde Y_q)f
-&=(\tilde Y_q\tilde Y_p-\tilde Y_p\tilde Y_q)f(q)=
+&=[(\tilde Y_q\tilde Y_p-\tilde Y_p\tilde Y_q)f](q)=
 \\
 &=(\nabla_Y \tilde Y_p-\nabla_Y\tilde Y_q)f=\nabla_Y \tilde Y_pf.
 \end{align*}
@@ -86,7 +86,7 @@ Applying \ref{eq:nabla}, we get that
 \begin{align*}
 \dcost{X\tilde X_p}{Y\tilde Y_p}{p}{q}&=\dcost{X\tilde X_p}{Y\tilde Y_q}{p}{q}+\dcost{X\tilde X_p}{\nabla_Y\tilde Y_q}{p}{q}=
 \\
-&=\dcost{X\tilde X_p}{Y\tilde Y_q}{p}{q}+\dcost{X\tilde X_q}{\nabla_Y\tilde Y_q}{p}{q}-\dcost{\nabla_X\tilde X_p}{\nabla_Y\tilde Y_q}{p}{q}
+&=\dcost{X\tilde X_p}{Y\tilde Y_q}{p}{q}+\dcost{X\tilde X_q}{\nabla_Y\tilde Y_q}{p}{q}-\dcost{\nabla_X\tilde X_p}{\nabla_Y\tilde Y_q}{p}{q}.
 \end{align*}
 By \ref{derXYY}, 
 \[\dcost{X\tilde X_q}{\nabla_Y\tilde Y_q}{p}{q}=0.\]
@@ -110,8 +110,16 @@ is 1-concave.
 \end{enumerate}
 \end{thm}
 
-\parit{Proof.} Note that $s(X)=\tfrac12\cdot |X|^2=\cost{p}{\exp_qX}$,
-in particular the function $s$ is $1$-affine (that is $1$-concave and $1$-convex at the same time).
+
+Note that equivalence 
+(\textit{\ref{MTW-plus-convexity:MTW}})$\iff$(\textit{\ref{MTW-plus-convexity:f}}) imply the
+equivalence of (\textit{\ref{thm:convexity:convexity}})$\iff$(\textit{\ref{thm:convexity:MTW}}) in \ref{thm:convexity}. 
+Therefore the proposition finishes the proof of the main theorem.
+
+
+\parit{Proof.}  
+Note that $\cost{p_0}{\exp_{p_0}X}=\tfrac12\cdot |X|^2$ for any $X\in\TIL_{p_0}$,
+in particular the function $s(X)\zz=\cost{p_0}{\exp_{p_0}X}$ is $1$-affine (that is, $1$-concave and $1$-convex at the same time).
 
 Evidently $f=h+s$, therefore (\textit{\ref{MTW-plus-convexity:h}})$\iff$(\textit{\ref{MTW-plus-convexity:f}}).
 
