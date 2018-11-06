@@ -5,36 +5,26 @@
 The ``if'' part follows from Exercise~\ref{ex:quotient};
 let us prove the ``only if'' part.
 
-Fix a point array $a_1,\dots, a_n$ in $X$.
-Consider the complete graph $K_n$ with the vertexes labeled by $a_1,\dots, a_n$.
+Since $X$ is separable, it has a countable everywhere dense set $\{x_1,x_2,\dots\}$.
+Consider the complete countable graph $K$ with the vertexes labeled by $x_1,x_2\dots$;
+let $T\to K$ be its universal covering.
 
+The graph $T$ is a tree with countable set of vertexes.
+Note that $K$ can be presented as a union of nested sequence of finite trees $T_1\subset T_2\subset \dots$;
+moreover, we can assume that each $T_n$ is spanned by vertexes $\{y_1,\dots,y_n\}$ for some enumeration $y_1,y_2,\dots$ of the vertexes of $T$.
+Denote by $s(y_i)$ the corresponding point $x_j$ in $X$.
 
-Let $\hat K_n\to K_n$ be the universal covering.
-Denote by $\hat  V$ the set of vertexes of $\hat  K_n$;
-given a vertex $\hat  v\in\hat V$ denote by $v$ the corresponding vertex of $K_n$.
+Applying the tree comparison for each $T_n$ we get a finite configuration $\~y_{1,n},\dots,\~y_{n,n}$ in $\HH$.
+Set $Y_n=\{\~y_{1,n},\dots,\~y_{n,n}\}$. 
+Consider the map $s_n\:Y_n\to X$ defined by $s_n\:\~y_{i,n}\mapsto s(y_i)$.
+By comparison, $s_n$ is a short map that preserves the distances between the points adjacent in $T_n$.
 
-Applying the tree comparison for finite subtrees in $\hat  K_n$ and passing to a partial limit,  we get the following:
+Without loss of generality, we may assume that for any $k\le n$, the points $\~y_{1,n},\dots,\~y_{k,n}$ lie in the subspace spanned by first $k-1$ elements of a fixed basis of $\HH$.
+Passing to a partial limit as $n\to \infty$, we get a set $Y=\{\~y_1,\~y_2,\dots\}\subset \HH$ and a map $s\:Y\to X$ that is short and preserves the distances between the points adjacent in $T$.
+In particular for any $\~y_i$ and $x_j$ there is $\~y_k$ such that $s(\~y_k)=x_j$ and $|\~y_i-\~y_k|_\HH=|s(\~y_i)-x_j|_X$.
 
-\begin{enumerate}[$({*})$]
-\item There is a map $f\:\hat V\to\HH$ such that 
-\[|f(\hat v)-f(\hat w)|_\HH\ge |v-w|_X\]
-for any two vertexes $\hat v,\hat w\in \hat  V$ and the equality holds if $(\hat v,\hat w)$ is an edge in $\hat  K_n$.
-\end{enumerate}
-
-For $Y=f(\hat V)$ the projection $Y\to X$ defined by $f(\hat v)\mapsto v$ is the required submetry.
-It finishes the proof if $X$ is finite.
-
-Since $X$ is separable, it has a countable everywhere dense set $\{a_1,a_2,\dots\}$. 
-Applying the statement above for $X_n=\{a_1,\dots a_n\}$, we get 
-a submetry from $Y_n=f_n(\hat V_n)\subset \HH$ to $X_n$.
-
-Let $Y$ and $W$ be the ultra-limits of subspaces $Y_n$ and spaces $X_n$ respectfully. 
-Clearly $Y$ admits an isometric embedding into a Hilbert space $\HH$ 
-and it admits submetry $\phi\:Y\zz\to W$.
-The space $X$ can be considered as a subspace of $W$.
-Therefore the restriction of $\phi$ to $\phi^{-1}(X)$ is a required submetry.
+By construction, the continuous extension of $s$ to the closure $\bar Y$ of $Y$ is a required submetry.
 \qeds
-
 
 The following proof was suggested by Alexander Lytchak, it is simplified version of the construction of Chuu-Lian Terng and Gudlaugur Thorbergsson given in \cite[Section 4]{terng-thorbergsson}.
 
