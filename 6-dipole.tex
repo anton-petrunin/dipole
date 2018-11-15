@@ -238,8 +238,12 @@ $\~\xi_i$ is adjacent to $\~\xi_j$ if $\measuredangle(\~\xi_i,\~\xi_j)<\alpha_{i
 If the comparison does not hold, then $\Gamma$ is not a null graph; that is, $\Gamma$ has some edges.
 
 Note that by Corollary \ref{cor:|x-x|}, degree of any vertex is at least 2.
-Indeed, if $\~\xi_1$ is a vertex of degree 1 that is adjacent to $\~\xi_2$, then $\alpha_{1,2}>\pi$ which contradicts \ref{cor:|x-x|}\textit{\ref{cor:|x-x|:a}};
-if $\~\xi_1$ is a vertex of degree 0 then all other vertexes have degree 2 and therefore $\alpha_{2,3}+\alpha_{2,4}+\alpha_{3,4}>2\cdot \pi$ which contradicts \ref{cor:|x-x|}\textit{\ref{cor:|x-x|:b}}. 
+Indeed, assume $\~\xi_1$ has degree 1 and it is adjacent to $\~\xi_2$, then $\measuredangle(\~\xi_1,\~\xi_2)=\pi$ and therefore $\alpha_{1,2}>\pi$.
+The latter contradicts \ref{cor:|x-x|}\textit{\ref{cor:|x-x|:a}}.
+If $\~\xi_1$ is a vertex of degree 0, then from the previous case all other vertexes have degree 2.
+Since $E$ is minimal the edges $[\~\xi_2\~\xi_3]$, $[\~\xi_3\~\xi_4]$ and $[\~\xi_4\~\xi_1]$ form an equator. 
+Therefore $\alpha_{2,3}+\alpha_{2,4}+\alpha_{3,4}>2\cdot \pi$ which contradicts \ref{cor:|x-x|}\textit{\ref{cor:|x-x|:b}}. 
+
 Therefore the graph $\Gamma$ is isomorphic to one the following three graphs.
 
 \begin{center}
@@ -310,7 +314,9 @@ By the observation above the both triangles in the graph run along one equator.
 The latter contradicts Corollary \ref{cor:|x-x|}\textit{\ref{cor:|x-x|:b}}.
 
 For the 4-edge graph (that is, for 4-cycle)
-by the same observation we have 4 points lie on the equator; 
-moving one diagonal pair to the north pole 
-and the other diagonal pair to the south pole will decrease the energy, a contradiction.
+by the same observation the 4 vertexes lie on an equator.%
+\footnote{Since any vertex of $\Gamma$ can not lie in an open hemisphere with all its adjacent vertexes, the configuration is centrally symmetric, but we do not need it in the proof.}
+Moving one diagonal pair to the north pole 
+and the other diagonal pair to the south pole will decrease the energy which leads to a contradiction.
+Here we use again that edges condrbute at least quadratic decay of energy, while the nonedges can contribute a slower than quadratic growth.
 \qeds
